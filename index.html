@@ -470,7 +470,140 @@
             background: #171516;
 
         }
+/* =========================================
+   MAVIS NEW DESIGN
+========================================= */
 
+.mavis-intro {
+    max-width: 700px;
+    margin: -5px auto 40px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+
+    font-style: italic;
+
+    line-height: 1.35;
+
+    color: #6d2638;
+}
+
+
+.mavis-description {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    font-size: 0.95rem;
+
+    line-height: 1.9;
+
+    color: #171516;
+
+    opacity: 0.78;
+}
+
+
+.mavis-description strong {
+    color: #6d2638;
+
+    font-weight: 500;
+}
+
+
+.mavis-themes {
+
+    max-width: 950px;
+
+    margin: 80px auto 65px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 45px;
+
+    text-align: left;
+}
+
+
+.theme {
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(109, 38, 56, 0.35);
+
+}
+
+
+.theme h3 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.8rem;
+
+    font-weight: 600;
+
+    color: #6d2638;
+
+    margin-bottom: 12px;
+
+}
+
+
+.theme p {
+
+    font-size: 0.82rem;
+
+    line-height: 1.7;
+
+    opacity: 0.7;
+
+}
+
+
+.mavis-ending {
+
+    margin: 70px auto 45px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.8rem;
+
+    line-height: 1.3;
+
+}
+
+
+.mavis-ending em {
+
+    color: #6d2638;
+
+}
+
+
+/* MOBILE MAVIS */
+
+@media (max-width: 700px) {
+
+    .mavis-themes {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        text-align: center;
+
+    }
+
+    .theme {
+
+        padding-top: 20px;
+
+    }
+
+}
 
         /* =========================================
            ABOUT
