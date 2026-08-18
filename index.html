@@ -144,24 +144,36 @@
 }
         
 
-       .hero-button {
-    display: inline-block;
-    padding: 15px 34px;
-    border: 1px solid rgba(243, 238, 230, 0.55);
-    color: #f3eee6;
+      .hero-button-wrap {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 48px;
+
+    border: 1px solid #f3eee6;
     background: transparent;
+
+    color: #f3eee6;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 .hero-button:hover {
     background: #f3eee6;
     color: #171516;
-    border-color: #f3eee6;
 }
 
         /* GENERAL SECTIONS */
@@ -331,7 +343,9 @@
         <div class="nav-name">Amal Iman Ameen</div>
 
         <div>
-           <a href="#mavis" class="hero-button">Enter</a>
+          <div class="hero-button-wrap">
+    <a href="#mavis" class="hero-button">ENTER</a>
+</div>
             <a href="#about">About</a>
             <a href="#connect">Connect</a>
         </div>
