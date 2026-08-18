@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Amal Iman Ameen | Author & Novel Artist</title>
 
     <meta name="description"
           content="Official website of Amal Iman Ameen, author and novel artist writing under the pen name Esper Ayla. Author of Mavis.">
 
+    <meta name="author"
+          content="Amal Iman Ameen">
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+          rel="stylesheet">
+
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+        /* =========================================
+           BASIC RESET
+        ========================================= */
 
         * {
             margin: 0;
@@ -18,495 +42,914 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             background: #171516;
+
             color: #f3eee6;
+
             font-family: 'DM Sans', sans-serif;
+
             font-weight: 300;
+
             line-height: 1.7;
+
+            overflow-x: hidden;
+
         }
 
-        /* NAVIGATION */
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
 
         nav {
+
             position: fixed;
+
             top: 0;
             left: 0;
+
             width: 100%;
+
             padding: 24px 6%;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             z-index: 1000;
-            background: rgba(23, 21, 22, 0.88);
+
+            background: rgba(23, 21, 22, 0.90);
+
             backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(243, 238, 230, 0.05);
+
         }
+
 
         .nav-name {
+
             font-family: 'Cormorant Garamond', serif;
+
             font-size: 1.35rem;
+
             letter-spacing: 2px;
+
             color: #f3eee6;
+
+            white-space: nowrap;
+
         }
+
 
         nav a {
+
             color: #f3eee6;
+
             text-decoration: none;
+
             margin-left: 28px;
+
             font-size: 0.75rem;
+
             letter-spacing: 2px;
+
             text-transform: uppercase;
+
             opacity: 0.75;
-            transition: 0.3s;
+
+            transition: 0.3s ease;
+
         }
+
 
         nav a:hover {
+
             opacity: 1;
+
             color: #b59a67;
+
         }
 
-        /* HERO */
+
+        /* =========================================
+           HERO
+        ========================================= */
 
         .hero {
+
             min-height: 100vh;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             text-align: center;
-            padding: 120px 25px 80px;
+
+            padding: 140px 25px 90px;
+
             position: relative;
+
+            overflow: hidden;
+
         }
+
+
+        /* Subtle wine-colored atmosphere */
 
         .hero::before {
+
             content: "";
+
             position: absolute;
-            width: 420px;
-            height: 420px;
+
+            width: 500px;
+
+            height: 500px;
+
             border-radius: 50%;
+
             background: #6d2638;
-            opacity: 0.12;
-            filter: blur(100px);
+
+            opacity: 0.13;
+
+            filter: blur(120px);
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
         }
+
 
         .hero-content {
+
             position: relative;
+
             z-index: 2;
-            max-width: 900px;
+
+            max-width: 950px;
+
         }
+
 
         .eyebrow {
+
             font-size: 0.72rem;
+
             letter-spacing: 5px;
+
             text-transform: uppercase;
+
             color: #b59a67;
-            margin-bottom: 25px;
+
+            margin-bottom: 28px;
+
         }
+
 
         h1 {
+
             font-family: 'Cormorant Garamond', serif;
+
             font-size: clamp(4rem, 10vw, 8.5rem);
+
             font-weight: 500;
-            line-height: 0.9;
+
+            line-height: 0.88;
+
             letter-spacing: -2px;
+
         }
+
 
         .title {
-            margin-top: 28px;
-            font-size: 0.8rem;
+
+            margin-top: 30px;
+
+            font-size: 0.78rem;
+
             letter-spacing: 4px;
+
             text-transform: uppercase;
+
             opacity: 0.75;
+
         }
+
 
         .pen-name {
+
             margin-top: 10px;
+
             font-family: 'Cormorant Garamond', serif;
+
             font-size: 1.4rem;
+
             font-style: italic;
+
             color: #d7c5a3;
+
         }
 
-       .tagline {
-    margin: 55px auto 35px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 400;
-    line-height: 1.05;
-}
 
-.tagline span {
-    color: #b59a67;
-    font-style: italic;
-}
-        
+        .tagline {
 
-      .hero-button-wrap {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
+            margin: 55px auto 35px;
 
-.hero-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 48px;
+            font-family: 'Cormorant Garamond', serif;
 
-    border: 1px solid #f3eee6;
-    background: transparent;
+            font-size: clamp(2.1rem, 4vw, 3.6rem);
 
-    color: #f3eee6;
-    text-decoration: none;
+            font-weight: 400;
 
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 400;
-    letter-spacing: 4px;
+            line-height: 1.05;
 
-    transition: all 0.3s ease;
-}
+        }
 
-.hero-button:hover {
-    background: #f3eee6;
-    color: #171516;
-}
 
-        /* GENERAL SECTIONS */
+        .tagline span {
+
+            color: #b59a67;
+
+            font-style: italic;
+
+        }
+
+
+        /* =========================================
+           ENTER BUTTON
+        ========================================= */
+
+        .hero-button-wrap {
+
+            margin-top: 25px;
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+
+        .hero-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 155px;
+
+            height: 50px;
+
+            border: 1px solid #f3eee6;
+
+            background: transparent;
+
+            color: #f3eee6;
+
+            text-decoration: none;
+
+            font-family: 'DM Sans', sans-serif;
+
+            font-size: 0.7rem;
+
+            font-weight: 400;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition:
+
+                background 0.3s ease,
+
+                color 0.3s ease,
+
+                transform 0.3s ease;
+
+        }
+
+
+        .hero-button:hover {
+
+            background: #f3eee6;
+
+            color: #171516;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================= */
 
         section {
+
             padding: 120px 8%;
+
         }
+
 
         .section-label {
+
             color: #b59a67;
+
             font-size: 0.7rem;
+
             letter-spacing: 4px;
+
             text-transform: uppercase;
+
             margin-bottom: 18px;
+
         }
+
 
         h2 {
+
             font-family: 'Cormorant Garamond', serif;
+
             font-size: clamp(2.8rem, 6vw, 5rem);
+
             font-weight: 500;
+
             line-height: 1;
+
             margin-bottom: 30px;
+
         }
 
-        /* MAVIS */
+
+        /* =========================================
+           MAVIS
+        ========================================= */
 
         .mavis {
+
             background: #f3eee6;
+
             color: #171516;
+
             text-align: center;
+
         }
+
 
         .mavis .section-label {
+
             color: #6d2638;
+
         }
+
 
         .mavis-description {
+
             max-width: 650px;
+
             margin: 0 auto 35px;
+
             opacity: 0.75;
+
         }
+
 
         .mavis-button {
-            display: inline-block;
-            padding: 13px 28px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 190px;
+
+            height: 48px;
+
+            padding: 0 25px;
+
             background: #6d2638;
+
             color: #f3eee6;
+
             text-decoration: none;
+
             text-transform: uppercase;
+
             letter-spacing: 3px;
+
             font-size: 0.7rem;
+
+            transition: 0.3s ease;
+
         }
 
-        /* ABOUT */
+
+        .mavis-button:hover {
+
+            background: #171516;
+
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
 
         .about {
+
             max-width: 900px;
+
             margin: auto;
+
             text-align: center;
+
         }
+
 
         .quote {
+
             font-family: 'Cormorant Garamond', serif;
+
             font-size: clamp(2rem, 4vw, 3.3rem);
+
             line-height: 1.2;
+
             margin-bottom: 35px;
+
         }
+
 
         .about-text {
+
             max-width: 700px;
+
             margin: auto;
+
             opacity: 0.72;
+
         }
 
-        /* PHILOSOPHY */
+
+        /* =========================================
+           PHILOSOPHY
+        ========================================= */
 
         .philosophy {
+
             background: #211d1f;
+
             text-align: center;
+
         }
+
 
         .philosophy-text {
+
             max-width: 750px;
+
             margin: auto;
+
             font-family: 'Cormorant Garamond', serif;
+
             font-size: 1.5rem;
+
             line-height: 1.7;
+
             color: #e5ddd0;
+
         }
 
-        /* CONNECT */
+
+        /* =========================================
+           CONNECT
+        ========================================= */
 
         .connect {
+
             text-align: center;
+
         }
+
 
         .socials {
+
             margin-top: 35px;
+
         }
+
 
         .socials a {
+
             color: #f3eee6;
+
             text-decoration: none;
+
             margin: 0 15px;
+
             font-size: 0.75rem;
+
             letter-spacing: 2px;
+
             text-transform: uppercase;
+
+            transition: 0.3s ease;
+
         }
+
 
         .socials a:hover {
+
             color: #b59a67;
+
         }
 
-        /* FOOTER */
+
+        /* =========================================
+           FOOTER
+        ========================================= */
 
         footer {
+
             text-align: center;
+
             padding: 35px 20px;
+
             border-top: 1px solid rgba(243, 238, 230, 0.1);
+
             font-size: 0.7rem;
+
             letter-spacing: 1px;
+
             opacity: 0.5;
+
         }
 
-        /* MOBILE */
+
+        /* =========================================
+           MOBILE
+        ========================================= */
 
         @media (max-width: 700px) {
 
+
             nav {
+
                 padding: 18px 5%;
+
             }
+
 
             .nav-name {
-                font-size: 1.1rem;
+
+                font-size: 1rem;
+
             }
+
 
             nav a {
+
                 margin-left: 12px;
-                font-size: 0.6rem;
+
+                font-size: 0.58rem;
+
             }
+
 
             section {
+
                 padding: 90px 7%;
+
             }
+
 
             h1 {
+
                 font-size: clamp(3.2rem, 16vw, 5rem);
+
+                letter-spacing: -1px;
+
             }
+
 
             .tagline {
-                margin-top: 40px;
+
+                margin-top: 45px;
+
             }
 
-            .socials a {
-                display: block;
-                margin: 15px 0;
+
+            .hero-button {
+
+                width: 145px;
+
+                height: 48px;
+
             }
+
+
+            .socials a {
+
+                display: block;
+
+                margin: 15px 0;
+
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
 
     <nav>
-        <div class="nav-name">Amal Iman Ameen</div>
+
+        <div class="nav-name">
+            Amal Iman Ameen
+        </div>
+
 
         <div>
-          <div class="hero-button-wrap">
-    <a href="#mavis" class="hero-button">ENTER</a>
-</div>
-            <a href="#about">About</a>
-            <a href="#connect">Connect</a>
+
+            <a href="#mavis">
+                Mavis
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#connect">
+                Connect
+            </a>
+
         </div>
+
     </nav>
 
 
-    <!-- HERO -->
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
     <header class="hero">
 
         <div class="hero-content">
 
+
             <div class="eyebrow">
                 Author & Novel Artist
             </div>
 
+
             <h1>
-                Amal Iman <br>
-                Ameen
+                Amal<br>
+                Iman Ameen
             </h1>
+
 
             <div class="title">
                 Writing as Esper Ayla
             </div>
 
+
             <div class="tagline">
+
                 Beyond words.<br>
+
                 <span>Into worlds.</span>
+
             </div>
 
-           <a href="#mavis"
-   style="
-   display:inline-block;
-   padding:15px 34px;
-   border:1px solid rgba(243,238,230,0.55);
-   color:#f3eee6;
-   background:transparent;
-   text-decoration:none;
-   text-transform:uppercase;
-   letter-spacing:3px;
-   font-size:0.7rem;
-   font-family:'DM Sans',sans-serif;
-   cursor:pointer;
-   ">
-   Enter
-</a>
+
+            <div class="hero-button-wrap">
+
+                <a href="#mavis"
+                   class="hero-button">
+
+                    ENTER
+
+                </a>
+
+            </div>
+
 
         </div>
 
     </header>
 
 
-    <!-- MAVIS -->
 
-    <section class="mavis" id="mavis">
+    <!-- =========================================
+         MAVIS
+    ========================================== -->
+
+    <section class="mavis"
+             id="mavis">
+
 
         <div class="section-label">
             Debut Novel
         </div>
 
+
         <h2>
             Mavis
         </h2>
 
+
         <p class="mavis-description">
-            A story born from imagination, emotion and the desire
-            to make a reader see a world beyond the page.
+
+            A story born from imagination,
+            emotion and the desire to make
+            a reader see a world beyond the page.
+
         </p>
 
-        <a href="#about" class="mavis-button">
+
+        <a href="#about"
+           class="mavis-button">
+
             Discover the author
+
         </a>
+
 
     </section>
 
 
-    <!-- ABOUT -->
+
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
 
     <section id="about">
 
+
         <div class="about">
+
 
             <div class="section-label">
                 The Author
             </div>
 
+
             <div class="quote">
+
                 “I don't just write stories.
                 I want you to see them.”
+
             </div>
 
+
             <p class="about-text">
-                Amal Iman Ameen is an author and novel artist writing
-                under the pen name Esper Ayla. Drawn to literature
-                from childhood, she experiences stories visually,
-                often imagining them as films without screens.
-                Through her writing, she seeks to create worlds
-                that readers can see, feel and experience.
+
+                Amal Iman Ameen is an author
+                and novel artist writing under
+                the pen name Esper Ayla.
+
+                Drawn to literature from childhood,
+                she experiences stories visually,
+                often imagining them as films
+                without screens.
+
+                Through her writing, she seeks
+                to create worlds that readers
+                can see, feel and experience.
+
             </p>
+
 
         </div>
 
     </section>
 
 
-    <!-- PHILOSOPHY -->
+
+    <!-- =========================================
+         NOVEL ARTIST PHILOSOPHY
+    ========================================== -->
 
     <section class="philosophy">
+
 
         <div class="section-label">
             The Novel Artist
         </div>
 
+
         <p class="philosophy-text">
+
             “I want to direct through words —
             but go beyond what words alone can do.”
+
         </p>
+
 
     </section>
 
 
-    <!-- CONNECT -->
 
-    <section class="connect" id="connect">
+    <!-- =========================================
+         CONNECT
+    ========================================== -->
+
+    <section class="connect"
+             id="connect">
+
 
         <div class="section-label">
             Connect
         </div>
 
+
         <h2>
             Follow the story.
         </h2>
 
+
         <div class="socials">
 
-            <!-- We'll replace these with your real links later -->
 
-            <a href="#" aria-label="Instagram">
+            <!--
+            THESE ARE TEMPORARY LINKS.
+            WE WILL REPLACE THEM WITH
+            YOUR REAL PROFILES LATER.
+            -->
+
+
+            <a href="#"
+               aria-label="Instagram">
+
                 Instagram
+
             </a>
 
-            <a href="#" aria-label="Amazon">
+
+            <a href="#"
+               aria-label="Amazon">
+
                 Amazon
+
             </a>
 
-            <a href="#" aria-label="Goodreads">
+
+            <a href="#"
+               aria-label="Goodreads">
+
                 Goodreads
+
             </a>
+
 
         </div>
+
 
     </section>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <footer>
 
-        © 2026 Amal Iman Ameen · Writing as Esper Ayla
+        © 2026 Amal Iman Ameen ·
+        Writing as Esper Ayla
 
     </footer>
 
+
 </body>
+
 </html>
