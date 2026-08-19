@@ -472,7 +472,23 @@
 /* =========================================
    MAVIS NEW DESIGN
 ========================================= */
+.mavis-cover {
+    margin: 45px auto 55px;
+    display: flex;
+    justify-content: center;
+}
 
+.mavis-cover img {
+    width: min(360px, 80vw);
+    height: auto;
+    display: block;
+    box-shadow: 0 25px 60px rgba(23, 21, 22, 0.25);
+    transition: transform 0.4s ease;
+}
+
+.mavis-cover img:hover {
+    transform: translateY(-6px);
+}
 .mavis-intro {
     max-width: 700px;
     margin: -5px auto 40px;
@@ -913,6 +929,9 @@
     <h2>
         Mavis
     </h2>
+           <div class="mavis-cover">
+    <img src="mavis-cover.jpg" alt="Mavis — a novel by Amal Iman Ameen">
+</div>
 
     <p class="mavis-intro">
         Some people leave. Some people stay.
