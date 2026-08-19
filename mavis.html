@@ -1,1 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mavis: A Heart's Lament | Amal Iman Ameen</title>
+
+    <meta name="description"
+          content="Mavis: A Heart's Lament — a contemporary romance and psychological drama by Amal Iman Ameen, writing as Esper Ayla. An ongoing series.">
+
+    <meta name="author"
+          content="Amal Iman Ameen">
+
+    <meta name="keywords"
+          content="Mavis A Heart's Lament, Amal Iman Ameen, Esper Ayla, contemporary romance, psychological fiction, novel">
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            background: #171516;
+
+            color: #f3eee6;
+
+            font-family: 'DM Sans', sans-serif;
+
+            font-weight: 300;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 24px 6%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            z-index: 1000;
+
+            background: rgba(23, 21, 22, 0.90);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(243, 238, 230, 0.06);
+
+        }
+
+
+        .nav-name {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 1.35rem;
+
+            letter-spacing: 2px;
+
+            color: #f3eee6;
+
+            white-space: nowrap;
+
+        }
+
+
+        nav a {
+
+            color: #f3eee6;
+
+            text-decoration: none;
+
+            margin-left: 28px;
+
+            font-size: 0.72rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: 0.75;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav a:hover {
+
+            opacity: 1;
+
+            color: #b59a67;
+
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .mavis-hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 150px 8% 100px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .mavis-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 650px;
+
+            height: 650px;
+
+            border-radius: 50%;
+
+            background: #6d2638;
+
+            opacity: 0.16;
+
+            filter: blur(140px);
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+        }
+
+
+        .hero-inner {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 1100px;
+
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            gap: 90px;
+
+            align-items: center;
+
+        }
+
+
+        /* =========================================
+           COVER
+        ========================================= */
+
+        .cover-container {
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+
+        .cover-container img {
+
+            width: min(380px, 80vw);
+
+            height: auto;
+
+            display: block;
+
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.5);
+
+            transition: transform 0.5s ease;
+
+        }
+
+
+        .cover-container img:hover {
+
+            transform: translateY(-8px);
+
+        }
+
+
+        /* =========================================
+           HERO TEXT
+        ========================================= */
+
+        .hero-text .label {
+
+            color: #b59a67;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .hero-text h1 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(4rem, 8vw, 7rem);
+
+            font-weight: 500;
+
+            line-height: 0.85;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .subtitle {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+
+            color: #d8c9b2;
+
+            font-style: italic;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .genre {
+
+            font-size: 0.7rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: #b59a67;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .status {
+
+            display: inline-block;
+
+            padding: 9px 16px;
+
+            border: 1px solid rgba(181, 154, 103, 0.45);
+
+            font-size: 0.65rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =========================================
+           SYNOPSIS
+        ========================================= */
+
+        .synopsis {
+
+            background: #f3eee6;
+
+            color: #171516;
+
+            padding: 120px 8% 130px;
+
+        }
+
+
+        .content {
+
+            max-width: 850px;
+
+            margin: auto;
+
+        }
+
+
+        .section-label {
+
+            color: #6d2638;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .synopsis h2 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(3rem, 6vw, 5rem);
+
+            font-weight: 500;
+
+            line-height: 1;
+
+            margin-bottom: 50px;
+
+        }
+
+
+        .synopsis p {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 1.35rem;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+
+            opacity: 0.85;
+
+        }
+
+
+        .synopsis .final-line {
+
+            margin-top: 45px;
+
+            color: #6d2638;
+
+            font-size: 1.55rem;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =========================================
+           CHARACTERS
+        ========================================= */
+
+        .characters {
+
+            padding: 120px 8%;
+
+        }
+
+
+        .characters-header {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            margin-bottom: 70px;
+
+        }
+
+
+        .characters-header h2 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(3rem, 6vw, 5rem);
+
+            font-weight: 500;
+
+        }
+
+
+        .character-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 45px;
+
+        }
+
+
+        .character {
+
+            padding: 35px 0;
+
+            border-top: 1px solid rgba(243, 238, 230, 0.18);
+
+        }
+
+
+        .character-name {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 2.3rem;
+
+            color: #b59a67;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .character-role {
+
+            font-size: 0.65rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: 0.5;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .character p {
+
+            font-size: 0.9rem;
+
+            line-height: 1.8;
+
+            opacity: 0.72;
+
+        }
+
+
+        /* =========================================
+           READER EXPERIENCE
+        ========================================= */
+
+        .feel {
+
+            background: #211d1f;
+
+            padding: 120px 8%;
+
+        }
+
+
+        .feel-inner {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+        }
+
+
+        .feel h2 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(3rem, 6vw, 5rem);
+
+            font-weight: 500;
+
+            margin-bottom: 65px;
+
+        }
+
+
+        .feel-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 50px;
+
+        }
+
+
+        .feel-item {
+
+            border-top: 1px solid rgba(181, 154, 103, 0.4);
+
+            padding-top: 25px;
+
+        }
+
+
+        .feel-item h3 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            color: #b59a67;
+
+            font-size: 1.8rem;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .feel-item p {
+
+            font-size: 0.85rem;
+
+            line-height: 1.8;
+
+            opacity: 0.65;
+
+        }
+
+
+        /* =========================================
+           AUTHOR NOTE
+        ========================================= */
+
+        .author-note {
+
+            padding: 120px 8%;
+
+            text-align: center;
+
+        }
+
+
+        .author-note-inner {
+
+            max-width: 800px;
+
+            margin: auto;
+
+        }
+
+
+        .author-note h2 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(3rem, 6vw, 5rem);
+
+            font-weight: 500;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .author-note p {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 1.4rem;
+
+            line-height: 1.8;
+
+            color: #d8d0c5;
+
+        }
+
+
+        /* =========================================
+           SERIES STATUS
+        ========================================= */
+
+        .series {
+
+            background: #f3eee6;
+
+            color: #171516;
+
+            padding: 100px 8%;
+
+            text-align: center;
+
+        }
+
+
+        .series h2 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(3rem, 6vw, 5rem);
+
+            font-weight: 500;
+
+            margin-bottom: 50px;
+
+        }
+
+
+        .series-grid {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .series-card {
+
+            border: 1px solid rgba(109, 38, 56, 0.25);
+
+            padding: 35px 25px;
+
+        }
+
+
+        .series-card span {
+
+            display: block;
+
+            color: #6d2638;
+
+            font-size: 0.65rem;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .series-card h3 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 1.8rem;
+
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            border-top: 1px solid rgba(243, 238, 230, 0.1);
+
+            font-size: 0.7rem;
+
+            letter-spacing: 1px;
+
+            opacity: 0.5;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .hero-inner {
+
+                grid-template-columns: 1fr;
+
+                gap: 60px;
+
+                text-align: center;
+
+            }
+
+
+            .hero-text {
+
+                order: -1;
+
+            }
+
+
+            .character-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .feel-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .series-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            nav {
+
+                padding: 18px 5%;
+
+            }
+
+
+            .nav-name {
+
+                font-size: 1rem;
+
+            }
+
+
+            nav a {
+
+                margin-left: 12px;
+
+                font-size: 0.58rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav>
+
+        <div class="nav-name">
+            Amal Iman Ameen
+        </div>
+
+
+        <div>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="mavis.html">
+                Mavis
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="index.html#connect">
+                Connect
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <header class="mavis-hero">
+
+        <div class="hero-inner">
+
+
+            <div class="cover-container">
+
+                <img src="mavis-cover.jpg"
+                     alt="Mavis: A Heart's Lament by Amal Iman Ameen">
+
+            </div>
+
+
+            <div class="hero-text">
+
+                <div class="label">
+                    Debut Novel · Ongoing Series
+                </div>
+
+
+                <h1>
+                    Mavis
+                </h1>
+
+
+                <div class="subtitle">
+                    A Heart's Lament
+                </div>
+
+
+                <div class="genre">
+                    Contemporary Romance · Psychological Drama · Emotional Fiction
+                </div>
+
+
+                <div class="status">
+                    Part I · Published
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         SYNOPSIS
+    ========================================== -->
+
+    <section class="synopsis">
+
+        <div class="content">
+
+
+            <div class="section-label">
+                The Story
+            </div>
+
+
+            <h2>
+                She never believed
+                in fairy tales.
+            </h2>
+
+
+            <p>
+
+                Amalyn knows how to survive on her own.
+                She knows how to keep people at a distance,
+                how to hide what hurts, and how to leave
+                before anyone gets the chance to leave her.
+
+            </p>
+
+
+            <p>
+
+                Then Ryan arrives.
+
+            </p>
+
+
+            <p>
+
+                Mysterious. Playful. Persistent.
+
+            </p>
+
+
+            <p>
+
+                He doesn't ask permission to challenge
+                the walls around her — he simply keeps
+                finding his way through them.
+
+            </p>
+
+
+            <p>
+
+                And somewhere between arguments,
+                laughter, vulnerability and the kind
+                of love neither of them expected,
+                Amalyn begins to wonder if perhaps
+                she was wrong about letting someone in.
+
+            </p>
+
+
+            <p>
+
+                Until fate asks a question neither
+                of them is prepared to answer.
+
+            </p>
+
+
+            <p class="final-line">
+
+                What happens when the person who
+                teaches you how to love becomes the
+                person fate never intended you to keep?
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CHARACTERS
+    ========================================== -->
+
+    <section class="characters">
+
+        <div class="characters-header">
+
+            <div class="section-label">
+                The Characters
+            </div>
+
+
+            <h2>
+                The hearts within Mavis.
+            </h2>
+
+        </div>
+
+
+        <div class="character-grid">
+
+
+            <article class="character">
+
+                <div class="character-name">
+                    Amalyn
+                </div>
+
+                <div class="character-role">
+                    The guarded heart
+                </div>
+
+                <p>
+
+                    Independent, guarded and carrying
+                    wounds she rarely allows anyone
+                    to see.
+
+                    Amalyn doesn't believe in fairy tales,
+                    but beneath her defenses lies someone
+                    still trying to understand how to let
+                    people close without losing them.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="character">
+
+                <div class="character-name">
+                    Zayn
+                </div>
+
+                <div class="character-role">
+                    The tender heart
+                </div>
+
+                <p>
+
+                    Tender and playful, Zayn carries
+                    a warmth that reaches places
+                    Amalyn would rather keep hidden.
+
+                    He becomes one of the people capable
+                    of making her defenses tremble.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="character">
+
+                <div class="character-name">
+                    Ryan
+                </div>
+
+                <div class="character-role">
+                    The unexpected storm
+                </div>
+
+                <p>
+
+                    Mysterious, playful and persistent,
+                    Ryan enters Amalyn's life without
+                    asking whether she is ready.
+
+                    He pushes against the edges of
+                    everything she thought she knew
+                    about herself.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         READER EXPERIENCE
+    ========================================== -->
+
+    <section class="feel">
+
+        <div class="feel-inner">
+
+
+            <div class="section-label">
+                The Reader's Journey
+            </div>
+
+
+            <h2>
+                What Mavis is meant to make you feel.
+            </h2>
+
+
+            <div class="feel-grid">
+
+
+                <article class="feel-item">
+
+                    <h3>
+                        Vulnerability
+                    </h3>
+
+                    <p>
+
+                        The slow and painful dismantling
+                        of the defenses people build to
+                        protect themselves.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="feel-item">
+
+                    <h3>
+                        First Love
+                    </h3>
+
+                    <p>
+
+                        The aching intensity of something
+                        raw, imperfect and impossible
+                        to experience halfway.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="feel-item">
+
+                    <h3>
+                        Longing
+                    </h3>
+
+                    <p>
+
+                        The quiet anticipation that
+                        something beautiful may be
+                        changed by forces neither heart
+                        can control.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         AUTHOR NOTE
+    ========================================== -->
+
+    <section class="author-note">
+
+        <div class="author-note-inner">
+
+
+            <div class="section-label">
+                From the Author
+            </div>
+
+
+            <h2>
+                Writing is Love.
+            </h2>
+
+
+            <p>
+
+                Mavis began as something deeply personal —
+                a lament of the heart transformed into fiction.
+
+                Amal hopes that what she felt while writing
+                these pages becomes something her readers
+                can feel in their own way.
+
+                Not simply something they read.
+
+                Something they see.
+
+                Something they carry.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SERIES
+    ========================================== -->
+
+    <section class="series">
+
+        <div class="section-label">
+            The Series
+        </div>
+
+
+        <h2>
+            Mavis: A Heart's Lament
+        </h2>
+
+
+        <div class="series-grid">
+
+
+            <div class="series-card">
+
+                <span>
+                    Part I
+                </span>
+
+                <h3>
+                    Published
+                </h3>
+
+            </div>
+
+
+
+            <div class="series-card">
+
+                <span>
+                    Part II
+                </span>
+
+                <h3>
+                    In Development
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        © 2026 Amal Iman Ameen ·
+        Writing as Esper Ayla
+
+    </footer>
+
+
+</body>
+
+</html>
