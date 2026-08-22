@@ -850,6 +850,580 @@ img {
     }
 
 }
+        /* =====================================================
+   ESPER AYLA — CINEMATIC HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        150px
+        var(--page-padding)
+        90px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    background:
+        radial-gradient(
+            ellipse at 68% 48%,
+            rgba(166,112,47,.035),
+            transparent 38%
+        ),
+        var(--black);
+}
+
+
+/* =====================================================
+   GIANT BACKGROUND WORD
+===================================================== */
+
+.hero-watermark {
+
+    position: absolute;
+
+    right: -7vw;
+    bottom: 5vh;
+
+    font-family: var(--display);
+
+    font-size:
+        clamp(
+            10rem,
+            27vw,
+            30rem
+        );
+
+    line-height: .7;
+
+    letter-spacing: -.06em;
+
+    color:
+        rgba(238,232,220,.018);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    z-index: 0;
+
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: auto;
+
+}
+
+
+/* =====================================================
+   TOP META
+===================================================== */
+
+.hero-meta {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 75px;
+
+    color: var(--ivory-soft);
+
+    font-family: var(--ui);
+
+    font-size: .58rem;
+
+    font-weight: 400;
+
+    letter-spacing: .25em;
+
+    text-transform: uppercase;
+
+    opacity: .65;
+
+}
+
+
+.hero-meta span:last-child {
+
+    color: var(--amber-soft);
+
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.hero-name h1 {
+
+    margin: 0;
+
+    max-width: 1000px;
+
+    font-family: var(--display);
+
+    font-size:
+        clamp(
+            5rem,
+            12vw,
+            12rem
+        );
+
+    font-weight: 500;
+
+    line-height: .78;
+
+    letter-spacing: -.055em;
+
+    text-transform: uppercase;
+
+    color: var(--ivory);
+
+}
+
+
+/* =====================================================
+   PEN NAME
+===================================================== */
+
+.hero-identity {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 14px;
+
+    margin-top: 42px;
+
+    font-family: var(--ui);
+
+    font-size: .65rem;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+
+    color: var(--ivory-soft);
+
+}
+
+
+.hero-identity strong {
+
+    font-family: var(--display);
+
+    font-size: 1.45rem;
+
+    font-style: italic;
+
+    font-weight: 400;
+
+    letter-spacing: .02em;
+
+    text-transform: none;
+
+    color: var(--amber-soft);
+
+}
+
+
+/* =====================================================
+   HERO STATEMENT
+===================================================== */
+
+.hero-statement {
+
+    max-width: 700px;
+
+    margin-top: 90px;
+
+    margin-left: 18%;
+
+    font-family: var(--display);
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            5.5rem
+        );
+
+    font-weight: 400;
+
+    line-height: .95;
+
+    letter-spacing: -.025em;
+
+    color: var(--ivory);
+
+}
+
+
+.hero-statement em {
+
+    color: var(--amber-soft);
+
+    font-style: italic;
+
+}
+
+
+/* =====================================================
+   BOTTOM AREA
+===================================================== */
+
+.hero-bottom {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-top: 90px;
+
+    padding-top: 35px;
+
+    border-top:
+        1px solid
+        rgba(238,232,220,.08);
+
+}
+
+
+/* =====================================================
+   ENTER BUTTON
+===================================================== */
+
+.hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 205px;
+
+    height: 55px;
+
+    padding: 0 28px;
+
+    border:
+        1px solid
+        rgba(238,232,220,.5);
+
+    background: transparent;
+
+    color: var(--ivory);
+
+    text-decoration: none;
+
+    font-family: var(--ui);
+
+    font-size: .6rem;
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+
+    transition:
+        background .7s cubic-bezier(.22,1,.36,1),
+        color .7s cubic-bezier(.22,1,.36,1),
+        transform .7s cubic-bezier(.22,1,.36,1),
+        border-color .7s ease;
+
+}
+
+
+.hero-button:hover {
+
+    background: var(--ivory);
+
+    color: var(--black);
+
+    border-color: var(--ivory);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =====================================================
+   SCROLL INDICATOR
+===================================================== */
+
+.hero-scroll {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    font-family: var(--ui);
+
+    font-size: .55rem;
+
+    letter-spacing: .24em;
+
+    color: var(--ivory-soft);
+
+    opacity: .5;
+
+}
+
+
+.hero-scroll span {
+
+    display: block;
+
+    width: 45px;
+
+    height: 1px;
+
+    background: var(--amber-soft);
+
+    transform-origin: left;
+
+    animation:
+        scroll-line 2.5s
+        ease-in-out infinite;
+
+}
+
+
+@keyframes scroll-line {
+
+    0%,
+    100% {
+
+        transform:
+            scaleX(.35);
+
+        opacity: .3;
+
+    }
+
+    50% {
+
+        transform:
+            scaleX(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =====================================================
+   HERO ENTRANCE
+===================================================== */
+
+.hero-meta,
+.hero-name,
+.hero-identity,
+.hero-statement,
+.hero-bottom {
+
+    animation:
+        hero-reveal
+        1.4s
+        cubic-bezier(.22,1,.36,1)
+        both;
+
+}
+
+
+.hero-meta {
+    animation-delay: .05s;
+}
+
+
+.hero-name {
+    animation-delay: .15s;
+}
+
+
+.hero-identity {
+    animation-delay: .3s;
+}
+
+
+.hero-statement {
+    animation-delay: .45s;
+}
+
+
+.hero-bottom {
+    animation-delay: .6s;
+}
+
+
+@keyframes hero-reveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE HERO
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        min-height: 100svh;
+
+        padding:
+            120px 7%
+            60px;
+
+        text-align: left;
+
+    }
+
+
+    .hero-meta {
+
+        margin-bottom: 55px;
+
+        font-size: .5rem;
+
+    }
+
+
+    .hero-name h1 {
+
+        font-size:
+            clamp(
+                3.7rem,
+                16vw,
+                6rem
+            );
+
+        line-height: .82;
+
+    }
+
+
+    .hero-identity {
+
+        margin-top: 28px;
+
+        gap: 8px;
+
+        flex-wrap: wrap;
+
+        font-size: .55rem;
+
+    }
+
+
+    .hero-identity strong {
+
+        font-size: 1.2rem;
+
+    }
+
+
+    .hero-statement {
+
+        margin-top: 65px;
+
+        margin-left: 0;
+
+        font-size:
+            clamp(
+                2.3rem,
+                10vw,
+                3.5rem
+            );
+
+    }
+
+
+    .hero-bottom {
+
+        margin-top: 70px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 35px;
+
+    }
+
+
+    .hero-scroll {
+
+        font-size: .5rem;
+
+    }
+
+
+    .hero-watermark {
+
+        right: -25vw;
+
+        bottom: 12vh;
+
+        font-size: 40vw;
+
+    }
+
+}
     </style>
   <!-- AUTHOR SEO / STRUCTURED DATA -->
     <script type="application/ld+json">
@@ -905,50 +1479,68 @@ img {
 
 <header class="hero">
 
-    <div class="hero-atmosphere"></div>
+   <header class="hero">
+
+    <div class="hero-watermark" aria-hidden="true">
+        ESPER
+    </div>
 
     <div class="hero-content">
 
-        <div class="eyebrow">
-            AUTHOR · NOVEL ARTIST
+        <div class="hero-meta">
+            <span>AUTHOR · NOVEL ARTIST</span>
+            <span>01 / 04</span>
         </div>
 
-        <h1>
-            Amal Iman<br>
-            Ameen
-        </h1>
+        <div class="hero-name">
+
+            <h1>
+                Amal<br>
+                Iman Ameen
+            </h1>
+
+        </div>
 
         <div class="hero-identity">
-            writing as <span>Esper Ayla</span>
-        </div>
 
-        <div class="tagline">
+            <span>writing as</span>
 
-            Beyond words.<br>
-
-            <span>Into worlds.</span>
+            <strong>Esper Ayla</strong>
 
         </div>
 
-        <p class="hero-intro">
-            Stories that begin somewhere between
-            the page and the screen.
-        </p>
+        <div class="hero-statement">
 
-        <div class="hero-button-wrap">
+            Stories for the
+            <br>
+            beautiful things
+            <br>
+            <em>that hurt.</em>
 
-            <a href="#works" class="hero-button">
-                ENTER
+        </div>
+
+        <div class="hero-bottom">
+
+            <a href="#mavis"
+               class="hero-button">
+
+                Enter the world
+
             </a>
 
+            <div class="hero-scroll">
+
+                <span></span>
+
+                SCROLL TO EXPLORE
+
+            </div>
+
         </div>
 
     </div>
 
-    <div class="scroll-indicator">
-        <span></span>
-        SCROLL TO ENTER
-    </div>
+</header>
 
 </header>
 
