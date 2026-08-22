@@ -61,43 +61,219 @@
 
     <style>
 
-        /* =========================================
-           BASIC RESET
-        ========================================= */
+      /* =====================================================
+   ESPER AYLA — VISUAL FOUNDATION
+   Luxury Gothic Editorial
+===================================================== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+:root {
+
+    /* CORE PALETTE */
+    --black: #070707;
+    --charcoal: #0d0c0c;
+    --charcoal-soft: #121011;
+
+    --ivory: #eee8dc;
+    --ivory-soft: #cfc7ba;
+
+    --amber: #b88945;
+    --amber-soft: #d0a866;
+
+    /* TYPOGRAPHY */
+    --display: 'Cormorant Garamond', serif;
+    --ui: 'DM Sans', sans-serif;
+
+    /* SPACING */
+    --page-padding: clamp(24px, 6vw, 100px);
+
+    /* MOTION */
+    --slow: 1.2s cubic-bezier(.22,1,.36,1);
+    --smooth: .6s cubic-bezier(.22,1,.36,1);
+}
 
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 
-      
-           body {
-    background: #050505;
-     color: #e8e2d6;
-
-            font-family: 'DM Sans', sans-serif;
-
-            font-weight: 300;
-
-            line-height: 1.7;
-
-            overflow-x: hidden;
-
-        }
+html {
+    scroll-behavior: smooth;
+    background: var(--black);
+}
 
 
-       /* =========================================
-   NAVIGATION — ESPER AYLA
-========================================= */
+body {
 
-.site-nav {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(110, 72, 30, .045),
+            transparent 42%
+        ),
+        var(--black);
+
+    color: var(--ivory);
+
+    font-family: var(--ui);
+
+    font-weight: 300;
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =====================================================
+   FILM GRAIN
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    opacity: .045;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+
+    animation: grain .25s steps(2) infinite;
+}
+
+
+@keyframes grain {
+
+    0% {
+        transform: translate(0,0);
+    }
+
+    25% {
+        transform: translate(2%,-1%);
+    }
+
+    50% {
+        transform: translate(-1%,2%);
+    }
+
+    75% {
+        transform: translate(1%,1%);
+    }
+
+    100% {
+        transform: translate(-2%,-1%);
+    }
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+
+    font-family: var(--display);
+
+    font-weight: 500;
+
+    letter-spacing: -.025em;
+
+}
+
+
+h1 {
+
+    font-size: clamp(
+        4.5rem,
+        12vw,
+        11rem
+    );
+
+    line-height: .82;
+
+}
+
+
+h2 {
+
+    font-size: clamp(
+        4rem,
+        10vw,
+        9rem
+    );
+
+    line-height: .86;
+
+}
+
+
+h3 {
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        4rem
+    );
+
+}
+
+
+p {
+
+    font-size: .95rem;
+
+}
+
+
+/* =====================================================
+   TINY EDITORIAL LABELS
+===================================================== */
+
+.eyebrow,
+.section-label {
+
+    font-family: var(--ui);
+
+    font-size: .62rem;
+
+    font-weight: 400;
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+
+    color: var(--amber-soft);
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
 
     position: fixed;
 
@@ -106,7 +282,9 @@
 
     width: 100%;
 
-    padding: 26px 6%;
+    padding:
+        28px
+        var(--page-padding);
 
     display: flex;
 
@@ -116,78 +294,73 @@
 
     z-index: 1000;
 
-    background: rgba(5, 5, 5, 0.72);
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(7,7,7,.82),
+            rgba(7,7,7,0)
+        );
 
-    backdrop-filter: blur(16px);
+    border: none;
 
-    border-bottom: 1px solid rgba(232, 226, 214, 0.07);
-
+    backdrop-filter: blur(8px);
 }
 
 
-.brand {
+.nav-name {
 
-    font-family: 'Cinzel', serif;
+    font-family: var(--display);
 
-    font-size: 0.95rem;
+    font-size: 1.25rem;
 
-    font-weight: 500;
-
-    letter-spacing: 4px;
-
-    color: #e8e2d6;
-
-    text-decoration: none;
-
-}
-
-
-.nav-links {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 30px;
-
-}
-
-
-.nav-links a {
-
-    color: #e8e2d6;
-
-    text-decoration: none;
-
-    font-size: 0.68rem;
-
-    letter-spacing: 2.5px;
+    letter-spacing: .12em;
 
     text-transform: uppercase;
 
-    opacity: 0.65;
-
-    transition: 0.3s ease;
+    color: var(--ivory);
 
 }
 
 
-.nav-links a:hover {
+nav a {
 
-    opacity: 1;
+    color: var(--ivory-soft);
 
-    color: #c58a32;
+    text-decoration: none;
+
+    margin-left: 32px;
+
+    font-family: var(--ui);
+
+    font-size: .62rem;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+
+    transition:
+        color var(--smooth),
+        opacity var(--smooth);
 
 }
 
 
-     /* =========================================
-   HERO — ESPER AYLA
-========================================= */
+nav a:hover {
+
+    color: var(--amber-soft);
+
+}
+
+
+/* =====================================================
+   HERO FOUNDATION
+===================================================== */
 
 .hero {
 
     min-height: 100vh;
+
+    min-height: 100svh;
 
     display: flex;
 
@@ -197,44 +370,72 @@
 
     text-align: center;
 
-    padding: 150px 25px 110px;
+    padding:
+        140px
+        var(--page-padding)
+        100px;
 
     position: relative;
 
     overflow: hidden;
 
     background:
+
         radial-gradient(
-            circle at 50% 45%,
-            rgba(197, 138, 50, 0.055),
-            transparent 30%
+            ellipse at 50% 45%,
+            rgba(135, 87, 35, .065),
+            transparent 48%
         ),
-        #050505;
+
+        var(--black);
+}
+
+
+/* Atmospheric glow */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 45vw;
+
+    height: 45vw;
+
+    max-width: 700px;
+    max-height: 700px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(166,112,47,.08),
+            transparent 70%
+        );
+
+    filter: blur(40px);
+
+    pointer-events: none;
 
 }
 
 
-.hero-atmosphere {
+/* Very subtle border atmosphere */
+
+.hero::after {
+
+    content: "";
 
     position: absolute;
 
-    width: 600px;
+    inset: 30px;
 
-    height: 600px;
+    border:
 
-    border-radius: 50%;
-
-    background: #c58a32;
-
-    opacity: 0.035;
-
-    filter: blur(150px);
-
-    top: 45%;
-
-    left: 50%;
-
-    transform: translate(-50%, -50%);
+        1px solid
+        rgba(238,232,220,.045);
 
     pointer-events: none;
 
@@ -247,102 +448,119 @@
 
     z-index: 2;
 
-    max-width: 950px;
+    max-width: 1400px;
+
+    width: 100%;
 
 }
 
 
-.eyebrow {
-
-    font-size: 0.65rem;
-
-    letter-spacing: 6px;
-
-    text-transform: uppercase;
-
-    color: #c58a32;
-
-    margin-bottom: 30px;
-
-}
-
+/* =====================================================
+   HERO NAME
+===================================================== */
 
 .hero h1 {
 
-    font-family: 'Cinzel', serif;
+    margin-top: 30px;
 
-    font-size: clamp(4.5rem, 11vw, 9rem);
+    color: var(--ivory);
 
-    font-weight: 500;
+    text-transform: uppercase;
 
-    line-height: 0.86;
+}
 
-    letter-spacing: -3px;
 
-    color: #e8e2d6;
+.hero-identity {
+
+    margin-top: 30px;
+
+    font-family: var(--ui);
+
+    font-size: .68rem;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+
+    color: var(--ivory-soft);
 
 }
 
 
 .hero-identity span {
-    color: #c58a32;
-    font-family: 'Cormorant Garamond', serif;
+
+    color: var(--amber-soft);
+
+    font-family: var(--display);
+
     font-size: 1.25rem;
+
     font-style: italic;
-    letter-spacing: 1px;
-}
+
+    letter-spacing: .04em;
+
+    text-transform: none;
+
 }
 
+
+/* =====================================================
+   HERO TAGLINE
+===================================================== */
 
 .tagline {
 
-    margin: 65px auto 25px;
+    margin:
+        80px auto
+        45px;
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--display);
 
-    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-size:
+        clamp(
+            2.4rem,
+            5vw,
+            5rem
+        );
 
-    line-height: 1;
+    line-height: .98;
 
-    color: #e8e2d6;
+    font-weight: 400;
 
 }
 
 
 .tagline span {
 
-    color: #c58a32;
+    color: var(--amber-soft);
 
     font-style: italic;
 
 }
 
 
+/* =====================================================
+   HERO INTRO
+===================================================== */
+
 .hero-intro {
 
-    max-width: 450px;
+    max-width: 500px;
 
-    margin: 0 auto;
+    margin: auto;
 
-    color: #73767a;
+    color: var(--ivory-soft);
 
-    font-size: 0.85rem;
+    font-size: .82rem;
 
-    letter-spacing: 1px;
-
-}
-
-
-.hero-button-wrap {
-
-    margin-top: 45px;
-
-    display: flex;
-
-    justify-content: center;
+    letter-spacing: .04em;
 
 }
 
+
+/* =====================================================
+   EDITORIAL BUTTON
+===================================================== */
 
 .hero-button {
 
@@ -352,635 +570,286 @@
 
     justify-content: center;
 
-    min-width: 160px;
+    min-width: 190px;
 
-    height: 50px;
+    height: 54px;
 
-    padding: 0 30px;
+    margin-top: 35px;
 
-    border: 1px solid rgba(197, 138, 50, 0.55);
+    border:
+        1px solid
+        rgba(238,232,220,.55);
 
     background: transparent;
 
-    color: #e8e2d6;
+    color: var(--ivory);
 
     text-decoration: none;
 
-    font-size: 0.65rem;
+    font-size: .62rem;
 
-    letter-spacing: 4px;
+    letter-spacing: .28em;
 
     text-transform: uppercase;
 
-    transition: 0.35s ease;
+    transition:
+        background var(--smooth),
+        color var(--smooth),
+        border-color var(--smooth),
+        transform var(--smooth);
 
 }
 
 
 .hero-button:hover {
 
-    background: #c58a32;
+    background: var(--ivory);
 
-    border-color: #c58a32;
+    color: var(--black);
 
-    color: #050505;
+    border-color: var(--ivory);
 
     transform: translateY(-3px);
 
 }
 
 
-.scroll-indicator {
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section {
+
+    position: relative;
+
+    padding:
+        clamp(120px, 16vw, 240px)
+        var(--page-padding);
+
+}
+
+
+section::before {
+
+    content: "";
 
     position: absolute;
 
-    bottom: 35px;
+    top: 0;
 
-    left: 50%;
+    left: var(--page-padding);
 
-    transform: translateX(-50%);
+    right: var(--page-padding);
 
-    display: flex;
+    height: 1px;
 
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 10px;
-
-    font-size: 0.55rem;
-
-    letter-spacing: 3px;
-
-    color: #73767a;
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(238,232,220,.08),
+            transparent
+        );
 
 }
 
 
-.scroll-indicator span {
+/* =====================================================
+   LARGE BACKGROUND TYPOGRAPHY
+===================================================== */
 
-    width: 1px;
+.editorial-ghost {
 
-    height: 35px;
+    position: absolute;
 
-    background: #c58a32;
+    z-index: 0;
 
-    opacity: 0.7;
+    pointer-events: none;
+
+    font-family: var(--display);
+
+    font-size:
+        clamp(
+            10rem,
+            25vw,
+            30rem
+        );
+
+    line-height: .7;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(238,232,220,.025);
+
+    white-space: nowrap;
 
 }
-        /* =========================================
-           ENTER BUTTON
-        ========================================= */
 
-        .hero-button-wrap {
 
-            margin-top: 25px;
+/* =====================================================
+   IMAGES
+===================================================== */
 
-            display: flex;
+img {
 
-            justify-content: center;
-
-        }
-
-
-        .hero-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 155px;
-
-            height: 50px;
-
-            border: 1px solid #f3eee6;
-
-            background: transparent;
-
-            color: #f3eee6;
-
-            text-decoration: none;
-
-            font-family: 'DM Sans', sans-serif;
-
-            font-size: 0.7rem;
-
-            font-weight: 400;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            cursor: pointer;
-
-            transition:
-
-                background 0.3s ease,
-
-                color 0.3s ease,
-
-                transform 0.3s ease;
-
-        }
-
-
-        .hero-button:hover {
-
-            background: #f3eee6;
-
-            color: #171516;
-
-            transform: translateY(-2px);
-
-        }
-
-
-        /* =========================================
-           GENERAL SECTIONS
-        ========================================= */
-
-        section {
-
-            padding: 120px 8%;
-
-        }
-
-
-        .section-label {
-
-            color: #b59a67;
-
-            font-size: 0.7rem;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        h2 {
-
-            font-family: 'Cormorant Garamond', serif;
-
-            font-size: clamp(2.8rem, 6vw, 5rem);
-
-            font-weight: 500;
-
-            line-height: 1;
-
-            margin-bottom: 30px;
-
-        }
-
-
-        /* =========================================
-           MAVIS
-        ========================================= */
-
-        .mavis {
-
-            background: #f3eee6;
-
-            color: #171516;
-
-            text-align: center;
-
-        }
-
-
-        .mavis .section-label {
-
-            color: #6d2638;
-
-        }
-
-
-        .mavis-description {
-
-            max-width: 650px;
-
-            margin: 0 auto 35px;
-
-            opacity: 0.75;
-
-        }
-
-
-        .mavis-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            min-width: 190px;
-
-            height: 48px;
-
-            padding: 0 25px;
-
-            background: #6d2638;
-
-            color: #f3eee6;
-
-            text-decoration: none;
-
-            text-transform: uppercase;
-
-            letter-spacing: 3px;
-
-            font-size: 0.7rem;
-
-            transition: 0.3s ease;
-
-        }
-
-
-        .mavis-button:hover {
-
-            background: #171516;
-
-        }
-/* =========================================
-   MAVIS NEW DESIGN
-========================================= */
-.mavis-cover {
-    margin: 45px auto 55px;
-    display: flex;
-    justify-content: center;
-}
-
-.mavis-cover img {
-    width: min(360px, 80vw);
-    height: auto;
     display: block;
-    box-shadow: 0 25px 60px rgba(23, 21, 22, 0.25);
-    transition: transform 0.4s ease;
-}
 
-.mavis-cover img:hover {
-    transform: translateY(-6px);
-}
-        .mavis-author {
-    margin-top: -35px;
-    margin-bottom: 45px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #6d2638;
-    letter-spacing: 1px;
-}.mavis-author {
-    margin-top: -35px;
-    margin-bottom: 45px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #6d2638;
-    letter-spacing: 1px;
-}
-.mavis-intro {
-    max-width: 700px;
-    margin: -5px auto 40px;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-
-    font-style: italic;
-
-    line-height: 1.35;
-
-    color: #6d2638;
-}
-
-
-.mavis-description {
-    max-width: 720px;
-
-    margin: 0 auto;
-
-    font-size: 0.95rem;
-
-    line-height: 1.9;
-
-    color: #171516;
-
-    opacity: 0.78;
-}
-
-
-.mavis-description strong {
-    color: #6d2638;
-
-    font-weight: 500;
-}
-
-
-.mavis-themes {
-
-    max-width: 950px;
-
-    margin: 80px auto 65px;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 45px;
-
-    text-align: left;
-}
-
-
-.theme {
-
-    padding-top: 25px;
-
-    border-top: 1px solid rgba(109, 38, 56, 0.35);
+    max-width: 100%;
 
 }
 
 
-.theme h3 {
+.cinematic-image {
 
-    font-family: 'Cormorant Garamond', serif;
+    width: 100%;
 
-    font-size: 1.8rem;
+    height: 100%;
 
-    font-weight: 600;
+    object-fit: cover;
 
-    color: #6d2638;
-
-    margin-bottom: 12px;
-
-}
-
-
-.theme p {
-
-    font-size: 0.82rem;
-
-    line-height: 1.7;
-
-    opacity: 0.7;
+    transition:
+        transform 1.6s cubic-bezier(.22,1,.36,1),
+        filter 1.6s ease;
 
 }
 
 
-.mavis-ending {
+.cinematic-image:hover {
 
-    margin: 70px auto 45px;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 1.8rem;
-
-    line-height: 1.3;
+    transform: scale(1.025);
 
 }
 
 
-.mavis-ending em {
+/* =====================================================
+   SELECTION
+===================================================== */
 
-    color: #6d2638;
+::selection {
+
+    background: var(--amber);
+
+    color: var(--black);
 
 }
 
 
-/* MOBILE MAVIS */
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: var(--black);
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #29221b;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--amber);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 700px) {
 
-    .mavis-themes {
+    nav {
 
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        text-align: center;
+        padding:
+            20px
+            5%;
 
     }
 
-    .theme {
 
-        padding-top: 20px;
+    .nav-name {
+
+        font-size: .95rem;
+
+    }
+
+
+    nav a {
+
+        margin-left: 14px;
+
+        font-size: .52rem;
+
+        letter-spacing: .16em;
+
+    }
+
+
+    .hero {
+
+        padding:
+            130px 7%
+            80px;
+
+    }
+
+
+    .hero::after {
+
+        inset: 18px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            clamp(
+                3.4rem,
+                15vw,
+                6rem
+            );
+
+    }
+
+
+    .tagline {
+
+        margin-top: 60px;
+
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                3.5rem
+            );
+
+    }
+
+
+    section {
+
+        padding:
+            110px 7%;
 
     }
 
 }
-
-        /* =========================================
-           ABOUT
-        ========================================= */
-
-        .about {
-
-            max-width: 900px;
-
-            margin: auto;
-
-            text-align: center;
-
-        }
-
-
-        .quote {
-
-            font-family: 'Cormorant Garamond', serif;
-
-            font-size: clamp(2rem, 4vw, 3.3rem);
-
-            line-height: 1.2;
-
-            margin-bottom: 35px;
-
-        }
-
-
-        .about-text {
-
-            max-width: 700px;
-
-            margin: auto;
-
-            opacity: 0.72;
-
-        }
-
-
-        /* =========================================
-           PHILOSOPHY
-        ========================================= */
-
-        .philosophy {
-
-            background: #211d1f;
-
-            text-align: center;
-
-        }
-
-
-        .philosophy-text {
-
-            max-width: 750px;
-
-            margin: auto;
-
-            font-family: 'Cormorant Garamond', serif;
-
-            font-size: 1.5rem;
-
-            line-height: 1.7;
-
-            color: #e5ddd0;
-
-        }
-
-
-        /* =========================================
-           CONNECT
-        ========================================= */
-
-        .connect {
-
-            text-align: center;
-
-        }
-
-
-        .socials {
-
-            margin-top: 35px;
-
-        }
-
-
-        .socials a {
-
-            color: #f3eee6;
-
-            text-decoration: none;
-
-            margin: 0 15px;
-
-            font-size: 0.75rem;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            transition: 0.3s ease;
-
-        }
-
-
-        .socials a:hover {
-
-            color: #b59a67;
-
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        footer {
-
-            text-align: center;
-
-            padding: 35px 20px;
-
-            border-top: 1px solid rgba(243, 238, 230, 0.1);
-
-            font-size: 0.7rem;
-
-            letter-spacing: 1px;
-
-            opacity: 0.5;
-
-        }
-
-
-        /* =========================================
-           MOBILE
-        ========================================= */
-
-        @media (max-width: 700px) {
-
-
-            nav {
-
-                padding: 18px 5%;
-
-            }
-
-
-            .nav-name {
-
-                font-size: 1rem;
-
-            }
-
-
-            nav a {
-
-                margin-left: 12px;
-
-                font-size: 0.58rem;
-
-            }
-
-
-            section {
-
-                padding: 90px 7%;
-
-            }
-
-
-            h1 {
-
-                font-size: clamp(3.2rem, 16vw, 5rem);
-
-                letter-spacing: -1px;
-
-            }
-
-
-            .tagline {
-
-                margin-top: 45px;
-
-            }
-
-
-            .hero-button {
-
-                width: 145px;
-
-                height: 48px;
-
-            }
-
-
-            .socials a {
-
-                display: block;
-
-                margin: 15px 0;
-
-            }
-
-        }
-
     </style>
   <!-- AUTHOR SEO / STRUCTURED DATA -->
     <script type="application/ld+json">
