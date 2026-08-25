@@ -472,10 +472,11 @@ body::before {
 
 
 /* =====================================================
-   HERO NAME
+   HERO NAME — MOONBEAM
 ===================================================== */
 
 .hero-title {
+
     font-family:
         'Cormorant Garamond',
         serif;
@@ -494,8 +495,105 @@ body::before {
     letter-spacing: -0.065em;
 
     text-transform: uppercase;
+
+    position: relative;
+
+    color: #eee9e1;
+
+    overflow: hidden;
 }
 
+
+/* =====================================================
+   MOONBEAM CROSSING THE NAME
+===================================================== */
+
+.hero-title::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -20%;
+
+    left: -35%;
+
+    width: 18%;
+
+    height: 140%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(245, 239, 225, 0.18),
+            rgba(255, 250, 240, 0.30),
+            rgba(245, 239, 225, 0.18),
+            transparent
+        );
+
+    filter: blur(12px);
+
+    transform:
+        skewX(-12deg);
+
+    animation:
+        nameMoonbeam
+        12s
+        ease-in-out
+        infinite;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   SLOW MOONBEAM MOVEMENT
+===================================================== */
+
+@keyframes nameMoonbeam {
+
+    0% {
+
+        left: -35%;
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 0;
+
+    }
+
+    35% {
+
+        opacity: 0.7;
+
+    }
+
+    55% {
+
+        opacity: 0.7;
+
+    }
+
+    75% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        left: 120%;
+
+        opacity: 0;
+
+    }
+
+}
 
 /* =====================================================
    REAL NAME
