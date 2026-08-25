@@ -264,25 +264,74 @@ body::before {
         );
 }
 /* =====================================================
-   HERO MOONLIGHT — TEST VERSION
+   HERO MOONLIGHT
 ===================================================== */
+
 .hero-moonlight {
 
     position: absolute;
 
-    width: 500px;
+    width: 700px;
     height: 500px;
 
-    top: 5%;
-    right: 10%;
+    top: 2%;
+    right: 3%;
 
-    z-index: 4;
+    z-index: 1;
 
     pointer-events: none;
 
     border-radius: 50%;
 
-    background: rgba(255, 0, 0, 0.35);
+    background:
+        radial-gradient(
+            ellipse at center,
+
+            rgba(245, 239, 225, 0.18) 0%,
+
+            rgba(245, 239, 225, 0.10) 18%,
+
+            rgba(245, 239, 225, 0.045) 38%,
+
+            rgba(245, 239, 225, 0.015) 55%,
+
+            transparent 72%
+        );
+
+    filter: blur(35px);
+
+    opacity: 1;
+
+    animation:
+        moonlightBreath
+        18s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =====================================================
+   MOONLIGHT MOVEMENT
+===================================================== */
+
+@keyframes moonlightBreath {
+
+    0% {
+
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.96);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(-30px, 15px, 0)
+            scale(1.04);
+
+    }
 
 }
 
