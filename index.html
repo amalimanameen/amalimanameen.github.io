@@ -653,7 +653,337 @@ nav {
     }
 
 }
+/* =========================================================
+   MAVIS WORLD
+========================================================= */
 
+.mavis-world {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(109, 38, 56, 0.16),
+            transparent 55%
+        ),
+
+        #0d0b0c;
+
+    padding: 140px 8%;
+
+}
+
+
+/* enormous ghost typography */
+
+.mavis-background-word {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(
+        12rem,
+        31vw,
+        34rem
+    );
+
+    font-weight: 300;
+
+    letter-spacing: -0.08em;
+
+    line-height: 0.7;
+
+    color: rgba(
+        238,
+        233,
+        225,
+        0.018
+    );
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    user-select: none;
+
+}
+
+
+/* content */
+
+.mavis-world-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: min(900px, 90vw);
+
+    text-align: center;
+
+}
+
+
+/* label */
+
+.mavis-label {
+
+    font-size: 0.6rem;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: #b59a67;
+
+    opacity: 0.85;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* title */
+
+.mavis-title {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(
+        6rem,
+        15vw,
+        13rem
+    );
+
+    font-weight: 400;
+
+    line-height: 0.7;
+
+    letter-spacing: -0.06em;
+
+    color: #eee9e1;
+
+}
+
+
+/* subtitle */
+
+.mavis-subtitle {
+
+    margin-top: 35px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(
+        1.3rem,
+        2.5vw,
+        2rem
+    );
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+
+    color: #cfc7bd;
+
+}
+
+
+/* divider */
+
+.mavis-divider {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: #b59a67;
+
+    margin: 42px auto;
+
+    opacity: 0.6;
+
+}
+
+
+/* hook */
+
+.mavis-hook {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(
+        1.8rem,
+        3.5vw,
+        3.1rem
+    );
+
+    line-height: 1.15;
+
+    font-weight: 300;
+
+    color: #eee9e1;
+
+}
+
+
+.mavis-hook em {
+
+    color: #b59a67;
+
+    font-style: italic;
+
+}
+
+
+/* description */
+
+.mavis-description {
+
+    max-width: 520px;
+
+    margin: 35px auto 45px;
+
+    font-size: 0.85rem;
+
+    line-height: 1.9;
+
+    color: #eee9e1;
+
+    opacity: 0.52;
+
+}
+
+
+/* button */
+
+.mavis-enter {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    color: #eee9e1;
+
+    text-decoration: none;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    padding: 16px 0;
+
+    transition:
+        color 0.4s ease,
+        gap 0.5s ease;
+
+}
+
+
+.mavis-enter::after {
+
+    content: "→";
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+
+.mavis-enter:hover {
+
+    color: #b59a67;
+
+    gap: 28px;
+
+}
+
+
+.mavis-enter:hover::after {
+
+    transform: translateX(5px);
+
+}
+
+
+/* chapter number */
+
+.mavis-number {
+
+    position: absolute;
+
+    right: 5vw;
+
+    bottom: 40px;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 3px;
+
+    color: #eee9e1;
+
+    opacity: 0.25;
+
+}
+
+
+/* =========================================================
+   MAVIS MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .mavis-world {
+
+        padding:
+            120px 7%;
+    }
+
+    .mavis-title {
+
+        font-size:
+            clamp(5rem, 25vw, 8rem);
+
+    }
+
+    .mavis-hook {
+
+        font-size: 1.8rem;
+
+    }
+
+    .mavis-description {
+
+        font-size: 0.8rem;
+
+    }
+
+}
 </style>
 
 </head>
@@ -782,30 +1112,81 @@ nav {
      TEMPORARY NEXT SECTION
 ===================================================== -->
 
-<section class="world-preview"
+<!-- =====================================================
+     MAVIS — THE FIRST WORLD
+===================================================== -->
+
+<section class="mavis-world"
          id="worlds">
 
-    <div class="world-preview-inner">
 
-        <div class="world-label">
+    <div class="mavis-background-word">
+        MAVIS
+    </div>
 
-            The worlds begin here
+
+    <div class="mavis-world-content">
+
+
+        <div class="mavis-label">
+
+            The Debut Novel
 
         </div>
 
-        <h2>
 
-            Stories become worlds.
+        <h2 class="mavis-title">
+
+            Mavis
 
         </h2>
 
-        <p>
 
-            More coming soon.
+        <div class="mavis-subtitle">
+
+            A Heart's Lament
+
+        </div>
+
+
+        <div class="mavis-divider"></div>
+
+
+        <p class="mavis-hook">
+
+            Some hearts don't break loudly.<br>
+
+            <em>They simply learn to live with the pieces.</em>
 
         </p>
 
+
+        <p class="mavis-description">
+
+            A story of love, vulnerability, loss,
+            and the ghosts we carry long after
+            someone is gone.
+
+        </p>
+
+
+        <a href="mavis.html"
+           class="mavis-enter">
+
+            Discover Mavis
+
+        </a>
+
+
     </div>
+
+
+    <div class="mavis-number">
+
+        01
+
+    </div>
+
 
 </section>
 
