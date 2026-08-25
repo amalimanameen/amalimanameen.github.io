@@ -263,7 +263,97 @@ body::before {
             rgba(245, 239, 225, 0.09)
         );
 }
+/* =====================================================
+   HERO MOONLIGHT — SOFT MOVING LIGHT
+===================================================== */
 
+.hero-moonlight {
+
+    position: absolute;
+
+    width: 75vw;
+    height: 75vw;
+
+    max-width: 1000px;
+    max-height: 1000px;
+
+    top: -8%;
+    right: -10%;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(245, 239, 225, 0.075) 0%,
+            rgba(245, 239, 225, 0.035) 24%,
+            rgba(245, 239, 225, 0.012) 45%,
+            transparent 72%
+        );
+
+    filter: blur(28px);
+
+    opacity: 0.65;
+
+    animation:
+        moonlightBreath
+        18s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =====================================================
+   MOONLIGHT MOVEMENT
+===================================================== */
+
+@keyframes moonlightBreath {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            scale(0.96);
+
+        opacity: 0.48;
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                -18px,
+                8px,
+                0
+            )
+            scale(1.01);
+
+        opacity: 0.62;
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                -35px,
+                15px,
+                0
+            )
+            scale(1.04);
+
+        opacity: 0.52;
+    }
+
+}
 /* =====================================================
    MOON DRIFT
 ===================================================== */
@@ -1698,16 +1788,17 @@ footer {
 <header class="hero"
         id="top">
 
-    <div class="hero-atmosphere"></div>
+   <div class="hero-atmosphere"></div>
 
-  <img src="images/hero-moon.png"
+<div class="hero-moonlight"></div>
+
+<img src="images/hero-moon.png"
      class="hero-moon-image"
      alt="">
 
-
-    <div class="hero-ghost">
-        AYLA
-    </div>
+<div class="hero-ghost">
+    AYLA
+</div>
 
     <div class="hero-content">
 
