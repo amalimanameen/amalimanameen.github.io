@@ -881,10 +881,11 @@ body::before {
 
 
 /* =====================================================
-   MAVIS WORLD
+   MAVIS WORLD — THE FIRST WORLD
 ===================================================== */
 
 .mavis-world {
+
     min-height: 115vh;
 
     position: relative;
@@ -898,53 +899,60 @@ body::before {
     justify-content: center;
 
     padding:
-        150px
+        160px
         7vw;
 
     background:
         radial-gradient(
-            circle at 50% 35%,
-            rgba(109, 38, 56, 0.13),
-            transparent 48%
+            ellipse at 50% 35%,
+            rgba(109, 38, 56, 0.16),
+            transparent 42%
         ),
-        #0d0b0c;
+        linear-gradient(
+            180deg,
+            #0d0b0c 0%,
+            #100c0e 55%,
+            #0b090a 100%
+        );
+
 }
-
-
 /* =====================================================
    MAVIS ATMOSPHERE
 ===================================================== */
 
 .mavis-world::before {
+
     content: "";
 
     position: absolute;
 
-    width: 75vw;
-    height: 75vw;
+    width: 80vw;
+    height: 80vw;
 
-    max-width: 1050px;
-    max-height: 1050px;
+    max-width: 1000px;
+    max-height: 1000px;
 
     left: 50%;
-    top: 50%;
+    top: 45%;
 
     transform:
         translate(-50%, -50%);
 
+    border-radius: 50%;
+
     background:
         radial-gradient(
             circle,
-            rgba(109, 38, 56, 0.14),
-            transparent 70%
+            rgba(109, 38, 56, 0.11) 0%,
+            rgba(109, 38, 56, 0.045) 32%,
+            transparent 68%
         );
 
-    filter: blur(45px);
+    filter: blur(55px);
 
     pointer-events: none;
+
 }
-
-
 /* =====================================================
    MAVIS GHOST TYPOGRAPHY
 ===================================================== */
