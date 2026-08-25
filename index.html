@@ -264,21 +264,21 @@ body::before {
         );
 }
 /* =====================================================
-   HERO MOONLIGHT — SOFT MOVING LIGHT
+   HERO MOONLIGHT — TEST VERSION
 ===================================================== */
 
 .hero-moonlight {
 
     position: absolute;
 
-    width: 75vw;
-    height: 75vw;
+    width: 80vw;
+    height: 80vw;
 
-    max-width: 1000px;
-    max-height: 1000px;
+    max-width: 1100px;
+    max-height: 1100px;
 
-    top: -8%;
-    right: -10%;
+    top: -10%;
+    right: -12%;
 
     z-index: 1;
 
@@ -288,16 +288,16 @@ body::before {
 
     background:
         radial-gradient(
-            ellipse at 50% 50%,
-            rgba(245, 239, 225, 0.075) 0%,
-            rgba(245, 239, 225, 0.035) 24%,
-            rgba(245, 239, 225, 0.012) 45%,
-            transparent 72%
+            ellipse at center,
+            rgba(245, 239, 225, 0.16) 0%,
+            rgba(245, 239, 225, 0.08) 20%,
+            rgba(245, 239, 225, 0.035) 42%,
+            transparent 70%
         );
 
-    filter: blur(28px);
+    filter: blur(35px);
 
-    opacity: 0.65;
+    opacity: 1;
 
     animation:
         moonlightBreath
@@ -317,40 +317,17 @@ body::before {
     0% {
 
         transform:
-            translate3d(
-                0,
-                0,
-                0
-            )
-            scale(0.96);
+            translate3d(0, 0, 0)
+            scale(0.94);
 
-        opacity: 0.48;
-    }
-
-    50% {
-
-        transform:
-            translate3d(
-                -18px,
-                8px,
-                0
-            )
-            scale(1.01);
-
-        opacity: 0.62;
     }
 
     100% {
 
         transform:
-            translate3d(
-                -35px,
-                15px,
-                0
-            )
-            scale(1.04);
+            translate3d(-45px, 20px, 0)
+            scale(1.06);
 
-        opacity: 0.52;
     }
 
 }
@@ -379,8 +356,6 @@ body::before {
     }
 
 }
-
-
 
 /* =====================================================
    HERO GHOST WORD
