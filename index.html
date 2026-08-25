@@ -3,2072 +3,658 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Esper Ayla — Amal Iman Ameen | Author & Novel Artist</title>
+<title>Esper Ayla | Amal Iman Ameen</title>
 
-    <meta name="description"
-          content="The official world of Esper Ayla, the writing identity of Sri Lankan author and novel artist Amal Iman Ameen. Enter the worlds of Mavis and The Synapse Key.">
+<meta name="description"
+      content="Esper Ayla — the literary world of Amal Iman Ameen, author and novel artist. Stories for the beautiful things that hurt.">
 
-    <meta name="author"
-          content="Amal Iman Ameen">
+<meta name="author"
+      content="Amal Iman Ameen">
 
-    <meta name="robots"
-          content="index, follow">
+<meta name="robots"
+      content="index, follow">
 
-    <link rel="canonical"
-          href="https://amalimanameen.github.io/">
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-    <!-- =================================================
-         OPEN GRAPH
-    ================================================== -->
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-    <meta property="og:title"
-          content="Esper Ayla — Author & Novel Artist">
-
-    <meta property="og:description"
-          content="Stories for the beautiful things that hurt. Enter the worlds created by Amal Iman Ameen, writing as Esper Ayla.">
-
-    <meta property="og:type"
-          content="website">
-
-    <meta property="og:url"
-          content="https://amalimanameen.github.io/">
-
-    <meta property="og:site_name"
-          content="Esper Ayla">
-
-    <meta name="twitter:card"
-          content="summary_large_image">
-
-    <meta name="twitter:title"
-          content="Esper Ayla — Author & Novel Artist">
-
-    <meta name="twitter:description"
-          content="The official website of Amal Iman Ameen, writing as Esper Ayla.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet">
 
 
-    <!-- =================================================
-         GOOGLE FONTS
-    ================================================== -->
+<style>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+/* =========================================================
+   FOUNDATION
+========================================================= */
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
-          rel="stylesheet">
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0a0b;
+    color: #eee9e1;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+}
 
 
-    <!-- =================================================
-         STRUCTURED DATA
-    ================================================== -->
+/* =========================================================
+   GRAIN
+========================================================= */
 
-    <script type="application/ld+json">
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
 
-    {
-        "@context": "https://schema.org",
+    pointer-events: none;
 
-        "@type": "Person",
+    opacity: 0.045;
 
-        "@id": "https://amalimanameen.github.io/#author",
+    z-index: 9999;
 
-        "name": "Amal Iman Ameen",
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 
-        "alternateName": "Esper Ayla",
+    background-size: 180px 180px;
+}
 
-        "url": "https://amalimanameen.github.io/",
 
-        "jobTitle": "Author and Novel Artist",
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-        "description": "Amal Iman Ameen is a Sri Lankan author and novel artist writing under the pen name Esper Ayla.",
+nav {
+    position: fixed;
 
-        "sameAs": [
-            "https://www.instagram.com/esperayla/",
-            "https://www.tiktok.com/@esperayla/",
-            "https://www.youtube.com/@esperayla/"
-        ]
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 28px 5vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+
+    mix-blend-mode: normal;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.05rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #eee9e1;
+
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 34px;
+}
+
+.nav-links a {
+    color: #eee9e1;
+
+    text-decoration: none;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: 0.62;
+
+    transition: opacity 0.4s ease,
+                color 0.4s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: #c8b28a;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(75, 52, 58, 0.16),
+            transparent 52%
+        ),
+
+        #0b0a0b;
+}
+
+
+/* =========================================================
+   HUGE BACKGROUND TYPOGRAPHY
+========================================================= */
+
+.hero-word {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -52%);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(11rem, 27vw, 30rem);
+
+    font-weight: 300;
+
+    letter-spacing: -0.06em;
+
+    line-height: 0.7;
+
+    color: rgba(238, 233, 225, 0.018);
+
+    white-space: nowrap;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   ATMOSPHERIC LIGHT
+========================================================= */
+
+.atmosphere {
+
+    position: absolute;
+
+    width: 55vw;
+    height: 55vw;
+
+    max-width: 850px;
+    max-height: 850px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(109, 38, 56, 0.12),
+            rgba(109, 38, 56, 0.035) 35%,
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    animation: breathe 12s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes breathe {
+
+    from {
+        transform: scale(0.94);
+        opacity: 0.65;
     }
 
-    </script>
+    to {
+        transform: scale(1.06);
+        opacity: 1;
+    }
 
+}
 
-    <!-- =================================================
-         DESIGN SYSTEM
-    ================================================== -->
 
-    <style>
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
-        :root {
+.hero-content {
 
-            --black: #090808;
+    position: relative;
 
-            --black-soft: #111011;
+    z-index: 5;
 
-            --charcoal: #171516;
+    width: min(1200px, 90vw);
 
-            --ivory: #f1ece3;
+    text-align: center;
 
-            --ivory-soft: #c9c1b5;
+    padding-top: 40px;
+}
 
-            --wine: #6d2638;
 
-            --wine-dark: #3d1823;
+/* small editorial label */
 
-            --amber: #a67432;
+.hero-kicker {
 
-            --amber-soft: #c4a36b;
+    font-size: 0.62rem;
 
-            --line: rgba(241,236,227,.10);
+    letter-spacing: 6px;
 
-            --display: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
 
-            --ui: 'DM Sans', sans-serif;
+    color: #c8b28a;
 
-            --page-padding: 7vw;
+    margin-bottom: 35px;
 
-        }
+    opacity: 0.8;
+}
 
 
-        /* =================================================
-           RESET
-        ================================================== */
+/* =========================================================
+   MAIN NAME
+========================================================= */
 
-        *,
-        *::before,
-        *::after {
+.hero-title {
 
-            margin: 0;
+    font-family: 'Cormorant Garamond', serif;
 
-            padding: 0;
+    font-weight: 400;
 
-            box-sizing: border-box;
+    font-size: clamp(
+        5rem,
+        13vw,
+        12.5rem
+    );
 
-        }
+    line-height: 0.72;
 
+    letter-spacing: -0.055em;
 
-        html {
+    text-transform: uppercase;
 
-            scroll-behavior: smooth;
+    color: #eee9e1;
 
-            background: var(--black);
+    margin-left: -0.055em;
+}
 
-        }
 
+/* =========================================================
+   REAL NAME
+========================================================= */
 
-        body {
+.hero-real-name {
 
-            background: var(--black);
+    margin-top: 34px;
 
-            color: var(--ivory);
+    font-family: 'Cormorant Garamond', serif;
 
-            font-family: var(--ui);
+    font-size: clamp(
+        1rem,
+        1.8vw,
+        1.45rem
+    );
 
-            font-weight: 300;
+    letter-spacing: 4px;
 
-            line-height: 1.7;
+    color: #cfc7bd;
 
-            overflow-x: hidden;
+    opacity: 0.8;
+}
 
-        }
 
+/* =========================================================
+   AUTHOR DESCRIPTION
+========================================================= */
 
-        img {
+.hero-role {
 
-            max-width: 100%;
+    margin-top: 10px;
 
-            display: block;
+    font-size: 0.62rem;
 
-        }
+    letter-spacing: 4px;
 
+    text-transform: uppercase;
 
-        a {
+    opacity: 0.45;
+}
 
-            color: inherit;
 
-        }
+/* =========================================================
+   TAGLINE
+========================================================= */
 
+.hero-tagline {
 
-        ::selection {
+    margin: 65px auto 45px;
 
-            background: var(--amber);
+    max-width: 850px;
 
-            color: var(--black);
+    font-family: 'Cormorant Garamond', serif;
 
-        }
+    font-size: clamp(
+        2rem,
+        4vw,
+        4rem
+    );
 
+    font-weight: 300;
 
-        /* =================================================
-           FILM GRAIN
-        ================================================== */
+    line-height: 1.05;
 
-        body::before {
+    letter-spacing: -0.02em;
 
-            content: "";
+    color: #eee9e1;
+}
 
-            position: fixed;
+.hero-tagline em {
+    color: #c8b28a;
+    font-style: italic;
+}
 
-            inset: -50%;
 
-            width: 200%;
+/* =========================================================
+   ENTER
+========================================================= */
 
-            height: 200%;
+.enter {
 
-            pointer-events: none;
+    display: inline-flex;
 
-            z-index: 9999;
+    align-items: center;
 
-            opacity: .018;
+    justify-content: center;
 
-            background-image:
+    gap: 20px;
 
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+    color: #eee9e1;
 
-            animation: grain 1.2s steps(4) infinite;
+    text-decoration: none;
 
-        }
+    font-size: 0.62rem;
 
+    letter-spacing: 4px;
 
-        @keyframes grain {
+    text-transform: uppercase;
 
-            0% {
-                transform: translate(0,0);
-            }
+    padding: 15px 0;
 
-            25% {
-                transform: translate(-2%,2%);
-            }
+    transition: gap 0.5s ease,
+                color 0.4s ease;
+}
 
-            50% {
-                transform: translate(2%,-1%);
-            }
+.enter::after {
 
-            75% {
-                transform: translate(1%,2%);
-            }
+    content: "→";
 
-            100% {
-                transform: translate(0,0);
-            }
+    font-size: 1rem;
 
-        }
+    transition: transform 0.5s ease;
+}
 
+.enter:hover {
 
-        /* =================================================
-           NAVIGATION
-        ================================================== */
+    gap: 30px;
 
-        .site-nav {
+    color: #c8b28a;
+}
 
-            position: fixed;
+.enter:hover::after {
 
-            top: 0;
+    transform: translateX(5px);
+}
 
-            left: 0;
 
-            width: 100%;
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
 
-            padding: 25px var(--page-padding);
+.scroll-indicator {
 
-            display: flex;
+    position: absolute;
 
-            justify-content: space-between;
+    bottom: 32px;
 
-            align-items: center;
+    left: 50%;
 
-            z-index: 1000;
+    transform: translateX(-50%);
 
-            background:
+    display: flex;
 
-                linear-gradient(
-                    to bottom,
-                    rgba(9,8,8,.88),
-                    transparent
-                );
+    flex-direction: column;
 
-            backdrop-filter: blur(4px);
+    align-items: center;
 
-        }
+    gap: 12px;
 
+    opacity: 0.35;
 
-        .nav-logo {
+    z-index: 5;
+}
 
-            text-decoration: none;
+.scroll-indicator span {
 
-            font-family: var(--display);
+    font-size: 0.5rem;
 
-            font-size: 1.45rem;
+    letter-spacing: 3px;
 
-            letter-spacing: .08em;
+    text-transform: uppercase;
+}
 
-            line-height: 1;
+.scroll-line {
 
-        }
+    width: 1px;
 
+    height: 42px;
 
-        .nav-logo small {
+    background: #eee9e1;
 
-            display: block;
+    animation: scrollPulse 2.5s ease-in-out infinite;
+}
 
-            margin-top: 4px;
+@keyframes scrollPulse {
 
-            font-family: var(--ui);
+    0%, 100% {
+        transform: scaleY(0.4);
+        transform-origin: top;
+        opacity: 0.3;
+    }
 
-            font-size: .45rem;
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
 
-            letter-spacing: .24em;
+}
 
-            text-transform: uppercase;
 
-            color: var(--amber-soft);
+/* =========================================================
+   PLACEHOLDER NEXT SECTION
+   ========================================================= */
 
-        }
+.world-preview {
 
+    min-height: 100vh;
 
-        .nav-links {
+    background: #111011;
 
-            display: flex;
+    display: flex;
 
-            gap: 32px;
+    align-items: center;
 
-        }
+    justify-content: center;
 
+    text-align: center;
 
-        .nav-links a {
+    padding: 100px 8%;
+}
 
-            text-decoration: none;
+.world-preview-inner {
 
-            font-size: .56rem;
+    max-width: 900px;
+}
 
-            letter-spacing: .25em;
+.world-label {
 
-            text-transform: uppercase;
+    font-size: 0.6rem;
 
-            color: var(--ivory-soft);
+    letter-spacing: 5px;
 
-            transition: color .4s ease;
+    text-transform: uppercase;
 
-        }
+    color: #c8b28a;
 
+    margin-bottom: 25px;
+}
 
-        .nav-links a:hover {
+.world-preview h2 {
 
-            color: var(--amber-soft);
+    font-family: 'Cormorant Garamond', serif;
 
-        }
+    font-size: clamp(
+        3.5rem,
+        8vw,
+        8rem
+    );
 
+    font-weight: 300;
 
-        /* =================================================
-           HERO
-        ================================================== */
+    line-height: 0.9;
 
-        .hero {
+    letter-spacing: -0.04em;
+}
 
-            min-height: 100vh;
+.world-preview p {
 
-            min-height: 100svh;
+    margin-top: 30px;
 
-            position: relative;
+    opacity: 0.5;
 
-            display: flex;
+    font-family: 'Cormorant Garamond', serif;
 
-            align-items: center;
+    font-size: 1.3rem;
+}
 
-            padding:
-                150px
-                var(--page-padding)
-                80px;
 
-            overflow: hidden;
+/* =========================================================
+   MOBILE
+========================================================= */
 
-            background:
+@media (max-width: 700px) {
 
-                radial-gradient(
-                    ellipse at 72% 48%,
-                    rgba(166,112,47,.045),
-                    transparent 38%
-                );
+    nav {
+        padding: 20px 5vw;
+    }
 
-        }
+    .logo {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
 
+    .nav-links {
+        gap: 13px;
+    }
 
-        .hero::after {
+    .nav-links a {
+        font-size: 0.5rem;
+        letter-spacing: 1.5px;
+    }
 
-            content: "";
+    .hero-content {
+        width: 92vw;
+    }
 
-            position: absolute;
+    .hero-title {
+        font-size: clamp(
+            4.2rem,
+            19vw,
+            7rem
+        );
 
-            width: 1px;
+        line-height: 0.78;
+    }
 
-            height: 38vh;
+    .hero-real-name {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
 
-            right: 10%;
+    .hero-role {
+        font-size: 0.5rem;
+        letter-spacing: 2px;
+    }
 
-            top: 50%;
+    .hero-tagline {
+        margin-top: 48px;
+        font-size: 2rem;
+        line-height: 1.05;
+    }
 
-            transform: translateY(-50%);
+    .hero-word {
+        font-size: 45vw;
+    }
 
-            background:
+}
 
-                linear-gradient(
-                    to bottom,
-                    transparent,
-                    rgba(196,163,107,.35),
-                    transparent
-                );
 
-            opacity: .5;
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-        }
+@media (prefers-reduced-motion: reduce) {
 
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
 
-        .hero-watermark {
+}
 
-            position: absolute;
-
-            right: -7vw;
-
-            bottom: 4vh;
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    10rem,
-                    27vw,
-                    30rem
-                );
-
-            line-height: .7;
-
-            letter-spacing: -.06em;
-
-            color:
-                rgba(241,236,227,.018);
-
-            white-space: nowrap;
-
-            pointer-events: none;
-
-            user-select: none;
-
-        }
-
-
-        .hero-content {
-
-            width: 100%;
-
-            max-width: 1500px;
-
-            margin: auto;
-
-            position: relative;
-
-            z-index: 2;
-
-        }
-
-
-        .hero-meta {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            margin-bottom: 70px;
-
-            font-size: .56rem;
-
-            letter-spacing: .28em;
-
-            text-transform: uppercase;
-
-            color: var(--ivory-soft);
-
-            opacity: .65;
-
-        }
-
-
-        .hero-meta span:last-child {
-
-            color: var(--amber-soft);
-
-        }
-
-
-        .hero-name h1 {
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    5rem,
-                    12vw,
-                    12rem
-                );
-
-            font-weight: 500;
-
-            line-height: .78;
-
-            letter-spacing: -.055em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .hero-identity {
-
-            display: flex;
-
-            align-items: baseline;
-
-            gap: 14px;
-
-            margin-top: 40px;
-
-            font-size: .6rem;
-
-            letter-spacing: .23em;
-
-            text-transform: uppercase;
-
-            color: var(--ivory-soft);
-
-        }
-
-
-        .hero-identity strong {
-
-            font-family: var(--display);
-
-            font-size: 1.5rem;
-
-            font-style: italic;
-
-            font-weight: 400;
-
-            letter-spacing: .02em;
-
-            text-transform: none;
-
-            color: var(--amber-soft);
-
-        }
-
-
-        .hero-statement {
-
-            margin-top: 90px;
-
-            margin-left: 18%;
-
-            max-width: 700px;
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    2.5rem,
-                    5vw,
-                    5.5rem
-                );
-
-            line-height: .95;
-
-            letter-spacing: -.025em;
-
-        }
-
-
-        .hero-statement em {
-
-            color: var(--amber-soft);
-
-        }
-
-
-        .hero-bottom {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-end;
-
-            margin-top: 85px;
-
-            padding-top: 32px;
-
-            border-top: 1px solid var(--line);
-
-        }
-
-
-        .hero-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            min-width: 210px;
-
-            height: 56px;
-
-            padding: 0 30px;
-
-            border: 1px solid rgba(241,236,227,.45);
-
-            text-decoration: none;
-
-            font-size: .58rem;
-
-            letter-spacing: .28em;
-
-            text-transform: uppercase;
-
-            transition:
-
-                background .6s ease,
-
-                color .6s ease,
-
-                transform .6s cubic-bezier(.22,1,.36,1);
-
-        }
-
-
-        .hero-button:hover {
-
-            background: var(--ivory);
-
-            color: var(--black);
-
-            transform: translateY(-4px);
-
-        }
-
-
-        .hero-scroll {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 14px;
-
-            font-size: .52rem;
-
-            letter-spacing: .24em;
-
-            text-transform: uppercase;
-
-            color: var(--ivory-soft);
-
-            opacity: .5;
-
-        }
-
-
-        .hero-scroll span {
-
-            width: 48px;
-
-            height: 1px;
-
-            background: var(--amber-soft);
-
-            animation:
-                scroll-line 2.5s
-                ease-in-out infinite;
-
-        }
-
-
-        @keyframes scroll-line {
-
-            0%,100% {
-
-                transform: scaleX(.3);
-
-                opacity: .3;
-
-            }
-
-            50% {
-
-                transform: scaleX(1);
-
-                opacity: 1;
-
-            }
-
-        }
-
-
-        /* =================================================
-           MAVIS WORLD
-        ================================================== */
-
-        .mavis-world {
-
-            min-height: 100vh;
-
-            min-height: 100svh;
-
-            position: relative;
-
-            overflow: hidden;
-
-            display: flex;
-
-            align-items: center;
-
-            padding:
-                120px
-                var(--page-padding);
-
-            background:
-
-                radial-gradient(
-                    ellipse at 20% 50%,
-                    rgba(109,38,56,.18),
-                    transparent 45%
-                ),
-
-                #0a0809;
-
-        }
-
-
-        .mavis-world::before {
-
-            content: "MAVIS";
-
-            position: absolute;
-
-            left: -5vw;
-
-            bottom: -2vw;
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    12rem,
-                    30vw,
-                    36rem
-                );
-
-            line-height: .65;
-
-            letter-spacing: -.08em;
-
-            color:
-                rgba(241,236,227,.025);
-
-            white-space: nowrap;
-
-            pointer-events: none;
-
-        }
-
-
-        .mavis-content {
-
-            width: 100%;
-
-            max-width: 1450px;
-
-            margin: auto;
-
-            position: relative;
-
-            z-index: 2;
-
-        }
-
-
-        .section-meta {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            padding-bottom: 25px;
-
-            border-bottom: 1px solid var(--line);
-
-            font-size: .55rem;
-
-            letter-spacing: .25em;
-
-            text-transform: uppercase;
-
-            color: var(--ivory-soft);
-
-        }
-
-
-        .mavis-title {
-
-            margin-top: 70px;
-
-        }
-
-
-        .mavis-eyebrow {
-
-            margin-bottom: 20px;
-
-            font-size: .58rem;
-
-            letter-spacing: .3em;
-
-            text-transform: uppercase;
-
-            color: var(--amber-soft);
-
-        }
-
-
-        .mavis-title h2 {
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    7rem,
-                    17vw,
-                    17rem
-                );
-
-            font-weight: 500;
-
-            line-height: .68;
-
-            letter-spacing: -.07em;
-
-        }
-
-
-        .mavis-subtitle {
-
-            margin-top: 28px;
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    1.4rem,
-                    3vw,
-                    3rem
-                );
-
-            font-style: italic;
-
-            color: var(--ivory-soft);
-
-        }
-
-
-        .mavis-copy {
-
-            width: min(500px, 90%);
-
-            margin-top: 120px;
-
-        }
-
-
-        .mavis-quote {
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    2rem,
-                    4vw,
-                    4rem
-                );
-
-            line-height: 1;
-
-        }
-
-
-        .mavis-quote em {
-
-            color: var(--amber-soft);
-
-        }
-
-
-        .mavis-description {
-
-            margin-top: 40px;
-
-            color: var(--ivory-soft);
-
-            font-size: .8rem;
-
-            line-height: 1.9;
-
-        }
-
-
-        .world-link {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 25px;
-
-            margin-top: 45px;
-
-            padding-bottom: 12px;
-
-            border-bottom: 1px solid rgba(241,236,227,.4);
-
-            text-decoration: none;
-
-            font-size: .58rem;
-
-            letter-spacing: .25em;
-
-            text-transform: uppercase;
-
-            transition:
-                gap .6s cubic-bezier(.22,1,.36,1),
-                color .4s ease;
-
-        }
-
-
-        .world-link:hover {
-
-            gap: 40px;
-
-            color: var(--amber-soft);
-
-        }
-
-
-        /* =================================================
-           LIBRARY
-        ================================================== */
-
-        .library {
-
-            padding:
-                150px
-                var(--page-padding);
-
-            background: var(--ivory);
-
-            color: var(--black);
-
-        }
-
-
-        .library .section-meta {
-
-            border-color:
-                rgba(9,8,8,.15);
-
-            color: rgba(9,8,8,.55);
-
-        }
-
-
-        .library-heading {
-
-            margin-top: 70px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-end;
-
-            gap: 40px;
-
-        }
-
-
-        .library-heading h2 {
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    5rem,
-                    12vw,
-                    12rem
-                );
-
-            font-weight: 500;
-
-            line-height: .75;
-
-            letter-spacing: -.06em;
-
-        }
-
-
-        .library-intro {
-
-            max-width: 320px;
-
-            font-size: .78rem;
-
-            line-height: 1.8;
-
-            opacity: .65;
-
-        }
-
-
-        .library-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 2px;
-
-            margin-top: 100px;
-
-        }
-
-
-        .library-card {
-
-            min-height: 520px;
-
-            position: relative;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: flex-end;
-
-            padding: 45px;
-
-            overflow: hidden;
-
-            background: var(--black);
-
-            color: var(--ivory);
-
-            text-decoration: none;
-
-        }
-
-
-        .library-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                radial-gradient(
-                    circle at 70% 30%,
-                    rgba(166,112,47,.12),
-                    transparent 45%
-                );
-
-            transition: transform 1s
-                cubic-bezier(.22,1,.36,1);
-
-        }
-
-
-        .library-card:hover::before {
-
-            transform: scale(1.2);
-
-        }
-
-
-        .library-card:nth-child(2)::before {
-
-            background:
-                radial-gradient(
-                    circle at 30% 35%,
-                    rgba(109,38,56,.25),
-                    transparent 48%
-                );
-
-        }
-
-
-        .library-number {
-
-            position: absolute;
-
-            top: 35px;
-
-            right: 40px;
-
-            font-size: .52rem;
-
-            letter-spacing: .25em;
-
-            opacity: .5;
-
-        }
-
-
-        .library-card h3 {
-
-            position: relative;
-
-            z-index: 2;
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    3rem,
-                    6vw,
-                    6rem
-                );
-
-            line-height: .8;
-
-            font-weight: 500;
-
-        }
-
-
-        .library-card p {
-
-            position: relative;
-
-            z-index: 2;
-
-            margin-top: 20px;
-
-            font-size: .58rem;
-
-            letter-spacing: .22em;
-
-            text-transform: uppercase;
-
-            color: var(--amber-soft);
-
-        }
-
-
-        /* =================================================
-           SYNAPSE KEY
-        ================================================== */
-
-        .synapse {
-
-            min-height: 100vh;
-
-            min-height: 100svh;
-
-            position: relative;
-
-            overflow: hidden;
-
-            display: flex;
-
-            align-items: center;
-
-            padding:
-                130px
-                var(--page-padding);
-
-            background:
-
-                radial-gradient(
-                    circle at 65% 45%,
-                    rgba(166,112,47,.13),
-                    transparent 28%
-                ),
-
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(109,38,56,.07),
-                    transparent 35%
-                ),
-
-                #050505;
-
-        }
-
-
-        .synapse::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 1px;
-
-            height: 70%;
-
-            left: 12%;
-
-            top: 15%;
-
-            background:
-                linear-gradient(
-                    transparent,
-                    rgba(196,163,107,.25),
-                    transparent
-                );
-
-        }
-
-
-        .synapse-content {
-
-            width: 100%;
-
-            max-width: 1450px;
-
-            margin: auto;
-
-            position: relative;
-
-            z-index: 2;
-
-        }
-
-
-        .synapse-label {
-
-            font-size: .58rem;
-
-            letter-spacing: .3em;
-
-            text-transform: uppercase;
-
-            color: var(--amber-soft);
-
-        }
-
-
-        .synapse-title {
-
-            margin-top: 60px;
-
-            max-width: 1000px;
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    5rem,
-                    13vw,
-                    13rem
-                );
-
-            font-weight: 500;
-
-            line-height: .72;
-
-            letter-spacing: -.065em;
-
-        }
-
-
-        .synapse-title span {
-
-            display: block;
-
-            color: var(--amber-soft);
-
-            font-style: italic;
-
-        }
-
-
-        .synapse-subtitle {
-
-            margin-top: 45px;
-
-            max-width: 480px;
-
-            font-family: var(--display);
-
-            font-size: 1.7rem;
-
-            line-height: 1.15;
-
-            color: var(--ivory-soft);
-
-        }
-
-
-        .amber-eye {
-
-            position: absolute;
-
-            width: 38vw;
-
-            height: 38vw;
-
-            max-width: 560px;
-
-            max-height: 560px;
-
-            right: -4vw;
-
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            border-radius: 50%;
-
-            border:
-                1px solid
-                rgba(196,163,107,.12);
-
-            box-shadow:
-
-                inset 0 0 100px
-                rgba(166,112,47,.05),
-
-                0 0 100px
-                rgba(166,112,47,.05);
-
-        }
-
-
-        .amber-eye::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 42%;
-
-            height: 42%;
-
-            left: 29%;
-
-            top: 29%;
-
-            border-radius: 50%;
-
-            background:
-
-                radial-gradient(
-                    circle,
-                    #c39448 0%,
-                    #805521 20%,
-                    #22170c 48%,
-                    #050505 72%
-                );
-
-            box-shadow:
-                0 0 60px
-                rgba(196,163,107,.25);
-
-        }
-
-
-        .amber-eye::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 1px;
-
-            height: 100%;
-
-            left: 50%;
-
-            top: 0;
-
-            background:
-                rgba(196,163,107,.18);
-
-        }
-
-
-        .synapse-bottom {
-
-            margin-top: 80px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 40px;
-
-        }
-
-
-        .coming-soon {
-
-            font-size: .52rem;
-
-            letter-spacing: .28em;
-
-            text-transform: uppercase;
-
-            color: var(--ivory-soft);
-
-            opacity: .6;
-
-        }
-
-
-        /* =================================================
-           AUTHOR
-        ================================================== */
-
-        .author {
-
-            padding:
-                160px
-                var(--page-padding);
-
-            text-align: center;
-
-            background: var(--charcoal);
-
-        }
-
-
-        .author-label {
-
-            font-size: .58rem;
-
-            letter-spacing: .3em;
-
-            text-transform: uppercase;
-
-            color: var(--amber-soft);
-
-        }
-
-
-        .author h2 {
-
-            margin-top: 45px;
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    4rem,
-                    9vw,
-                    9rem
-                );
-
-            font-weight: 500;
-
-            line-height: .8;
-
-            letter-spacing: -.055em;
-
-        }
-
-
-        .author-name {
-
-            margin-top: 30px;
-
-            font-family: var(--display);
-
-            font-size: 1.6rem;
-
-            font-style: italic;
-
-            color: var(--amber-soft);
-
-        }
-
-
-        .author-text {
-
-            max-width: 650px;
-
-            margin: 45px auto 0;
-
-            color: var(--ivory-soft);
-
-            font-size: .82rem;
-
-            line-height: 2;
-
-        }
-
-
-        /* =================================================
-           FROM THE DESK
-        ================================================== */
-
-        .desk {
-
-            padding:
-                150px
-                var(--page-padding);
-
-            background: var(--black);
-
-        }
-
-
-        .desk-heading {
-
-            margin-top: 65px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-end;
-
-        }
-
-
-        .desk-heading h2 {
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    4.5rem,
-                    10vw,
-                    10rem
-                );
-
-            line-height: .75;
-
-            font-weight: 500;
-
-        }
-
-
-        .desk-heading p {
-
-            max-width: 300px;
-
-            color: var(--ivory-soft);
-
-            font-size: .75rem;
-
-        }
-
-
-        .desk-line {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            padding: 30px 0;
-
-            margin-top: 70px;
-
-            border-top: 1px solid var(--line);
-
-            border-bottom: 1px solid var(--line);
-
-            text-decoration: none;
-
-            transition: padding .6s
-                cubic-bezier(.22,1,.36,1);
-
-        }
-
-
-        .desk-line:hover {
-
-            padding-left: 20px;
-
-            padding-right: 20px;
-
-        }
-
-
-        .desk-line-title {
-
-            font-family: var(--display);
-
-            font-size: 1.8rem;
-
-        }
-
-
-        .desk-line-meta {
-
-            font-size: .52rem;
-
-            letter-spacing: .2em;
-
-            text-transform: uppercase;
-
-            color: var(--amber-soft);
-
-        }
-
-
-        /* =================================================
-           INNER CIRCLE
-        ================================================== */
-
-        .inner-circle {
-
-            padding:
-                150px
-                var(--page-padding);
-
-            text-align: center;
-
-            background: var(--wine-dark);
-
-        }
-
-
-        .inner-circle h2 {
-
-            margin-top: 40px;
-
-            font-family: var(--display);
-
-            font-size:
-                clamp(
-                    4rem,
-                    9vw,
-                    9rem
-                );
-
-            font-weight: 500;
-
-            line-height: .8;
-
-        }
-
-
-        .inner-circle p {
-
-            max-width: 480px;
-
-            margin: 35px auto;
-
-            color: var(--ivory-soft);
-
-            font-size: .78rem;
-
-        }
-
-
-        .email-form {
-
-            max-width: 520px;
-
-            margin: 50px auto 0;
-
-            display: flex;
-
-            border-bottom:
-                1px solid
-                rgba(241,236,227,.35);
-
-        }
-
-
-        .email-form input {
-
-            flex: 1;
-
-            min-width: 0;
-
-            padding: 18px 5px;
-
-            border: 0;
-
-            outline: 0;
-
-            background: transparent;
-
-            color: var(--ivory);
-
-            font-family: var(--ui);
-
-            font-size: .7rem;
-
-        }
-
-
-        .email-form input::placeholder {
-
-            color: var(--ivory-soft);
-
-        }
-
-
-        .email-form button {
-
-            border: 0;
-
-            background: transparent;
-
-            color: var(--amber-soft);
-
-            font-family: var(--ui);
-
-            font-size: .55rem;
-
-            letter-spacing: .2em;
-
-            text-transform: uppercase;
-
-            cursor: pointer;
-
-        }
-
-
-        /* =================================================
-           FOOTER
-        ================================================== */
-
-        footer {
-
-            padding:
-                50px
-                var(--page-padding);
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 30px;
-
-            border-top:
-                1px solid
-                rgba(241,236,227,.08);
-
-            background: var(--black);
-
-        }
-
-
-        .footer-name {
-
-            font-family: var(--display);
-
-            font-size: 1.3rem;
-
-        }
-
-
-        .footer-copy {
-
-            font-size: .5rem;
-
-            letter-spacing: .16em;
-
-            text-transform: uppercase;
-
-            color: var(--ivory-soft);
-
-        }
-
-
-        .footer-links {
-
-            display: flex;
-
-            gap: 22px;
-
-        }
-
-
-        .footer-links a {
-
-            font-size: .5rem;
-
-            letter-spacing: .18em;
-
-            text-transform: uppercase;
-
-            text-decoration: none;
-
-            color: var(--ivory-soft);
-
-        }
-
-
-        .footer-links a:hover {
-
-            color: var(--amber-soft);
-
-        }
-
-
-        /* =================================================
-           MOBILE
-        ================================================== */
-
-        @media (max-width: 800px) {
-
-            :root {
-
-                --page-padding: 7%;
-
-            }
-
-
-            .site-nav {
-
-                padding: 20px 7%;
-
-            }
-
-
-            .nav-links {
-
-                gap: 12px;
-
-            }
-
-
-            .nav-links a {
-
-                font-size: .45rem;
-
-            }
-
-
-            .hero {
-
-                padding-top: 120px;
-
-            }
-
-
-            .hero-meta {
-
-                margin-bottom: 55px;
-
-            }
-
-
-            .hero-name h1 {
-
-                font-size:
-                    clamp(
-                        3.8rem,
-                        16vw,
-                        6rem
-                    );
-
-            }
-
-
-            .hero-statement {
-
-                margin-left: 0;
-
-                margin-top: 65px;
-
-                font-size:
-                    clamp(
-                        2.4rem,
-                        10vw,
-                        3.6rem
-                    );
-
-            }
-
-
-            .hero-bottom {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 30px;
-
-            }
-
-
-            .hero::after {
-
-                display: none;
-
-            }
-
-
-            .mavis-world {
-
-                padding-top: 100px;
-
-                padding-bottom: 100px;
-
-            }
-
-
-            .mavis-title h2 {
-
-                font-size:
-                    clamp(
-                        5.5rem,
-                        25vw,
-                        9rem
-                    );
-
-            }
-
-
-            .mavis-copy {
-
-                margin-top: 80px;
-
-            }
-
-
-            .library {
-
-                padding-top: 100px;
-
-                padding-bottom: 100px;
-
-            }
-
-
-            .library-heading {
-
-                display: block;
-
-            }
-
-
-            .library-intro {
-
-                margin-top: 35px;
-
-            }
-
-
-            .library-grid {
-
-                grid-template-columns: 1fr;
-
-                margin-top: 65px;
-
-            }
-
-
-            .library-card {
-
-                min-height: 420px;
-
-            }
-
-
-            .synapse {
-
-                padding-top: 100px;
-
-                padding-bottom: 100px;
-
-            }
-
-
-            .synapse-title {
-
-                font-size:
-                    clamp(
-                        4rem,
-                        18vw,
-                        7rem
-                    );
-
-            }
-
-
-            .amber-eye {
-
-                width: 75vw;
-
-                height: 75vw;
-
-                right: -25vw;
-
-                top: 58%;
-
-            }
-
-
-            .author,
-            .desk,
-            .inner-circle {
-
-                padding-top: 100px;
-
-                padding-bottom: 100px;
-
-            }
-
-
-            .desk-heading {
-
-                display: block;
-
-            }
-
-
-            .desk-heading p {
-
-                margin-top: 30px;
-
-            }
-
-
-            footer {
-
-                flex-direction: column;
-
-                text-align: center;
-
-            }
-
-
-            .footer-links {
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -2076,625 +662,152 @@
 <body>
 
 
-    <!-- =================================================
-         NAVIGATION
-    ================================================== -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-    <nav class="site-nav">
+<nav>
 
-        <a href="#top"
-           class="nav-logo">
+    <a href="index.html"
+       class="logo">
+
+        Esper Ayla
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="mavis.html">
+            Mavis
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="connect.html">
+            Connect
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero"
+        id="top">
+
+
+    <!-- enormous background word -->
+
+    <div class="hero-word">
+        AYLA
+    </div>
+
+
+    <!-- atmospheric darkness -->
+
+    <div class="atmosphere"></div>
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-kicker">
+
+            Author · Novel Artist
+
+        </div>
+
+
+        <h1 class="hero-title">
 
             Esper Ayla
 
-            <small>
-                Amal Iman Ameen
-            </small>
+        </h1>
+
+
+        <div class="hero-real-name">
+
+            Amal Iman Ameen
+
+        </div>
+
+
+        <div class="hero-role">
+
+            Writing · Worlds · Stories
+
+        </div>
+
+
+        <div class="hero-tagline">
+
+            Stories for the <em>beautiful things</em> that hurt.
+
+        </div>
+
+
+        <a href="#worlds"
+           class="enter">
+
+            Enter the world
 
         </a>
 
 
-        <div class="nav-links">
+    </div>
 
-            <a href="#mavis">
-                Mavis
-            </a>
 
-            <a href="#library">
-                Library
-            </a>
+    <div class="scroll-indicator">
 
-            <a href="#synapse">
-                The Synapse Key
-            </a>
+        <span>Scroll</span>
 
-            <a href="#author">
-                Author
-            </a>
+        <div class="scroll-line"></div>
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     TEMPORARY NEXT SECTION
+===================================================== -->
+
+<section class="world-preview"
+         id="worlds">
+
+    <div class="world-preview-inner">
+
+        <div class="world-label">
+
+            The worlds begin here
 
         </div>
 
-    </nav>
+        <h2>
 
+            Stories become worlds.
 
+        </h2>
 
-    <main id="top">
+        <p>
 
+            More coming soon.
 
-        <!-- =================================================
-             HERO
-        ================================================== -->
+        </p>
 
-        <header class="hero">
+    </div>
 
-            <div class="hero-watermark"
-                 aria-hidden="true">
-
-                ESPER
-
-            </div>
-
-
-            <div class="hero-content">
-
-
-                <div class="hero-meta">
-
-                    <span>
-                        Author · Novel Artist
-                    </span>
-
-                    <span>
-                        01 / 06
-                    </span>
-
-                </div>
-
-
-                <div class="hero-name">
-
-                    <h1>
-
-                        Amal<br>
-                        Iman Ameen
-
-                    </h1>
-
-                </div>
-
-
-                <div class="hero-identity">
-
-                    <span>
-                        writing as
-                    </span>
-
-                    <strong>
-                        Esper Ayla
-                    </strong>
-
-                </div>
-
-
-                <div class="hero-statement">
-
-                    Stories for the
-
-                    <br>
-
-                    beautiful things
-
-                    <br>
-
-                    <em>
-                        that hurt.
-                    </em>
-
-                </div>
-
-
-                <div class="hero-bottom">
-
-                    <a href="#mavis"
-                       class="hero-button">
-
-                        Enter the world
-
-                    </a>
-
-
-                    <div class="hero-scroll">
-
-                        <span></span>
-
-                        Scroll to explore
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </header>
-
-
-
-        <!-- =================================================
-             MAVIS
-        ================================================== -->
-
-        <section class="mavis-world"
-                 id="mavis">
-
-            <div class="mavis-content">
-
-
-                <div class="section-meta">
-
-                    <span>
-                        The first world
-                    </span>
-
-                    <span>
-                        01 — Published
-                    </span>
-
-                </div>
-
-
-                <div class="mavis-title">
-
-                    <p class="mavis-eyebrow">
-                        Her debut novel
-                    </p>
-
-                    <h2>
-                        Mavis
-                    </h2>
-
-                    <p class="mavis-subtitle">
-                        A Heart's Lament
-                    </p>
-
-                </div>
-
-
-                <div class="mavis-copy">
-
-                    <div class="mavis-quote">
-
-                        Some hearts don't break loudly.
-
-                        <br>
-
-                        They simply learn to live
-
-                        <br>
-
-                        <em>
-                            with the pieces.
-                        </em>
-
-                    </div>
-
-
-                    <p class="mavis-description">
-
-                        Set during the restless years of
-                        college life, <strong>Mavis</strong>
-                        follows Amalyn — a guarded young
-                        woman who has long stopped believing
-                        in fairy tales.
-
-                    </p>
-
-
-                    <a href="mavis.html"
-                       class="world-link">
-
-                        Discover Mavis
-
-                        <span>
-                            ↗
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             LIBRARY
-        ================================================== -->
-
-        <section class="library"
-                 id="library">
-
-            <div class="section-meta">
-
-                <span>
-                    The library
-                </span>
-
-                <span>
-                    Worlds written & unwritten
-                </span>
-
-            </div>
-
-
-            <div class="library-heading">
-
-                <h2>
-                    The<br>
-                    Library
-                </h2>
-
-
-                <p class="library-intro">
-
-                    Stories in progress.
-                    Stories waiting to be told.
-                    Every world begins somewhere.
-
-                </p>
-
-            </div>
-
-
-            <div class="library-grid">
-
-
-                <a href="mavis.html"
-                   class="library-card">
-
-                    <span class="library-number">
-                        01
-                    </span>
-
-                    <h3>
-                        Mavis
-                    </h3>
-
-                    <p>
-                        A Heart's Lament · Published
-                    </p>
-
-                </a>
-
-
-                <a href="#synapse"
-                   class="library-card">
-
-                    <span class="library-number">
-                        02
-                    </span>
-
-                    <h3>
-                        The<br>
-                        Synapse<br>
-                        Key
-                    </h3>
-
-                    <p>
-                        Obsession Unbound · In progress
-                    </p>
-
-                </a>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SYNAPSE KEY
-        ================================================== -->
-
-        <section class="synapse"
-                 id="synapse">
-
-            <div class="amber-eye"
-                 aria-hidden="true">
-            </div>
-
-
-            <div class="synapse-content">
-
-                <p class="synapse-label">
-                    A world currently being written
-                </p>
-
-
-                <h2 class="synapse-title">
-
-                    The Synapse
-
-                    <span>
-                        Key
-                    </span>
-
-                </h2>
-
-
-                <p class="synapse-subtitle">
-
-                    Obsession Unbound.
-
-                    <br><br>
-
-                    Some doors are not meant
-                    to be opened twice.
-
-                </p>
-
-
-                <div class="synapse-bottom">
-
-                    <span class="coming-soon">
-
-                        Novel in progress
-
-                    </span>
-
-                    <a href="#desk"
-                       class="world-link">
-
-                        Enter the project
-
-                        <span>
-                            ↗
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             AUTHOR
-        ================================================== -->
-
-        <section class="author"
-                 id="author">
-
-            <p class="author-label">
-                The author
-            </p>
-
-
-            <h2>
-
-                Amal Iman<br>
-                Ameen
-
-            </h2>
-
-
-            <p class="author-name">
-
-                Writing as Esper Ayla.
-
-            </p>
-
-
-            <p class="author-text">
-
-                Amal Iman Ameen is a Sri Lankan author
-                and novel artist writing under the pen name
-                Esper Ayla.
-
-                <br><br>
-
-                She doesn't simply write stories.
-                She sees them — imagining atmosphere,
-                expressions, locations, movement and
-                emotion as though the page were already
-                a screen.
-
-                <br><br>
-
-                Somewhere between the page and the screen,
-                her stories begin.
-
-            </p>
-
-
-            <a href="about.html"
-               class="world-link">
-
-                About Esper Ayla
-
-                <span>
-                    ↗
-                </span>
-
-            </a>
-
-        </section>
-
-
-
-        <!-- =================================================
-             FROM THE DESK
-        ================================================== -->
-
-        <section class="desk"
-                 id="desk">
-
-            <div class="section-meta">
-
-                <span>
-                    From the desk
-                </span>
-
-                <span>
-                    Notes · Updates · Fragments
-                </span>
-
-            </div>
-
-
-            <div class="desk-heading">
-
-                <h2>
-                    From<br>
-                    the Desk
-                </h2>
-
-
-                <p>
-
-                    A glimpse behind the worlds —
-                    writing updates, new projects,
-                    fragments and announcements.
-
-                </p>
-
-            </div>
-
-
-            <a href="#"
-               class="desk-line">
-
-                <span class="desk-line-title">
-                    The Synapse Key — Chapter One
-                </span>
-
-                <span class="desk-line-meta">
-                    Writing
-                </span>
-
-            </a>
-
-
-            <a href="#"
-               class="desk-line">
-
-                <span class="desk-line-title">
-                    A new world is taking shape
-                </span>
-
-                <span class="desk-line-meta">
-                    Update
-                </span>
-
-            </a>
-
-        </section>
-
-
-
-        <!-- =================================================
-             INNER CIRCLE
-        ================================================== -->
-
-        <section class="inner-circle">
-
-            <p class="author-label">
-                Enter the inner circle
-            </p>
-
-
-            <h2>
-                Stay<br>
-                close.
-            </h2>
-
-
-            <p>
-
-                Occasional letters from the worlds
-                I'm writing — new books, fragments,
-                announcements and things I don't
-                post anywhere else.
-
-            </p>
-
-
-            <form class="email-form"
-                  onsubmit="return false;">
-
-                <input
-                    type="email"
-                    placeholder="Your email address"
-                    aria-label="Email address"
-                >
-
-                <button type="submit">
-                    Join
-                </button>
-
-            </form>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =================================================
-         FOOTER
-    ================================================== -->
-
-    <footer>
-
-        <div class="footer-name">
-            Esper Ayla
-        </div>
-
-
-        <div class="footer-copy">
-
-            © 2026 Amal Iman Ameen ·
-            Writing as Esper Ayla
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="https://www.instagram.com/esperayla/"
-               target="_blank"
-               rel="noopener noreferrer">
-                Instagram
-            </a>
-
-            <a href="https://www.tiktok.com/@esperayla/"
-               target="_blank"
-               rel="noopener noreferrer">
-                TikTok
-            </a>
-
-            <a href="https://www.youtube.com/@esperayla/"
-               target="_blank"
-               rel="noopener noreferrer">
-                YouTube
-            </a>
-
-            <a href="https://www.amazon.com/Mavis-Hearts-Amal-Iman-Ameen/dp/B0FLWS4DRN"
-               target="_blank"
-               rel="noopener noreferrer">
-                Amazon
-            </a>
-
-        </div>
-
-    </footer>
+</section>
 
 
 </body>
