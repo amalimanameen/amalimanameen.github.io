@@ -312,7 +312,80 @@ body::before {
         infinite
         alternate;
 }
+/* =====================================================
+   MOONLIGHT BEAM
+===================================================== */
 
+.moonlight-beam {
+
+    position: absolute;
+
+    top: 8%;
+    right: 24%;
+
+    width: 260px;
+    height: 720px;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            rgba(245, 239, 225, 0.015) 25%,
+            rgba(245, 239, 225, 0.07) 50%,
+            rgba(245, 239, 225, 0.015) 75%,
+            transparent 100%
+        );
+
+    filter: blur(28px);
+
+    transform:
+        rotate(18deg);
+
+    opacity: 0.8;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    animation:
+        moonbeamMove
+        18s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =====================================================
+   MOONBEAM MOVEMENT
+===================================================== */
+
+@keyframes moonbeamMove {
+
+    0% {
+
+        transform:
+            translateX(-35px)
+            rotate(18deg);
+
+        opacity: 0.45;
+    }
+
+    50% {
+
+        opacity: 0.75;
+    }
+
+    100% {
+
+        transform:
+            translateX(35px)
+            rotate(18deg);
+
+        opacity: 0.5;
+    }
+
+}
 
 /* =====================================================
    MOONLIGHT MOVEMENT
@@ -387,76 +460,7 @@ body::before {
     }
 
 }
-/* =====================================================
-   MOONLIGHT VEIL
-===================================================== */
 
-.hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: -20% -10%;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            112deg,
-            transparent 25%,
-            rgba(245, 239, 225, 0.025) 43%,
-            rgba(245, 239, 225, 0.075) 50%,
-            rgba(245, 239, 225, 0.025) 57%,
-            transparent 73%
-        );
-
-    filter: blur(45px);
-
-    opacity: 0.75;
-
-    transform:
-        translateX(-7%);
-
-    animation:
-        moonlightTravel
-        20s
-        ease-in-out
-        infinite
-        alternate;
-
-    z-index: 2;
-}
-
-
-/* =====================================================
-   MOONLIGHT TRAVEL
-===================================================== */
-
-@keyframes moonlightTravel {
-
-    0% {
-
-        transform:
-            translateX(-7%);
-        
-        opacity: 0.45;
-    }
-
-    50% {
-
-        opacity: 0.7;
-    }
-
-    100% {
-
-        transform:
-            translateX(7%);
-        
-        opacity: 0.5;
-    }
-
-}
 /* =====================================================
    HERO GHOST WORD
 ===================================================== */
@@ -1961,17 +1965,15 @@ footer {
 <header class="hero"
         id="top">
 
-   <div class="hero-atmosphere"></div>
+    <div class="hero-atmosphere"></div>
 
-<div class="hero-moonlight"></div>
+    <div class="hero-moon"></div>
 
-<img src="images/hero-moon.png"
-     class="hero-moon-image"
-     alt="">
+    <div class="moonlight-beam"></div>
 
-<div class="hero-ghost">
-    AYLA
-</div>
+    <div class="hero-ghost">
+        AYLA
+    </div>
 
     <div class="hero-content">
 
