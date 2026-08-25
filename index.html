@@ -267,50 +267,69 @@ body::before {
         );
 }
 /* =====================================================
-   HERO MOONLIGHT
+   HERO MOON — STILL MOON
 ===================================================== */
 
-.hero-moonlight {
+.hero-moon {
 
     position: absolute;
 
-    width: 700px;
-    height: 500px;
+    width: 150px;
+    height: 150px;
 
-    top: 2%;
-    right: 3%;
+    top: 17%;
+    right: 18%;
 
-    z-index: 1;
+    border-radius: 50%;
+
+    background:
+        url("images/hero-moon.png")
+        center / contain
+        no-repeat;
+
+    opacity: 0.95;
+
+    z-index: 2;
 
     pointer-events: none;
+
+}
+
+
+/* =====================================================
+   MOONLIGHT ATMOSPHERE
+===================================================== */
+
+.hero-moon::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            ellipse at center,
-
-            rgba(245, 239, 225, 0.18) 0%,
-
-            rgba(245, 239, 225, 0.10) 18%,
-
-            rgba(245, 239, 225, 0.045) 38%,
-
-            rgba(245, 239, 225, 0.015) 55%,
-
-            transparent 72%
+            circle,
+            rgba(245, 239, 225, 0.12) 0%,
+            rgba(245, 239, 225, 0.06) 28%,
+            transparent 68%
         );
 
-    filter: blur(35px);
+    filter: blur(28px);
 
-    opacity: 1;
+    z-index: -1;
 
-    animation:
-        moonlightBreath
-        18s
-        ease-in-out
-        infinite
-        alternate;
+    pointer-events: none;
 }
 /* =====================================================
    MOONLIGHT BEAM
