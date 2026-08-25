@@ -230,79 +230,129 @@ body::before {
 }
       
 /* =====================================================
-   HERO MOON — MOONLIT HOPE
+   HERO MOON IMAGE
 ===================================================== */
 
-.hero-moon {
+.hero-moon-image {
 
     position: absolute;
 
-    width: clamp(
-        180px,
-        22vw,
-        330px
-    );
+    width: min(240px, 22vw);
 
-    height: clamp(
-        180px,
-        22vw,
-        330px
-    );
-
-    top: 13%;
+    top: 11%;
     right: 17%;
-
-    background:
-        url("images/hero-moon.png")
-        center / contain
-        no-repeat;
-
-    opacity: 0.92;
 
     z-index: 2;
 
     pointer-events: none;
 
+    opacity: 0.88;
+
     filter:
         drop-shadow(
-            0 0 35px
-            rgba(245, 239, 225, 0.20)
+            0 0 25px
+            rgba(245, 239, 225, 0.22)
+        )
+        drop-shadow(
+            0 0 80px
+            rgba(245, 239, 225, 0.10)
         );
 
     animation:
-        moonShimmer
-        9s
+        moonDrift
+        14s
         ease-in-out
-        infinite;
+        infinite
+        alternate;
 }
 
 
 /* =====================================================
-   MOON SHIMMER
+   HERO BRANCHES
 ===================================================== */
 
-@keyframes moonShimmer {
+.hero-branches-image {
 
-    0%,
-    100% {
+    position: absolute;
 
-        opacity: 0.86;
+    left: -4%;
+    bottom: -3%;
+
+    width: 108%;
+
+    max-width: none;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    transform-origin:
+        50% 100%;
+
+    animation:
+        branchesWind
+        9s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =====================================================
+   MOON DRIFT
+===================================================== */
+
+@keyframes moonDrift {
+
+    0% {
 
         transform:
-            translateY(0)
-            scale(0.99);
+            translate3d(0, 0, 0)
+            scale(1);
     }
 
-    50% {
-
-        opacity: 1;
+    100% {
 
         transform:
-            translateY(-3px)
+            translate3d(
+                -5px,
+                3px,
+                0
+            )
             scale(1.015);
     }
 
 }
+
+
+/* =====================================================
+   BRANCHES — VERY SOFT WIND
+===================================================== */
+
+@keyframes branchesWind {
+
+    0% {
+
+        transform:
+            rotate(0deg)
+            translate3d(0, 0, 0);
+    }
+
+    100% {
+
+        transform:
+            rotate(0.45deg)
+            translate3d(
+                3px,
+                -1px,
+                0
+            );
+    }
+
+}
+      
 
 /* =====================================================
    HERO GHOST WORD
@@ -1712,7 +1762,13 @@ footer {
 
     <div class="hero-atmosphere"></div>
 
-    <div class="hero-moon"></div>
+  <img src="images/hero-moon.png"
+     class="hero-moon-image"
+     alt="">
+
+<img src="images/hero-branches.png"
+     class="hero-branches-image"
+     alt="">
 
     <div class="hero-ghost">
         AYLA
