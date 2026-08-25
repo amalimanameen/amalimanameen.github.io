@@ -1170,13 +1170,18 @@ body::before {
 ===================================================== */
 
 .mavis-title {
+
+    position: relative;
+
+    z-index: 3;
+
     font-family:
         'Cormorant Garamond',
         serif;
 
     font-size:
         clamp(
-            5rem,
+            5.5rem,
             13vw,
             12rem
         );
@@ -1185,31 +1190,11 @@ body::before {
 
     line-height: 0.7;
 
-    letter-spacing: -0.07em;
+    letter-spacing: -0.075em;
+
+    color: #eee9e1;
+
 }
-
-.mavis-subtitle {
-    margin-top: 31px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(
-            1.2rem,
-            2.5vw,
-            2.1rem
-        );
-
-    font-style: italic;
-
-    letter-spacing: 2px;
-
-    color: #cfc7bd;
-}
-
-
 /* =====================================================
    MAVIS DIVIDER
 ===================================================== */
