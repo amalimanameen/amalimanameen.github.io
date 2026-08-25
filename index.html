@@ -228,7 +228,119 @@ body::before {
     }
 
 }
+/* =====================================================
+   HERO MOON — MOONLIT HOPE
+===================================================== */
 
+.hero-moon {
+
+    position: absolute;
+
+    width: 135px;
+    height: 135px;
+
+    top: 18%;
+    right: 18%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 38% 35%,
+            #fffdf7 0%,
+            #f4eee3 28%,
+            #d8d0c4 58%,
+            rgba(216, 208, 196, 0.18) 72%,
+            transparent 73%
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(245, 239, 225, 0.28),
+
+        0 0 70px
+        rgba(245, 239, 225, 0.16),
+
+        0 0 150px
+        rgba(109, 38, 56, 0.20);
+
+    opacity: 0.72;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation:
+        moonShimmer
+        9s
+        ease-in-out
+        infinite;
+}
+
+
+/* =====================================================
+   MOONLIGHT HALO
+===================================================== */
+
+.hero-moon::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(245, 239, 225, 0.13),
+            rgba(109, 38, 56, 0.08) 38%,
+            transparent 70%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   MOON SHIMMER
+===================================================== */
+
+@keyframes moonShimmer {
+
+    0%,
+    100% {
+
+        opacity: 0.62;
+
+        transform:
+            translateY(0)
+            scale(0.98);
+    }
+
+    50% {
+
+        opacity: 0.82;
+
+        transform:
+            translateY(-3px)
+            scale(1.02);
+    }
+
+}
 
 /* =====================================================
    HERO GHOST WORD
@@ -1638,17 +1750,17 @@ footer {
 
     <div class="hero-atmosphere"></div>
 
+    <div class="hero-moon"></div>
+
     <div class="hero-ghost">
         AYLA
     </div>
-
 
     <div class="hero-content">
 
         <div class="hero-kicker">
             Author · Novel Artist
         </div>
-
 
         <h1 class="hero-title">
             Esper Ayla
