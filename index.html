@@ -155,10 +155,11 @@ body::before {
 
 
 /* =====================================================
-   HERO
+   HERO — CINEMATIC NIGHT
 ===================================================== */
 
 .hero {
+
     min-height: 100vh;
 
     position: relative;
@@ -172,15 +173,31 @@ body::before {
     overflow: hidden;
 
     background:
+
+        /* soft central breathing space */
+        radial-gradient(
+            ellipse at 50% 48%,
+            rgba(25, 20, 22, 0.18) 0%,
+            rgba(9, 8, 9, 0.25) 48%,
+            rgba(5, 5, 6, 0.72) 100%
+        ),
+
+        /* extremely subtle burgundy atmosphere */
+        radial-gradient(
+            ellipse at 72% 25%,
+            rgba(109, 38, 56, 0.09) 0%,
+            transparent 55%
+        ),
+
+        /* original background image */
         url("images/hero-background.png")
+
         center center
         / cover
         no-repeat;
 
     background-color: #090809;
 }
-
-
 /* =====================================================
    HERO ATMOSPHERE
 ===================================================== */
