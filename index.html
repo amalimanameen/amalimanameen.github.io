@@ -233,67 +233,36 @@ body::before {
    HERO MOON IMAGE
 ===================================================== */
 
+/* =====================================================
+   HERO MOON — CINEMATIC
+===================================================== */
+
 .hero-moon-image {
 
     position: absolute;
 
-    width: min(240px, 22vw);
+    width: min(230px, 20vw);
 
-    top: 11%;
-    right: 17%;
+    top: 12%;
+    right: 18%;
 
     z-index: 2;
 
     pointer-events: none;
 
-    opacity: 0.88;
+    opacity: 0.68;
 
     filter:
+        blur(0.25px)
         drop-shadow(
-            0 0 25px
-            rgba(245, 239, 225, 0.22)
+            0 0 18px
+            rgba(245, 239, 225, 0.16)
         )
         drop-shadow(
-            0 0 80px
-            rgba(245, 239, 225, 0.10)
+            0 0 55px
+            rgba(245, 239, 225, 0.09)
         );
-
-    animation:
-        moonDrift
-        14s
-        ease-in-out
-        infinite
-        alternate;
 }
-
-
-/* =====================================================
-   HERO BRANCHES
-===================================================== */
-
-.hero-branches-image {
-
-    position: absolute;
-
-    left: -4%;
-    bottom: -3%;
-
-    width: 108%;
-
-    max-width: none;
-
-    z-index: 3;
-
-    pointer-events: none;
-
-    user-select: none;
-
-    transform-origin:
-        50% 100%;
-
-    mix-blend-mode: multiply;
-}
-
 
 /* =====================================================
    MOON DRIFT
@@ -322,32 +291,6 @@ body::before {
 }
 
 
-/* =====================================================
-   BRANCHES — VERY SOFT WIND
-===================================================== */
-
-@keyframes branchesWind {
-
-    0% {
-
-        transform:
-            rotate(0deg)
-            translate3d(0, 0, 0);
-    }
-
-    100% {
-
-        transform:
-            rotate(0.45deg)
-            translate3d(
-                3px,
-                -1px,
-                0
-            );
-    }
-
-}
-      
 
 /* =====================================================
    HERO GHOST WORD
@@ -1761,9 +1704,6 @@ footer {
      class="hero-moon-image"
      alt="">
 
-<img src="images/hero-branches.png"
-     class="hero-branches-image"
-     alt="">
 
     <div class="hero-ghost">
         AYLA
