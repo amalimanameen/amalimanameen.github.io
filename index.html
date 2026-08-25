@@ -958,10 +958,11 @@ body::before {
 ===================================================== */
 
 .mavis-background-word {
+
     position: absolute;
 
     left: 50%;
-    top: 48%;
+    top: 46%;
 
     transform:
         translate(-50%, -50%);
@@ -973,22 +974,22 @@ body::before {
     font-size:
         clamp(
             13rem,
-            34vw,
-            38rem
+            32vw,
+            36rem
         );
 
     font-weight: 300;
 
     line-height: 0.7;
 
-    letter-spacing: -0.1em;
+    letter-spacing: -0.10em;
 
     color:
         rgba(
             238,
             233,
             225,
-            0.018
+            0.022
         );
 
     white-space: nowrap;
@@ -996,8 +997,10 @@ body::before {
     pointer-events: none;
 
     user-select: none;
-}
 
+    z-index: 0;
+
+}
 
 /* =====================================================
    MAVIS NUMBER
