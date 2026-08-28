@@ -1903,20 +1903,24 @@ body::before {
 
 .inner-circle {
     padding:
-        160px
-        7vw;
+        190px
+        7vw
+        180px;
 
     background:
         radial-gradient(
-            circle at center,
-            rgba(109, 38, 56, 0.13),
-            transparent 55%
+            circle at 50% 38%,
+            rgba(109, 38, 56, 0.11),
+            transparent 52%
         ),
         #0a090a;
 
     text-align: center;
-}
 
+    position: relative;
+
+    overflow: hidden;
+}
 .inner-circle h2 {
     font-family:
         'Cormorant Garamond',
