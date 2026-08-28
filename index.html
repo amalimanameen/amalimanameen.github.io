@@ -1329,11 +1329,20 @@ body::before {
 ===================================================== */
 
 .mavis-enter {
+
+    position: relative;
+
+    z-index: 3;
+
     display: inline-flex;
 
     align-items: center;
 
     gap: 18px;
+
+    padding:
+        15px
+        0;
 
     text-decoration: none;
 
@@ -1343,11 +1352,13 @@ body::before {
 
     text-transform: uppercase;
 
-    padding: 15px 0;
+    color: #eee9e1;
 
     transition:
         gap 0.5s ease,
         color 0.4s ease;
+
+}
 }
 
 .mavis-enter::after {
