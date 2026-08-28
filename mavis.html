@@ -1814,7 +1814,30 @@
             }
 
         }
+/* =====================================================
+   ACCESSIBILITY — REDUCED MOTION
+===================================================== */
 
+@media (prefers-reduced-motion: reduce) {
+
+    .opening-image {
+        animation: none;
+        transform: scale(1.03);
+    }
+
+    .opening-content,
+    .opening-label,
+    .opening-content h1,
+    .opening-subtitle,
+    .opening-line,
+    .opening-scroll {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
+}
     </style>
 
 
