@@ -1525,11 +1525,34 @@ body::before {
         );
 }
 .library-card p {
-    margin-top: 20px;
+    margin-top: 24px;
 
-    font-size: 0.78rem;
+    font-family:
+        'Cormorant Garamond',
+        serif;
 
-    opacity: 0.55;
+    font-size:
+        clamp(
+            1rem,
+            1.5vw,
+            1.25rem
+        );
+
+    font-style: italic;
+
+    letter-spacing: 1px;
+
+    opacity: 0.58;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.6s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
 }
 
 .library-card.future {
