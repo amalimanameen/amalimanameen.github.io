@@ -1943,16 +1943,31 @@ body::before {
 }
 
 .inner-circle p {
-    max-width: 560px;
+    max-width: 580px;
 
     margin:
-        35px
+        42px
         auto
-        35px;
+        42px;
 
-    font-size: 0.8rem;
+    font-family:
+        'DM Sans',
+        sans-serif;
 
-    opacity: 0.5;
+    font-size:
+        clamp(
+            0.78rem,
+            1vw,
+            0.88rem
+        );
+
+    line-height: 1.9;
+
+    letter-spacing: 0.1px;
+
+    color: #d2cbc2;
+
+    opacity: 0.68;
 }
 
 .email-link {
