@@ -1496,19 +1496,34 @@ body::before {
 }
 
 .library-card h3 {
-    margin-top: 80px;
+    margin-top: 95px;
 
     font-family:
         'Cormorant Garamond',
         serif;
 
-    font-size: 3rem;
+    font-size:
+        clamp(
+            3rem,
+            5vw,
+            5.5rem
+        );
 
-    font-weight: 500;
+    font-weight: 400;
 
-    line-height: 0.9;
+    line-height: 0.82;
+
+    letter-spacing: -0.055em;
+
+    transition:
+        transform 0.6s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
 }
-
 .library-card p {
     margin-top: 20px;
 
