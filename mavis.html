@@ -249,12 +249,20 @@
     background-position: center center;
 
     transform:
-        scale(1.03);
+        scale(1.035);
 
     animation:
-        opening-image 18s
-        ease-out
+        opening-image 24s
+        cubic-bezier(
+            0.22,
+            0.61,
+            0.36,
+            1
+        )
         forwards;
+
+    will-change:
+        transform;
 }
 
 
