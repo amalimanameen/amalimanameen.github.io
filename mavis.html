@@ -1949,6 +1949,45 @@
     }
 
 }
+        /* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .opening-image,
+    .opening-content,
+    .opening-scroll,
+    .opening-label,
+    .opening-content h1,
+    .opening-subtitle,
+    .opening-line {
+
+        animation:
+            none !important;
+    }
+
+
+    .opening-image {
+
+        transform:
+            scale(1.03);
+    }
+
+
+    .book-cover-display img {
+
+        transition:
+            none !important;
+    }
+
+
+    .book-cover-display img:hover {
+
+        transform:
+            none;
+    }
+}
     </style>
 
 
