@@ -1450,6 +1450,9 @@ body::before {
 }
 
 .library-card {
+
+    position: relative;
+
     min-height: 350px;
 
     border-top:
@@ -1461,12 +1464,22 @@ body::before {
             0.22
         );
 
-    padding-top: 25px;
+    padding:
+        25px
+        0
+        30px;
 
     text-decoration: none;
 
     transition:
-        transform 0.5s ease;
+        transform 0.6s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
 }
 
 .library-card:hover {
