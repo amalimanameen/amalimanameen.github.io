@@ -2078,9 +2078,20 @@ footer {
         'Cormorant Garamond',
         serif;
 
-    font-size: 1.1rem;
+    font-size:
+        clamp(
+            1.15rem,
+            1.8vw,
+            1.45rem
+        );
 
-    letter-spacing: 2px;
+    font-weight: 400;
+
+    letter-spacing: 2.5px;
+
+    color: #eee9e1;
+
+    white-space: nowrap;
 }
 
 .footer-links {
