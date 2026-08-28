@@ -326,17 +326,8 @@
     text-align: center;
 
     margin-top: 30px;
-
-    animation:
-        opening-content
-        2s
-        ease
-        0.4s
-        both;
 }
-
-
-.opening-label {
+        .opening-label {
     margin-bottom: 28px;
 
     color: #d8c39a;
@@ -346,6 +337,15 @@
     letter-spacing: 5px;
 
     text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        title-reveal
+        1.4s
+        ease
+        0.8s
+        forwards;
 }
 
 
@@ -379,6 +379,20 @@
             0,
             0.65
         );
+
+    opacity: 0;
+
+    animation:
+        title-reveal
+        1.8s
+        cubic-bezier(
+            0.22,
+            0.61,
+            0.36,
+            1
+        )
+        1.05s
+        forwards;
 }
 
 
@@ -401,6 +415,15 @@
     color: #e1d3bb;
 
     letter-spacing: 0.5px;
+
+    opacity: 0;
+
+    animation:
+        title-reveal
+        1.5s
+        ease
+        1.55s
+        forwards;
 }
 
 
@@ -434,8 +457,30 @@
     line-height: 1.7;
 
     font-style: italic;
+
+    opacity: 0;
+
+    animation:
+        title-reveal
+        1.5s
+        ease
+        2s
+        forwards;
 }
 
+@keyframes title-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
 
 /* -----------------------------------------------------
    SCROLL INDICATOR
