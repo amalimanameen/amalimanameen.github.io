@@ -1677,34 +1677,64 @@ body::before {
 .author-link {
     display: inline-flex;
 
-    gap: 18px;
-
     align-items: center;
+
+    gap: 16px;
 
     text-decoration: none;
 
-    font-size: 0.58rem;
+    font-size: 0.56rem;
 
     letter-spacing: 4px;
 
     text-transform: uppercase;
 
+    color: #d8c39a;
+
+    padding-bottom: 8px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            216,
+            195,
+            154,
+            0.45
+        );
+
     transition:
-        gap 0.5s ease,
-        color 0.4s ease;
+        gap 0.6s ease,
+        color 0.4s ease,
+        border-color 0.4s ease;
 }
 
 .author-link::after {
     content: "→";
+
+    font-size: 0.9rem;
+
+    transition:
+        transform 0.6s ease;
 }
 
 .author-link:hover {
-    gap: 28px;
+    gap: 23px;
 
-    color: #c8b28a;
+    color: #eee9e1;
+
+    border-color:
+        rgba(
+            238,
+            233,
+            225,
+            0.75
+        );
 }
 
-
+.author-link:hover::after {
+    transform:
+        translateX(4px);
+}
 /* =====================================================
    FROM THE DESK
 ===================================================== */
