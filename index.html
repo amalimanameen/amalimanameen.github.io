@@ -1873,13 +1873,29 @@ body::before {
 }
 
 .desk-item p {
-    margin-top: 12px;
+    max-width: 300px;
 
-    font-size: 0.76rem;
+    margin-top: 18px;
 
-    opacity: 0.45;
+    font-family:
+        'DM Sans',
+        sans-serif;
+
+    font-size:
+        clamp(
+            0.75rem,
+            1vw,
+            0.84rem
+        );
+
+    line-height: 1.8;
+
+    letter-spacing: 0.1px;
+
+    color: #d2cbc2;
+
+    opacity: 0.62;
 }
-
 
 /* =====================================================
    INNER CIRCLE
