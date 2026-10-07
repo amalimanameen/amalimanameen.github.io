@@ -1937,6 +1937,60 @@
 @media(max-width:800px){.mavis-memory img{object-position:center;height:100%;width:100%}}
 @media(prefers-reduced-motion:reduce){.mavis-memory{display:none!important}}
 
+/* =====================================================
+   MAVIS — FRACTURED MEMORY AURA
+===================================================== */
+:root{--mavis-wine:#3a080f;--mavis-burgundy:#1c0509;--mavis-ivory:#ead9c8;--mavis-rose:#9a5c5b}
+body{
+  background:
+    radial-gradient(ellipse at 12% 18%,rgba(82,10,21,.16),transparent 34%),
+    radial-gradient(ellipse at 88% 52%,rgba(64,7,16,.12),transparent 30%),
+    #070506;
+  color:#e8ddd3;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:screen;
+}
+nav{background:rgba(7,5,6,.84);border-bottom-color:rgba(126,45,55,.16)}
+.section-label,.opening-label,.book-number,.character-role,.series-card span{color:#b77772!important}
+.book-reveal,.characters,.author-note,.read-mavis{
+  position:relative;
+  background:
+    radial-gradient(ellipse at 5% 45%,rgba(84,8,20,.14),transparent 34%),
+    linear-gradient(180deg,#080506 0%,#0d0608 48%,#070506 100%)!important;
+}
+.story,.feel,.series{
+  position:relative;
+  background:
+    radial-gradient(ellipse at 92% 35%,rgba(73,8,18,.13),transparent 32%),
+    #070506!important;
+}
+.book-reveal::before,.characters::before,.author-note::before,.read-mavis::before,
+.story::before,.feel::before,.series::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.24;
+  background:
+    linear-gradient(105deg,transparent 0 13%,rgba(105,40,45,.08) 13.1%,transparent 13.5% 73%,rgba(120,56,56,.06) 73.1%,transparent 73.5%),
+    radial-gradient(circle at 8% 92%,rgba(107,14,28,.16),transparent 17%);
+}
+.book-reveal-inner,.story-inner,.characters-inner,.feel-inner,.author-note-inner,.series-inner,.read-mavis>*{position:relative;z-index:1}
+.book-cover-display img{
+  box-shadow:0 35px 90px rgba(0,0,0,.72),0 0 65px rgba(89,12,24,.18)!important;
+  border:1px solid rgba(190,124,112,.12);
+  filter:saturate(.86) contrast(1.04);
+}
+.book-reveal-text h2,.story h2,.characters-header h2,.feel h2,.author-note h2,.series h2,.read-mavis h2{color:#eadfd4!important;text-shadow:0 8px 36px rgba(0,0,0,.52)}
+.character,.feel-item,.series-card{
+  border-color:rgba(146,72,72,.18)!important;
+  background:linear-gradient(145deg,rgba(41,10,15,.20),rgba(8,6,7,.10))!important;
+}
+.character-name,.feel-item h3,.series-card h3{color:#dfc9bc!important}
+.final-line{color:#d7b2a5!important}
+.amazon-link{border-color:rgba(176,101,92,.38)!important}
+.amazon-link:hover{background:rgba(78,15,24,.32)!important;border-color:#a96d66!important}
+footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!important}
+
 </style>
 
 
@@ -2076,7 +2130,7 @@
         <div class="book-cover-display">
 
             <img
-                src="mavis-cover.jpg"
+                src="images/Mavis_Dark_Cover.png"
                 alt="Mavis: A Heart's Lament book cover by Amal Iman Ameen, writing as Esper Ayla"
                 loading="lazy">
 
