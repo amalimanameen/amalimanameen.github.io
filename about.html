@@ -105,6 +105,102 @@
 }
 @media(prefers-reduced-motion:reduce){.creator-word{animation:none;opacity:.35}.reveal-soft{opacity:1;transform:none;filter:none;transition:none}}
 
+
+/* =====================================================
+   ABOUT — CINEMATIC DEPTH PASS
+===================================================== */
+body{background:#070607}
+.hero{
+ background:
+ radial-gradient(circle at 50% 42%,rgba(130,42,63,.22),transparent 28%),
+ radial-gradient(ellipse at 16% 72%,rgba(87,22,39,.13),transparent 35%),
+ linear-gradient(180deg,#090809 0%,#0b0709 65%,#080708 100%)!important;
+}
+.hero::before{
+ content:"";position:absolute;inset:-15%;z-index:0;pointer-events:none;
+ background:conic-gradient(from 205deg at 50% 50%,transparent 0 20%,rgba(216,195,154,.035) 26%,transparent 34% 67%,rgba(109,38,56,.08) 73%,transparent 82%);
+ animation:authorLight 18s ease-in-out infinite alternate;
+}
+@keyframes authorLight{from{transform:translate3d(-2%,0,0) rotate(-2deg)}to{transform:translate3d(2%,-1%,0) rotate(3deg)}}
+.hero h1{text-shadow:0 18px 60px rgba(0,0,0,.8),0 0 75px rgba(128,43,61,.10)}
+.hero .label{color:#e1c99e}.pen{color:#e0bd9c}
+
+/* Portrait becomes a cinematic editorial frame */
+.author-portrait{margin-bottom:155px!important;padding-top:30px}
+.author-portrait-frame{
+ width:min(570px,80vw)!important;
+ border:1px solid rgba(216,195,154,.11);
+ box-shadow:0 45px 130px rgba(0,0,0,.78),0 0 120px rgba(115,31,51,.18)!important;
+}
+.author-portrait-frame img{filter:saturate(.90) brightness(.88) contrast(1.07)!important;transform:scale(1.015)}
+.author-portrait-frame::after{
+ background:
+ linear-gradient(180deg,rgba(9,8,9,.03) 40%,rgba(9,8,9,.12) 64%,rgba(9,8,9,.78) 100%),
+ linear-gradient(90deg,rgba(9,8,9,.45),transparent 18%,transparent 82%,rgba(9,8,9,.45))!important;
+}
+.author-portrait::after{
+ content:"AUTHOR · NOVEL ARTIST";position:absolute;z-index:4;right:calc(50% - 350px);top:18%;
+ writing-mode:vertical-rl;font-size:.46rem;letter-spacing:5px;color:rgba(216,195,154,.65);
+}
+.author-portrait-caption{color:#c8b9ad!important;opacity:.8!important}
+
+/* Chapters no longer sit on one flat black */
+.chapter{background:
+ radial-gradient(ellipse at 84% 40%,rgba(88,21,38,.10),transparent 34%),
+ linear-gradient(180deg,#080708,#0b0809 52%,#080708)}
+.chapter:nth-of-type(even){background:
+ radial-gradient(ellipse at 12% 54%,rgba(216,195,154,.045),transparent 31%),
+ linear-gradient(180deg,#080708,#0a0809 55%,#070607)}
+.chapter-no{color:#c8a977!important}
+.chapter h2{color:#f1e9df;text-shadow:0 10px 45px rgba(0,0,0,.55)}
+.prose{color:#d8d0c8!important}
+.prose p:first-child::first-letter{
+ font-family:'Cormorant Garamond',serif;font-size:3.8rem;float:left;line-height:.72;
+ margin:.12em .12em 0 0;color:#d8c39a;
+}
+
+/* Quote = a shaft of light between chapters */
+.quote{position:relative;overflow:hidden;isolation:isolate;background:
+ radial-gradient(ellipse at 50% 50%,rgba(119,32,52,.22),transparent 48%),#090708!important}
+.quote::before{
+ content:"";position:absolute;left:50%;top:-45%;width:24vw;height:190%;min-width:170px;
+ transform:translateX(-50%) rotate(8deg);background:linear-gradient(90deg,transparent,rgba(226,205,171,.055),transparent);
+ filter:blur(14px);pointer-events:none;
+}
+.quote blockquote{position:relative;z-index:2;text-shadow:0 14px 55px rgba(0,0,0,.72)}
+
+/* Author Record gains glass/depth without changing its content */
+.identity{position:relative;background:
+ radial-gradient(circle at 20% 20%,rgba(100,25,43,.12),transparent 32%),#080708}
+.identity-item{background:rgba(16,12,14,.48);backdrop-filter:blur(7px);transition:background .35s,transform .35s}
+.identity-item:hover{background:rgba(46,18,26,.42);transform:translateY(-3px)}
+
+/* Stronger split into the two authored universes */
+.worlds{
+ background:
+ radial-gradient(ellipse at 12% 55%,rgba(120,22,43,.28),transparent 39%),
+ radial-gradient(ellipse at 88% 50%,rgba(43,79,105,.25),transparent 39%),
+ linear-gradient(90deg,#10070a 0%,#090809 48%,#070a0d 100%)!important;
+}
+.worlds::before,.worlds::after{opacity:.78!important;filter:blur(5px)}
+.world-links{box-shadow:0 35px 100px rgba(0,0,0,.48)}
+.world-links .world:first-child{background:linear-gradient(145deg,rgba(42,11,18,.82),#090809 75%)}
+.world-links .world:last-child{background:linear-gradient(215deg,rgba(17,32,43,.88),#090809 75%)}
+.world-links .world h3{transition:transform .45s,color .45s}
+.world-links .world:hover h3{transform:translateY(-4px);color:#f4e8dc}
+
+/* Final signature has its own pool of light */
+.signature{background:
+ radial-gradient(ellipse at 50% 48%,rgba(109,38,56,.16),transparent 42%),
+ linear-gradient(#080708,#050405)}
+.signature p{text-shadow:0 14px 55px rgba(0,0,0,.75)}
+@media(max-width:760px){
+ .author-portrait-frame{width:min(500px,88vw)!important}
+ .author-portrait::after{right:1vw;top:14%;font-size:.4rem;letter-spacing:3px}
+ .worlds{background:radial-gradient(ellipse at 50% 30%,rgba(120,22,43,.20),transparent 35%),radial-gradient(ellipse at 50% 78%,rgba(43,79,105,.20),transparent 36%),#090809!important}
+}
+@media(prefers-reduced-motion:reduce){.hero::before{animation:none}}
+
 </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">\n</head>
 <body>
@@ -129,6 +225,26 @@
    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-seen');io.unobserve(e.target);}});
  },{threshold:.14,rootMargin:'0px 0px -7% 0px'});
  targets.forEach(el=>io.observe(el));
+})();
+</script>
+<script>
+(() => {
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ const portrait=document.querySelector('.author-portrait-frame');
+ const ghost=document.querySelector('.ghost');
+ let ticking=false;
+ const render=()=>{
+   const y=scrollY;
+   if(ghost) ghost.style.transform='translate3d(0,'+(y*.055).toFixed(1)+'px,0)';
+   if(portrait){
+     const r=portrait.getBoundingClientRect(), vh=innerHeight;
+     const p=Math.max(-1,Math.min(1,(vh/2-(r.top+r.height/2))/vh));
+     portrait.style.transform='translate3d(0,'+(p*-14).toFixed(1)+'px,0)';
+   }
+   ticking=false;
+ };
+ addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(render)}},{passive:true});
+ render();
 })();
 </script>
 </body></html>
