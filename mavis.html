@@ -1985,6 +1985,50 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
 .story .final-line{color:#ddb4aa!important}
 .story h2{color:#f0e2d7!important}
 
+/* MAVIS MOODBOARD WORLD */
+.opening-image{background-image:none!important;background:
+ radial-gradient(circle at 50% 42%,rgba(92,17,29,.28),transparent 28%),
+ radial-gradient(ellipse at center,rgba(35,7,12,.54),#050304 68%)!important}
+.mavis-hands{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.mavis-hand{position:absolute;top:31%;width:46%;height:27%;opacity:.88;filter:drop-shadow(0 22px 35px rgba(0,0,0,.62))}
+.mavis-hand::before{content:"";position:absolute;top:35%;width:76%;height:35%;border-radius:50% 18% 22% 50%;background:linear-gradient(180deg,#a86e64,#68403d 58%,#301a1d);box-shadow:inset 0 7px 14px rgba(235,183,163,.14)}
+.mavis-hand::after{content:"";position:absolute;top:39%;width:38%;height:12%;border-radius:60% 100% 80% 50%;background:linear-gradient(180deg,#aa7167,#5b3736);transform-origin:100% 50%}
+.mavis-hand.left{left:-8%;transform:rotate(3deg)}
+.mavis-hand.left::before{left:0}.mavis-hand.left::after{right:1%;transform:rotate(-7deg)}
+.mavis-hand.right{right:-8%;transform:scaleX(-1) rotate(3deg)}
+.mavis-hand.right::before{left:0}.mavis-hand.right::after{right:1%;transform:rotate(-7deg)}
+.mavis-opening .opening-content{z-index:3}
+.mavis-opening .opening-overlay{z-index:2}
+.mavis-opening::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:
+ radial-gradient(circle at 50% 44%,transparent 0 22%,rgba(4,2,3,.18) 47%,rgba(4,2,3,.62) 100%),
+ linear-gradient(180deg,transparent 55%,#070506 100%)}
+
+/* tactile memory fragments between the clean editorial sections */
+.memory-divider{height:220px;position:relative;overflow:hidden;background:#070506;border-top:1px solid rgba(132,60,65,.08);border-bottom:1px solid rgba(132,60,65,.08)}
+.memory-divider::before{content:"";position:absolute;inset:0;background:
+ radial-gradient(ellipse at 22% 45%,rgba(88,13,25,.22),transparent 22%),
+ radial-gradient(ellipse at 78% 55%,rgba(88,13,25,.16),transparent 20%)}
+.memory-photo{position:absolute;width:145px;height:105px;border:7px solid rgba(208,183,164,.13);background:linear-gradient(135deg,rgba(205,175,153,.06),rgba(15,8,9,.8));box-shadow:0 18px 45px #000;opacity:.58}
+.memory-photo.one{left:10%;top:55px;transform:rotate(-8deg)}
+.memory-photo.two{right:12%;top:40px;transform:rotate(7deg)}
+.memory-letter{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-2deg);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:rgba(210,162,151,.45);letter-spacing:.04em;white-space:nowrap}
+.memory-petal{position:absolute;width:16px;height:28px;border-radius:80% 15% 80% 20%;background:#4d0c17;opacity:.7;transform:rotate(35deg)}
+.memory-petal.p1{left:35%;top:35%}.memory-petal.p2{left:62%;top:62%;transform:rotate(82deg);opacity:.45}.memory-petal.p3{left:72%;top:27%;transform:rotate(120deg);opacity:.35}
+
+/* ending: same visual language, but the reach has failed */
+.mavis-ending{height:min(68vw,720px);min-height:430px;position:relative;overflow:hidden;background:
+ radial-gradient(circle at 50% 46%,rgba(75,10,22,.17),transparent 28%),#050304;border-top:1px solid rgba(132,60,65,.10)}
+.mavis-ending .mavis-hand{top:36%;transition:transform .15s linear}
+.mavis-ending .mavis-hand.left{left:-23%;transform:rotate(8deg)}
+.mavis-ending .mavis-hand.right{right:-23%;transform:scaleX(-1) rotate(8deg)}
+.ending-copy{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);z-index:3;text-align:center;font-family:'Cormorant Garamond',serif;color:rgba(218,187,174,.68);font-style:italic;font-size:clamp(1.15rem,2.2vw,1.75rem);letter-spacing:.08em;width:70%}
+.ending-copy span{display:block;margin-top:12px;font-family:'DM Sans',sans-serif;font-style:normal;text-transform:uppercase;font-size:.48rem;letter-spacing:4px;color:#8d5657}
+@media(max-width:800px){
+ .mavis-hand{width:58%;top:34%;height:22%}.mavis-hand.left{left:-17%}.mavis-hand.right{right:-17%}
+ .memory-divider{height:180px}.memory-photo{width:105px;height:78px}.memory-letter{font-size:.9rem}
+ .mavis-ending{height:520px}.mavis-ending .mavis-hand.left{left:-31%}.mavis-ending .mavis-hand.right{right:-31%}
+}
+
 </style>
 
 
@@ -2074,7 +2118,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
     ===================================================== -->
 <header class="mavis-opening">
 
-    <div class="opening-image"></div>
+    <div class="opening-image"></div>\n    <div class="mavis-hands" aria-hidden="true"><div class="mavis-hand left"></div><div class="mavis-hand right"></div></div>
 
     <div class="opening-overlay"></div>
 
@@ -2557,6 +2601,9 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
     </footer>
 
 
+<script>
+(()=>{const end=document.getElementById('mavisEnding');if(!end)return;const left=end.querySelector('.left'),right=end.querySelector('.right');const move=()=>{const r=end.getBoundingClientRect(),vh=innerHeight;const p=Math.max(0,Math.min(1,(vh-r.top)/(vh+r.height)));const d=p*10;left.style.transform='translateX(-'+d+'vw) rotate(8deg)';right.style.transform='scaleX(-1) translateX(-'+d+'vw) rotate(8deg)';};addEventListener('scroll',move,{passive:true});move();})();
+</script>
 </body>
 
 </html>
