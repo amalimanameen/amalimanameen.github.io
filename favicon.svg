@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs><radialGradient id="bg" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#65101d"/><stop offset=".7" stop-color="#32050c"/><stop offset="1" stop-color="#170205"/></radialGradient></defs>
+<rect width="512" height="512" rx="96" fill="url(#bg)"/>
+<circle cx="256" cy="256" r="224" fill="none" stroke="#ead8bb" stroke-width="7"/>
+<text x="256" y="330" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="255" font-weight="500" fill="#f0dfc3" letter-spacing="-48">EA</text>
+<path d="M379 123a50 50 0 1 0 38 79 57 57 0 1 1-38-79Z" fill="#f0dfc3"/>
+<path d="M405 235l5 12 12 5-12 5-5 12-5-12-12-5 12-5Z" fill="#f0dfc3"/>
+</svg>
