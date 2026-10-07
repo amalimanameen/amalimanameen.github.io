@@ -2325,6 +2325,30 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
  .mavis-opening .hero-hand-piece>img{width:205vw!important}
 }
 
+
+/* OPENING HAND TIP FIX — crop source at a fixed seam, then move the crop as one piece */
+.mavis-opening .hero-hand-piece{overflow:hidden!important}
+.mavis-opening .hero-hand-left{left:0!important;width:50%!important}
+.mavis-opening .hero-hand-right{right:0!important;width:50%!important}
+.mavis-opening .hero-hand-piece>img{
+ top:50%!important;width:150vw!important;max-width:none!important;
+ clip-path:none!important;-webkit-clip-path:none!important;
+}
+.mavis-opening .hero-hand-left>img{
+ left:0!important;
+ transform:translate(-25%,-50%) scale(1.08)!important;
+}
+.mavis-opening .hero-hand-right>img{
+ right:0!important;left:auto!important;
+ transform:translate(25%,-50%) scale(1.08)!important;
+}
+.mavis-opening .hero-hand-left::after,.mavis-opening .hero-hand-right::after{pointer-events:none}
+@media(max-width:800px){
+ .mavis-opening .hero-hand-piece>img{width:205vw!important}
+ .mavis-opening .hero-hand-left>img{transform:translate(-25%,-50%) scale(1.04)!important}
+ .mavis-opening .hero-hand-right>img{transform:translate(25%,-50%) scale(1.04)!important}
+}
+
 </style>
 
 
