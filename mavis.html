@@ -1924,7 +1924,20 @@
             none;
     }
 }
-    </style>
+    
+/* MAVIS MEMORY INTRUSION */
+.mavis-memory{position:fixed;inset:0;z-index:1600;pointer-events:none;display:flex;align-items:center;justify-content:center;background:#070506;opacity:0;visibility:hidden}
+.mavis-memory img{width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.025);filter:saturate(.72) contrast(1.05)}
+.mavis-memory::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 28%,rgba(5,3,4,.48) 100%);opacity:0}
+.mavis-memory.remember{visibility:visible;animation:mavisMemoryVeil 2.35s ease both}
+.mavis-memory.remember img{animation:mavisMemoryImage 2.35s cubic-bezier(.22,.61,.36,1) both}
+.mavis-memory.remember::after{animation:mavisMemoryVeil 2.35s ease both}
+@keyframes mavisMemoryVeil{0%{opacity:0}20%{opacity:.9}72%{opacity:.9}100%{opacity:0}}
+@keyframes mavisMemoryImage{0%{opacity:0;transform:scale(1.04);filter:blur(5px) saturate(.6)}24%{opacity:.92;transform:scale(1.02);filter:blur(0) saturate(.72)}66%{opacity:.86;transform:scale(1.008);filter:blur(.4px) saturate(.62)}100%{opacity:0;transform:scale(1);filter:blur(5px) saturate(.45)}}
+@media(max-width:800px){.mavis-memory img{object-position:center;height:100%;width:100%}}
+@media(prefers-reduced-motion:reduce){.mavis-memory{display:none!important}}
+
+</style>
 
 
     <!-- =====================================================
@@ -1968,6 +1981,7 @@
 
 
 <body>
+<div class="mavis-memory" id="mavisMemory" aria-hidden="true"><img src="images/mavis-memory.jpg" alt=""></div>
 
 
     <!-- =====================================================
@@ -2495,6 +2509,9 @@
     </footer>
 
 
+<script>
+(()=>{const memory=document.getElementById('mavisMemory');const trigger=document.querySelector('.story .final-line');if(!memory||!trigger)return;let played=false;const observer=new IntersectionObserver(entries=>{if(played||!entries.some(e=>e.isIntersecting))return;played=true;observer.disconnect();setTimeout(()=>memory.classList.add('remember'),650);setTimeout(()=>memory.classList.remove('remember'),3200);},{threshold:.55});observer.observe(trigger);})();
+</script>
 </body>
 
 </html>
