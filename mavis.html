@@ -2349,6 +2349,33 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
  .mavis-opening .hero-hand-right>img{transform:translate(25%,-50%) scale(1.04)!important}
 }
 
+
+/* ENDING HAND TIP FIX — intact halves separate as complete pieces */
+#mavisSeparation .separation-hands{position:absolute!important;inset:0!important;overflow:hidden!important}
+#mavisSeparation .ending-hand-piece{
+ display:block!important;visibility:visible!important;position:absolute!important;
+ top:0!important;bottom:0!important;width:50%!important;overflow:hidden!important;
+ clip-path:none!important;-webkit-clip-path:none!important;
+}
+#mavisSeparation .ending-hand-left{left:0!important;right:auto!important}
+#mavisSeparation .ending-hand-right{right:0!important;left:auto!important}
+#mavisSeparation .ending-hand-piece>img{
+ display:block!important;position:absolute!important;top:50%!important;
+ width:150vw!important;max-width:none!important;
+ clip-path:none!important;-webkit-clip-path:none!important;
+}
+#mavisSeparation .ending-hand-left>img{
+ left:0!important;transform:translate(-25%,-50%) scale(1.08)!important;
+}
+#mavisSeparation .ending-hand-right>img{
+ right:0!important;left:auto!important;transform:translate(25%,-50%) scale(1.08)!important;
+}
+@media(max-width:800px){
+ #mavisSeparation .ending-hand-piece>img{width:205vw!important}
+ #mavisSeparation .ending-hand-left>img{transform:translate(-25%,-50%) scale(1.04)!important}
+ #mavisSeparation .ending-hand-right>img{transform:translate(25%,-50%) scale(1.04)!important}
+}
+
 </style>
 
 
