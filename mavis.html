@@ -1979,6 +1979,97 @@ nav{background:rgba(7,5,6,.84);border-bottom-color:rgba(126,45,55,.16)}
 .amazon-link:hover{background:rgba(78,15,24,.32)!important;border-color:#a96d66!important}
 footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!important}
 
+/* =====================================================
+   MAVIS — IMMERSIVE WORLD / WOUNDED MEMORY
+   Permanent atmosphere: no glitch, no jumpscare.
+===================================================== */
+body{position:relative;background:#050304!important}
+body::after{
+ content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;
+ background:
+  radial-gradient(ellipse at center,transparent 44%,rgba(0,0,0,.42) 100%),
+  linear-gradient(90deg,rgba(38,3,10,.10),transparent 24%,transparent 76%,rgba(38,3,10,.10));
+ mix-blend-mode:multiply;
+}
+.mavis-opening{background:#050304!important}
+.opening-image{filter:saturate(.58) brightness(.62) sepia(.08)}
+.opening-overlay{background:
+ linear-gradient(180deg,rgba(4,2,3,.32),rgba(18,3,7,.28) 42%,rgba(5,3,4,.88) 88%,#050304 100%)!important}
+.opening-content h1{color:#ead8cb!important;text-shadow:0 12px 55px #000,0 0 70px rgba(91,13,27,.18)!important}
+.opening-subtitle{color:#bd8d85!important}
+.opening-line{color:rgba(226,207,195,.70)!important}
+
+/* sections feel like pages of the same damaged memory */
+.book-reveal,.story,.characters,.feel,.author-note,.series,.read-mavis{
+ overflow:hidden;isolation:isolate;
+ border-top:1px solid rgba(129,54,60,.07);
+}
+.book-reveal::after,.story::after,.characters::after,.feel::after,.author-note::after,.series::after,.read-mavis::after{
+ content:"";position:absolute;inset:-8%;z-index:0;pointer-events:none;opacity:.52;
+ background:
+  radial-gradient(ellipse at 7% 20%,rgba(99,16,29,.13),transparent 24%),
+  radial-gradient(ellipse at 92% 76%,rgba(74,10,21,.10),transparent 25%),
+  linear-gradient(116deg,transparent 0 18%,rgba(179,111,103,.025) 18.2%,transparent 18.6% 68%,rgba(179,111,103,.018) 68.2%,transparent 68.6%);
+}
+
+/* ghosted handwritten-memory fragments — atmospheric, never readable copy */
+.story-inner::before,.author-note-inner::before,.feel-inner::before{
+ content:"I remember   ·   almost   ·   stay   ·   don't leave";
+ position:absolute;z-index:-1;pointer-events:none;
+ font-family:'Cormorant Garamond',serif;font-style:italic;
+ font-size:clamp(2.8rem,7vw,7rem);line-height:1.25;letter-spacing:.04em;
+ color:rgba(151,76,76,.045);white-space:nowrap;
+ transform:rotate(-7deg);filter:blur(.25px);
+}
+.story-inner::before{top:18%;left:-12%}
+.feel-inner::before{top:9%;right:-20%;transform:rotate(5deg)}
+.author-note-inner::before{bottom:4%;left:-9%;transform:rotate(-4deg)}
+
+/* the new artwork belongs to the world rather than sitting like a product tile */
+.book-cover-display{position:relative}
+.book-cover-display::before{
+ content:"";position:absolute;inset:-18%;z-index:-1;
+ background:radial-gradient(circle,rgba(104,20,31,.25),transparent 60%);
+ filter:blur(28px);
+}
+.book-cover-display img{
+ border:0!important;
+ box-shadow:0 45px 120px rgba(0,0,0,.88),0 0 85px rgba(91,12,26,.22)!important;
+ filter:saturate(.72) brightness(.88) contrast(1.08)!important;
+}
+.book-cover-display::after{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ box-shadow:inset 0 0 50px rgba(4,2,3,.48);
+}
+
+/* restrained dried-rose / photo-edge silhouettes made from gradients */
+.characters::before{
+ background:
+  radial-gradient(ellipse at 2% 82%,rgba(90,11,24,.22),transparent 15%),
+  radial-gradient(ellipse at 98% 18%,rgba(100,18,30,.14),transparent 18%),
+  linear-gradient(103deg,transparent 0 8%,rgba(199,145,129,.025) 8.1%,transparent 8.5%)!important;
+}
+.author-note::before{
+ background:
+  linear-gradient(102deg,transparent 0 70%,rgba(189,130,119,.035) 70.2%,transparent 70.6%),
+  radial-gradient(ellipse at 15% 80%,rgba(95,13,25,.19),transparent 22%)!important;
+}
+.character,.feel-item,.series-card{
+ backdrop-filter:blur(2px);
+ box-shadow:0 24px 70px rgba(0,0,0,.14);
+}
+.story p,.character p,.feel-item p,.author-note p,.read-mavis p{color:rgba(224,210,200,.72)!important}
+.final-line{
+ font-family:'Cormorant Garamond',serif!important;
+ font-size:clamp(1.35rem,2.2vw,1.8rem)!important;
+ color:#d0a39a!important;
+ text-shadow:0 0 32px rgba(113,28,38,.15);
+}
+@media(max-width:800px){
+ body::after{background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.34) 100%)}
+ .story-inner::before,.author-note-inner::before,.feel-inner::before{font-size:3.4rem;opacity:.7}
+}
+
 </style>
 
 
