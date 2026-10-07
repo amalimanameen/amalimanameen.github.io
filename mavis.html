@@ -2030,6 +2030,86 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
 }
 
 .mavis-hands,.mavis-hand,.mavis-ending{display:none!important}
+/* =====================================================
+   MAVIS CINEMATIC MEMORY SYSTEM — REAL ASSETS
+===================================================== */
+.opening-image{background-image:none!important;background:
+ radial-gradient(circle at 50% 43%,rgba(79,13,25,.26),transparent 31%),
+ linear-gradient(180deg,#090405 0%,#130609 48%,#060405 100%)!important}
+.mavis-opening{min-height:100vh}
+.mavis-opening .opening-overlay{z-index:2;background:
+ radial-gradient(circle at 50% 43%,rgba(0,0,0,.03) 0 25%,rgba(0,0,0,.24) 64%,rgba(0,0,0,.58) 100%),
+ linear-gradient(180deg,rgba(4,2,3,.10),rgba(5,3,4,.08) 62%,#070506 100%)!important}
+.mavis-opening .opening-content{z-index:4}
+.hero-hands{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.hero-hands img{
+ position:absolute;left:50%;top:50%;width:min(1380px,112vw);max-width:none;
+ transform:translate(-50%,-50%) scale(1.12);opacity:0;
+ filter:saturate(.80) brightness(.77) contrast(1.05) drop-shadow(0 30px 45px rgba(0,0,0,.55));
+ will-change:transform,opacity;
+ animation:heroHandsArrive 3.2s cubic-bezier(.16,.84,.24,1) .35s forwards;
+}
+@keyframes heroHandsArrive{
+ 0%{opacity:0;transform:translate(-50%,-50%) scale(1.26)}
+ 28%{opacity:.45}
+ 100%{opacity:.93;transform:translate(-50%,-50%) scale(1)}
+}
+.mavis-opening .opening-content{
+ text-shadow:0 8px 35px rgba(0,0,0,.95);
+ background:radial-gradient(ellipse at center,rgba(5,2,3,.55) 0%,rgba(5,2,3,.18) 43%,transparent 70%);
+ padding:50px 25px;
+}
+
+/* atmospheric memory layer — actual PNG, never a mock webpage */
+.mavis-atmosphere{
+ position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+}
+.mavis-atmosphere img{
+ position:absolute;left:50%;top:50%;width:112%;max-width:none;
+ transform:translate(-50%,calc(-50% + var(--memory-y,0px))) scale(1.04);
+ opacity:.42;filter:saturate(.72) brightness(.58) contrast(1.08);
+ will-change:transform;
+}
+.book-reveal,.story,.characters,.feel,.author-note,.series,.read-mavis{overflow:hidden;isolation:isolate}
+.book-reveal>.mavis-atmosphere,.story>.mavis-atmosphere,.author-note>.mavis-atmosphere{z-index:0}
+.book-reveal-inner,.story-inner,.author-note-inner{position:relative;z-index:2}
+.story>.mavis-atmosphere img{opacity:.30;filter:saturate(.58) brightness(.46)}
+.book-reveal>.mavis-atmosphere img{opacity:.32}
+.author-note>.mavis-atmosphere img{opacity:.24}
+
+/* closing visual: the SAME hands, but the reader pulls them apart */
+.mavis-separation{
+ height:clamp(430px,58vw,700px);position:relative;overflow:hidden;isolation:isolate;
+ background:radial-gradient(circle at 50% 48%,rgba(79,13,25,.20),transparent 33%),#050304;
+ border-top:1px solid rgba(147,70,75,.12);
+}
+.separation-atmosphere{position:absolute;inset:0;z-index:0;pointer-events:none}
+.separation-atmosphere img{width:110%;max-width:none;height:100%;object-fit:cover;object-position:center;opacity:.27;filter:brightness(.48) saturate(.65)}
+.separation-hands{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.separation-hands img{
+ position:absolute;left:50%;top:50%;width:min(1380px,112vw);max-width:none;
+ transform:translate(calc(-50% + var(--apart-x,0px)),-50%) scale(var(--apart-scale,1));
+ opacity:.86;filter:saturate(.76) brightness(.68) contrast(1.05) drop-shadow(0 30px 45px rgba(0,0,0,.55));
+ will-change:transform;
+}
+.separation-copy{
+ position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);z-index:3;
+ width:min(560px,72vw);text-align:center;font-family:'Cormorant Garamond',serif;
+ font-size:clamp(1.2rem,2.4vw,1.8rem);font-style:italic;letter-spacing:.06em;
+ color:rgba(230,207,194,.78);text-shadow:0 4px 24px #000;
+}
+.separation-copy span{display:block;margin-top:14px;font-family:'DM Sans',sans-serif;font-size:.5rem;font-style:normal;letter-spacing:4px;text-transform:uppercase;color:#a76a68}
+@media(max-width:800px){
+ .hero-hands img,.separation-hands img{width:155vw}
+ .mavis-opening .opening-content{padding:35px 12px}
+ .mavis-atmosphere img{width:165%;opacity:.26}
+ .mavis-separation{height:520px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-hands img{animation:none;opacity:.90;transform:translate(-50%,-50%) scale(1)}
+ .mavis-atmosphere img,.separation-hands img{transform:translate(-50%,-50%) scale(1)!important}
+}
+
 </style>
 
 
@@ -2119,7 +2199,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
     ===================================================== -->
 <header class="mavis-opening">
 
-    <div class="opening-image"></div>
+    <div class="opening-image"></div>\n    <div class="hero-hands" aria-hidden="true"><img src="images/mavis-hands.png" alt=""></div>
 
     <div class="opening-overlay"></div>
 
@@ -2156,7 +2236,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
      THE BOOK
 ===================================================== -->
 
-<section class="book-reveal">
+<section class="book-reveal">\n    <div class="mavis-atmosphere" aria-hidden="true"><img src="images/mavis-atmosphere.png" alt=""></div>
 
     <div class="book-reveal-inner">
 
@@ -2215,7 +2295,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
     ===================================================== -->
 
     <section class="story"
-             id="story">
+             id="story">\n        <div class="mavis-atmosphere" aria-hidden="true"><img src="images/mavis-atmosphere.png" alt=""></div>
 
         <div class="story-inner">
 
@@ -2461,7 +2541,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
          AUTHOR NOTE
     ===================================================== -->
 
-    <section class="author-note">
+    <section class="author-note">\n        <div class="mavis-atmosphere" aria-hidden="true"><img src="images/mavis-atmosphere.png" alt=""></div>
 
         <div class="author-note-inner">
 
@@ -2603,6 +2683,49 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
 
 
 
-</body>
+<script>
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const atmosphereLayers = [...document.querySelectorAll('.mavis-atmosphere img')];
+  const ending = document.getElementById('mavisSeparation');
+  const endingHands = ending?.querySelector('.separation-hands img');
+
+  let ticking = false;
+  const clamp = (n,min,max) => Math.max(min,Math.min(max,n));
+
+  function render(){
+    const vh = window.innerHeight;
+
+    atmosphereLayers.forEach((img,i) => {
+      const section = img.closest('section');
+      if(!section) return;
+      const r = section.getBoundingClientRect();
+      const progress = clamp((vh-r.top)/(vh+r.height),0,1);
+      const travel = (progress-.5) * (i % 2 ? 34 : -34);
+      img.style.setProperty('--memory-y', travel.toFixed(1)+'px');
+    });
+
+    if(ending && endingHands){
+      const r = ending.getBoundingClientRect();
+      const p = clamp((vh-r.top)/(vh+r.height*.72),0,1);
+      // The source contains both hands. Scaling up pushes each hand outward,
+      // increasing the gap while preserving the original anatomy.
+      const scale = 1 + p*.34;
+      endingHands.style.setProperty('--apart-scale', scale.toFixed(3));
+      endingHands.style.opacity = String(.90 - p*.16);
+    }
+    ticking=false;
+  }
+
+  function requestRender(){
+    if(!ticking){ticking=true;requestAnimationFrame(render);}
+  }
+  addEventListener('scroll',requestRender,{passive:true});
+  addEventListener('resize',requestRender,{passive:true});
+  render();
+})();
+</script>
+\n</body>
 
 </html>
