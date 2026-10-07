@@ -2309,6 +2309,22 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
 .separation-copy span{display:block;margin-top:18px;font-size:.42em;font-style:italic;letter-spacing:.06em;color:#c99b92}
 @media(max-width:800px){.mavis-separation{min-height:680px}.ending-hand-piece img{width:205vw}}
 
+
+/* OPENING HANDS — authoritative visibility repair */
+.mavis-opening .hero-hands{display:block!important;visibility:visible!important;opacity:1!important;position:absolute!important;inset:0!important;z-index:5!important;overflow:hidden!important;pointer-events:none!important}
+.mavis-opening .hero-hand-piece{display:block!important;visibility:visible!important;opacity:1;position:absolute!important;top:0!important;bottom:0!important;width:58%!important;overflow:visible!important;clip-path:none!important;-webkit-mask:none!important;mask:none!important}
+.mavis-opening .hero-hand-left{left:-8%!important;right:auto!important;animation:mavisOpenLeft 3.5s cubic-bezier(.18,.82,.2,1) .2s both!important}
+.mavis-opening .hero-hand-right{right:-8%!important;left:auto!important;animation:mavisOpenRight 3.5s cubic-bezier(.18,.82,.2,1) .2s both!important}
+.mavis-opening .hero-hand-piece>img{display:block!important;visibility:visible!important;opacity:.96!important;position:absolute!important;top:50%!important;width:150vw!important;max-width:none!important;animation:none!important;filter:none!important}
+.mavis-opening .hero-hand-left>img{left:100%!important;transform:translate(-50%,-50%) scale(1.08)!important;clip-path:inset(0 50% 0 0)!important}
+.mavis-opening .hero-hand-right>img{right:100%!important;left:auto!important;transform:translate(50%,-50%) scale(1.08)!important;clip-path:inset(0 0 0 50%)!important}
+@keyframes mavisOpenLeft{from{opacity:0;transform:translateX(-42vw)}to{opacity:1;transform:translateX(0)}}
+@keyframes mavisOpenRight{from{opacity:0;transform:translateX(42vw)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:800px){
+ .mavis-opening .hero-hand-piece{width:64%!important}
+ .mavis-opening .hero-hand-piece>img{width:205vw!important}
+}
+
 </style>
 
 
