@@ -2315,6 +2315,15 @@ footer {
 
 }
 
+/* =====================================================
+   WORLDS TRANSITION
+===================================================== */
+.worlds-transition{min-height:46vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding:90px 7vw;background:linear-gradient(180deg,#0b090a 0%,#090809 48%,#0d0b0c 100%);position:relative;overflow:hidden}
+.worlds-transition::before{content:"";position:absolute;width:52vw;height:52vw;max-width:700px;max-height:700px;border-radius:50%;background:radial-gradient(circle,rgba(109,38,56,.08),transparent 68%);filter:blur(35px);pointer-events:none}
+.transition-line{width:1px;height:72px;background:linear-gradient(transparent,rgba(216,195,154,.55),transparent);position:relative;z-index:1}
+.worlds-transition p{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4.5vw,4.7rem);font-weight:300;line-height:1;margin:0;color:#eee9e1}
+.worlds-transition span{position:relative;z-index:1;font-size:.5rem;letter-spacing:4px;text-transform:uppercase;color:#d8c39a;opacity:.62}
+
 /* SYNAPSE — LIBRARY CARD
    Keep this card structurally identical to the other library cards. */
 .synapse-card{position:relative}
@@ -2514,6 +2523,13 @@ footer {
 </section>
 
 
+
+<!-- WORLDS TRANSITION -->
+<section class="worlds-transition" aria-label="Transition to the library">
+    <div class="transition-line"></div>
+    <p>One story was only the beginning.</p>
+    <span>Enter the archive of worlds</span>
+</section>
 
 <!-- =====================================================
      THE LIBRARY
