@@ -2238,6 +2238,60 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
  background:linear-gradient(90deg,#070405 0%,rgba(7,4,5,.90) 2%,rgba(10,5,7,.54) 8%,transparent 19%);
 }
 
+/* FINAL HERO COMPOSITE: fixed full-bleed layers, no transformed clipping ghosts */
+.hero-hands{overflow:hidden!important;background:transparent!important}
+.hero-hand-piece{
+ position:absolute!important;inset:0!important;overflow:hidden!important;
+ clip-path:none!important;-webkit-mask-image:none!important;mask-image:none!important;
+}
+.hero-hand-piece img{
+ position:absolute!important;top:50%!important;width:clamp(1150px,150vw,1900px)!important;
+ max-width:none!important;animation:none!important;opacity:.96!important;
+}
+.hero-hand-left{left:0!important;right:50%!important}
+.hero-hand-right{left:50%!important;right:0!important}
+.hero-hand-left img{
+ left:100%!important;
+ transform:translate(-50%,-50%) scale(1.08)!important;
+ clip-path:none!important;
+}
+.hero-hand-right img{
+ left:0!important;
+ transform:translate(-50%,-50%) scale(1.08)!important;
+ clip-path:none!important;
+}
+/* Dedicated opaque-to-transparent edge fog hides the pale lace cutout boundary. */
+.hero-hand-left::after{
+ content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+ background:
+ linear-gradient(90deg,#070405 0%,#070405 4%,rgba(7,4,5,.97) 8%,rgba(9,4,6,.84) 13%,rgba(10,5,7,.46) 21%,transparent 34%),
+ linear-gradient(180deg,rgba(7,4,5,.68),transparent 24%,transparent 72%,rgba(7,4,5,.72));
+}
+.hero-hand-right::after{
+ content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+ background:linear-gradient(270deg,rgba(7,4,5,.66),transparent 22%);
+}
+/* Animate the half-screen windows, not duplicated full images. */
+.hero-hand-left{animation:mavisWindowLeft 3.8s cubic-bezier(.18,.82,.20,1) .25s both!important}
+.hero-hand-right{animation:mavisWindowRight 3.8s cubic-bezier(.18,.82,.20,1) .25s both!important}
+@keyframes mavisWindowLeft{
+ from{opacity:0;transform:translateX(-48vw)}
+ 18%{opacity:1}
+ to{opacity:1;transform:translateX(2.2vw)}
+}
+@keyframes mavisWindowRight{
+ from{opacity:0;transform:translateX(48vw)}
+ 18%{opacity:1}
+ to{opacity:1;transform:translateX(-2.2vw)}
+}
+@media(max-width:800px){
+ .hero-hand-piece img{width:205vw!important}
+ .hero-hand-left{animation-name:mavisWindowLeftMobile!important}
+ .hero-hand-right{animation-name:mavisWindowRightMobile!important}
+ @keyframes mavisWindowLeftMobile{from{opacity:0;transform:translateX(-58vw)}to{opacity:1;transform:translateX(3vw)}}
+ @keyframes mavisWindowRightMobile{from{opacity:0;transform:translateX(58vw)}to{opacity:1;transform:translateX(-3vw)}}
+}
+
 </style>
 
 
