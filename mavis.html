@@ -2144,6 +2144,20 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
  .hero-hand-piece img,.ending-hand-piece img{animation:none!important;transform:translate(-50%,-50%)!important}
 }
 
+/* HAND VISIBILITY HOTFIX */
+.mavis-hands{
+ display:block!important;
+ position:absolute!important;
+ inset:0!important;
+ z-index:3!important;
+ pointer-events:none!important;
+ overflow:hidden!important;
+}
+.mavis-hands>.hero-hand-piece{display:block!important}
+.mavis-hands>.mavis-hand{display:none!important}
+.separation-hands{display:block!important}
+.separation-hands>.ending-hand-piece{display:block!important}
+
 </style>
 
 
