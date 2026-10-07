@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 900">
+<defs>
+ <filter id="haunt" x="-50%" y="-30%" width="200%" height="170%">
+  <feTurbulence type="fractalNoise" baseFrequency=".008 .035" numOctaves="3" seed="17" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="34" xChannelSelector="R" yChannelSelector="B" result="d"/>
+  <feGaussianBlur in="d" stdDeviation="9" result="b"/>
+  <feColorMatrix in="b" values="0 0 0 0 0.015 0 0 0 0 0.025 0 0 0 0 0.03 0 0 0 .96 0"/>
+ </filter>
+ <radialGradient id="fade"><stop offset="0" stop-color="#020608" stop-opacity=".98"/><stop offset=".72" stop-color="#020608" stop-opacity=".86"/><stop offset="1" stop-color="#020608" stop-opacity="0"/></radialGradient>
+</defs>
+<g filter="url(#haunt)">
+ <ellipse cx="265" cy="126" rx="76" ry="105" fill="#010304"/>
+ <path d="M190 155 C145 200 135 300 104 405 C78 495 45 650 28 875 L494 875 C468 704 438 526 407 400 C382 298 369 210 331 162 C304 190 219 193 190 155Z" fill="url(#fade)"/>
+ <path d="M194 95 C145 145 128 238 107 350 C145 294 163 250 190 218 C160 356 130 480 112 615 C174 474 204 351 222 211Z" fill="#010304" opacity=".86"/>
+ <path d="M333 91 C382 158 400 250 422 365 C383 298 366 253 338 220 C367 369 397 492 413 626 C355 478 324 354 305 210Z" fill="#010304" opacity=".86"/>
+</g>
+</svg>
