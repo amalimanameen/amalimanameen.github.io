@@ -2315,6 +2315,13 @@ footer {
 
 }
 
+/* SYNAPSE — ACTIVE WORLD */
+.synapse-card{position:relative;overflow:hidden;background:radial-gradient(circle at 78% 22%,rgba(202,139,48,.16),transparent 12%),radial-gradient(circle at 52% 55%,rgba(28,72,91,.22),transparent 55%),#050b0f!important;border-color:rgba(132,177,194,.22)!important}
+.synapse-card::before{content:"K-17";position:absolute;right:-.04em;bottom:-.18em;font-family:'Cormorant Garamond',serif;font-size:clamp(6rem,11vw,11rem);font-weight:300;color:rgba(190,216,225,.035);letter-spacing:-.08em;pointer-events:none}
+.synapse-card::after{content:"";position:absolute;width:7px;height:7px;right:12%;top:18%;border-radius:50%;background:#c98c37;box-shadow:0 0 14px rgba(201,140,55,.75);animation:synapsePulse 3s ease-in-out infinite}
+.synapse-card h3{position:relative;z-index:2}.synapse-card p{position:relative;z-index:2}.synapse-enter{position:absolute;left:35px;bottom:30px;font-size:.48rem;letter-spacing:3px;color:#b9cbd2;opacity:.58;transition:opacity .35s,color .35s}.synapse-card:hover .synapse-enter{opacity:1;color:#d5963e}
+@keyframes synapsePulse{50%{opacity:.25;box-shadow:0 0 3px rgba(201,140,55,.2)}}
+@media(max-width:750px){.synapse-enter{left:25px;bottom:22px}}
 </style>
 
 </head>
@@ -2346,9 +2353,11 @@ footer {
             About
         </a>
 
-        <a href="connect.html">
-            Connect
-        </a>
+        <a href="#library">Books</a>
+
+        <a href="about.html">About</a>
+
+        <a href="connect.html">Connect</a>
 
     </div>
 
@@ -2550,10 +2559,10 @@ footer {
             </a>
 
 
-            <div class="library-card future">
+            <a href="synapse-key.html" class="library-card synapse-card">
 
                 <div class="library-card-number">
-                    02 · UPCOMING
+                    02 · CURRENTLY WRITING
                 </div>
 
                 <h3>
@@ -2564,7 +2573,9 @@ footer {
                     Obsession Unbound
                 </p>
 
-            </div>
+                <span class="synapse-enter">ENTER PROJECT K-17 →</span>
+
+            </a>
 
 
             <div class="library-card future">
