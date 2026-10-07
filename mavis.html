@@ -2029,6 +2029,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
  .mavis-ending{height:520px}.mavis-ending .mavis-hand.left{left:-31%}.mavis-ending .mavis-hand.right{right:-31%}
 }
 
+.mavis-hands,.mavis-hand,.mavis-ending{display:none!important}
 </style>
 
 
@@ -2118,7 +2119,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
     ===================================================== -->
 <header class="mavis-opening">
 
-    <div class="opening-image"></div>\n    <div class="mavis-hands" aria-hidden="true"><div class="mavis-hand left"></div><div class="mavis-hand right"></div></div>
+    <div class="opening-image"></div>
 
     <div class="opening-overlay"></div>
 
@@ -2601,9 +2602,6 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
     </footer>
 
 
-<script>
-(()=>{const end=document.getElementById('mavisEnding');if(!end)return;const left=end.querySelector('.left'),right=end.querySelector('.right');const move=()=>{const r=end.getBoundingClientRect(),vh=innerHeight;const p=Math.max(0,Math.min(1,(vh-r.top)/(vh+r.height)));const d=p*10;left.style.transform='translateX(-'+d+'vw) rotate(8deg)';right.style.transform='scaleX(-1) translateX(-'+d+'vw) rotate(8deg)';};addEventListener('scroll',move,{passive:true});move();})();
-</script>
 </body>
 
 </html>
