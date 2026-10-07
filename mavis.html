@@ -2110,6 +2110,40 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
  .mavis-atmosphere img,.separation-hands img{transform:translate(-50%,-50%) scale(1)!important}
 }
 
+/* TRUE TWO-HAND MOTION — each side of the PNG is an independent layer */
+.hero-hands img{display:none!important}
+.hero-hand-piece,.ending-hand-piece{
+ position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden;
+}
+.hero-hand-piece img,.ending-hand-piece img{
+ position:absolute;left:50%;top:50%;width:min(1380px,112vw);max-width:none;
+ opacity:.94;filter:saturate(.80) brightness(.77) contrast(1.05) drop-shadow(0 30px 45px rgba(0,0,0,.55));
+ will-change:transform,opacity;
+}
+.hero-hand-left,.ending-hand-left{clip-path:inset(0 50% 0 0)}
+.hero-hand-right,.ending-hand-right{clip-path:inset(0 0 0 50%)}
+.hero-hand-left img{animation:mavisLeftReach 3.1s cubic-bezier(.16,.84,.24,1) .3s both}
+.hero-hand-right img{animation:mavisRightReach 3.1s cubic-bezier(.16,.84,.24,1) .3s both}
+@keyframes mavisLeftReach{
+ from{opacity:0;transform:translate(calc(-50% - 9vw),-50%)}
+ 30%{opacity:.92}
+ to{opacity:.94;transform:translate(calc(-50% + 1.7vw),-50%)}
+}
+@keyframes mavisRightReach{
+ from{opacity:0;transform:translate(calc(-50% + 9vw),-50%)}
+ 30%{opacity:.92}
+ to{opacity:.94;transform:translate(calc(-50% - 1.7vw),-50%)}
+}
+.ending-hand-piece img{transform:translate(-50%,-50%);opacity:.88}
+@media(max-width:800px){
+ .hero-hand-piece img,.ending-hand-piece img{width:155vw}
+ @keyframes mavisLeftReach{from{opacity:0;transform:translate(calc(-50% - 13vw),-50%)}to{opacity:.92;transform:translate(calc(-50% + 2vw),-50%)}}
+ @keyframes mavisRightReach{from{opacity:0;transform:translate(calc(-50% + 13vw),-50%)}to{opacity:.92;transform:translate(calc(-50% - 2vw),-50%)}}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-hand-piece img,.ending-hand-piece img{animation:none!important;transform:translate(-50%,-50%)!important}
+}
+
 </style>
 
 
@@ -2199,7 +2233,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
     ===================================================== -->
 <header class="mavis-opening">
 
-    <div class="opening-image"></div>\n    <div class="hero-hands" aria-hidden="true"><img src="images/mavis-hands.png" alt=""></div>
+    <div class="opening-image"></div>\n    <div class="hero-hands" aria-hidden="true"><div class="hero-hand-piece hero-hand-left"><img src="images/mavis-hands.png" alt=""></div><div class="hero-hand-piece hero-hand-right"><img src="images/mavis-hands.png" alt=""></div></div>
 
     <div class="opening-overlay"></div>
 
@@ -2689,7 +2723,7 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
 
   const atmosphereLayers = [...document.querySelectorAll('.mavis-atmosphere img')];
   const ending = document.getElementById('mavisSeparation');
-  const endingHands = ending?.querySelector('.separation-hands img');
+  const endingLeft = ending?.querySelector('.ending-hand-left img');\n  const endingRight = ending?.querySelector('.ending-hand-right img');
 
   let ticking = false;
   const clamp = (n,min,max) => Math.max(min,Math.min(max,n));
@@ -2706,14 +2740,15 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
       img.style.setProperty('--memory-y', travel.toFixed(1)+'px');
     });
 
-    if(ending && endingHands){
+    if(ending && endingLeft && endingRight){
       const r = ending.getBoundingClientRect();
       const p = clamp((vh-r.top)/(vh+r.height*.72),0,1);
-      // The source contains both hands. Scaling up pushes each hand outward,
-      // increasing the gap while preserving the original anatomy.
-      const scale = 1 + p*.34;
-      endingHands.style.setProperty('--apart-scale', scale.toFixed(3));
-      endingHands.style.opacity = String(.90 - p*.16);
+      const distance = p * 15;
+      endingLeft.style.transform = 'translate(calc(-50% - '+distance+'vw),-50%)';
+      endingRight.style.transform = 'translate(calc(-50% + '+distance+'vw),-50%)';
+      const opacity = .90 - p*.14;
+      endingLeft.style.opacity = opacity;
+      endingRight.style.opacity = opacity;
     }
     ticking=false;
   }
