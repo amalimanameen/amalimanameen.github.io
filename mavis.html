@@ -2210,6 +2210,34 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
  }
 }
 
+/* HAND COMPOSITING FIX — no mirrored duplicate, soften pale sleeve edge */
+.hero-hands .hero-hand-piece{
+ overflow:hidden!important;
+}
+.hero-hands .hero-hand-left{
+ clip-path:inset(0 50% 0 0)!important;
+ -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.12) 5%,#000 18%,#000 100%);
+ mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.12) 5%,#000 18%,#000 100%);
+}
+.hero-hands .hero-hand-right{
+ clip-path:inset(0 0 0 50%)!important;
+ -webkit-mask-image:linear-gradient(to left,transparent 0%,rgba(0,0,0,.08) 4%,#000 15%,#000 100%);
+ mask-image:linear-gradient(to left,transparent 0%,rgba(0,0,0,.08) 4%,#000 15%,#000 100%);
+}
+/* Each copy is clipped at the exact source midpoint before motion,
+   preventing the opposite hand from appearing as a doubled/reflected ghost. */
+.hero-hands .hero-hand-left img{
+ clip-path:inset(0 50% 0 0)!important;
+}
+.hero-hands .hero-hand-right img{
+ clip-path:inset(0 0 0 50%)!important;
+}
+/* Extra burgundy feather over the pale lace entry edge only */
+.hero-hands::before{
+ content:"";position:absolute;inset:0;z-index:4;pointer-events:none;
+ background:linear-gradient(90deg,#070405 0%,rgba(7,4,5,.90) 2%,rgba(10,5,7,.54) 8%,transparent 19%);
+}
+
 </style>
 
 
