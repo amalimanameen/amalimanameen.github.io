@@ -2292,6 +2292,23 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
  @keyframes mavisWindowRightMobile{from{opacity:0;transform:translateX(58vw)}to{opacity:1;transform:translateX(-3vw)}}
 }
 
+
+/* RESTORED MAVIS CLOSING — same hands, separating with scroll */
+.mavis-separation{height:115vh;min-height:760px;position:relative;overflow:hidden;background:#070405;display:grid;place-items:center;isolation:isolate}
+.separation-atmosphere{position:absolute;inset:0;z-index:0;opacity:.17;pointer-events:none}
+.separation-atmosphere img{width:100%;height:100%;object-fit:cover;filter:saturate(.68) brightness(.43)}
+.separation-hands{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.ending-hand-piece{position:absolute;inset:0;overflow:hidden;opacity:.9;will-change:transform,opacity}
+.ending-hand-piece img{position:absolute;left:50%;top:50%;width:clamp(1150px,150vw,1900px);max-width:none;transform:translate(-50%,-50%) scale(1.08)}
+.ending-hand-left{right:50%;clip-path:inset(0 50% 0 0)}
+.ending-hand-right{left:50%;clip-path:inset(0 0 0 50%)}
+.ending-hand-left::after,.ending-hand-right::after{content:"";position:absolute;inset:0;pointer-events:none}
+.ending-hand-left::after{background:linear-gradient(90deg,#070405 0%,rgba(7,4,5,.94) 5%,rgba(7,4,5,.55) 14%,transparent 27%)}
+.ending-hand-right::after{background:linear-gradient(270deg,#070405 0%,rgba(7,4,5,.72) 8%,transparent 24%)}
+.separation-copy{position:relative;z-index:3;text-align:center;max-width:760px;padding:0 8vw;font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4.4vw,4.8rem);line-height:1.02;color:#eee1d8;text-shadow:0 12px 50px #070405}
+.separation-copy span{display:block;margin-top:18px;font-size:.42em;font-style:italic;letter-spacing:.06em;color:#c99b92}
+@media(max-width:800px){.mavis-separation{min-height:680px}.ending-hand-piece img{width:205vw}}
+
 </style>
 
 
@@ -2909,6 +2926,25 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
   render();
 })();
 </script>
-\n</body>
+\n<script>
+(() => {
+ const section=document.getElementById('mavisSeparation');
+ if(!section) return;
+ const left=section.querySelector('.ending-hand-left');
+ const right=section.querySelector('.ending-hand-right');
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const draw=()=>{
+   const r=section.getBoundingClientRect(), vh=innerHeight;
+   const p=Math.max(0,Math.min(1,(vh-r.top)/(vh+r.height*.62)));
+   const d=(reduce?10:p*18);
+   left.style.transform='translate3d(-'+d+'vw,0,0)';
+   right.style.transform='translate3d('+d+'vw,0,0)';
+   const o=reduce?.78:(.92-p*.18);
+   left.style.opacity=o;right.style.opacity=o;
+ };
+ addEventListener('scroll',draw,{passive:true});draw();
+})();
+</script>
+</body>
 
 </html>
