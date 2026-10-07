@@ -2030,6 +2030,59 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
 }
 
 .mavis-hands,.mavis-hand,.mavis-ending{display:none!important}
+/* MAVIS WORLD — uploaded cinematic artwork */
+.mavis-opening .opening-image{
+ background-image:url("images/mavis-world.png")!important;
+ background-size:cover!important;
+ background-position:center top!important;
+ filter:saturate(.88) brightness(.72) contrast(1.05);
+ transform:scale(1.04);
+ animation:mavisWorldBreath 12s cubic-bezier(.22,.61,.36,1) forwards!important;
+}
+@keyframes mavisWorldBreath{from{transform:scale(1.075)}to{transform:scale(1.025)}}
+.mavis-opening .opening-overlay{background:
+ linear-gradient(180deg,rgba(5,3,4,.16),rgba(5,3,4,.05) 48%,rgba(7,5,6,.82) 92%,#070506 100%)!important}
+.mavis-opening .opening-content{background:radial-gradient(ellipse at center,rgba(5,3,4,.52),transparent 67%);padding:55px 30px}
+.mavis-opening .opening-content h1{font-size:clamp(5.5rem,12vw,10rem)}
+.mavis-opening .opening-label,.mavis-opening .opening-subtitle,.mavis-opening .opening-line{text-shadow:0 3px 18px #000}
+
+/* echo the uploaded world between sections without replacing readable content */
+.memory-divider{
+ background-image:
+  linear-gradient(90deg,rgba(7,5,6,.28),rgba(7,5,6,.06),rgba(7,5,6,.28)),
+  url("images/mavis-world.png")!important;
+ background-size:cover!important;
+ background-position:center 62%!important;
+ filter:none;
+}
+.memory-divider::before{background:linear-gradient(180deg,#070506 0%,transparent 30%,transparent 70%,#070506 100%)!important}
+.memory-photo,.memory-letter,.memory-petal{display:none!important}
+
+/* real-art closing panel: lower strip of the same artwork contains the separated hands */
+.mavis-world-ending{
+ height:clamp(360px,38vw,620px);position:relative;overflow:hidden;background:#050304;
+ border-top:1px solid rgba(145,68,72,.13);
+}
+.mavis-world-ending::before{
+ content:"";position:absolute;inset:-8% -4%;
+ background-image:url("images/mavis-world.png");
+ background-size:cover;background-position:center bottom;
+ filter:saturate(.82) brightness(.68) contrast(1.08);
+ transform:scale(1.05);transition:transform .1s linear;
+}
+.mavis-world-ending::after{
+ content:"";position:absolute;inset:0;background:
+ linear-gradient(180deg,#070506 0%,rgba(7,5,6,.12) 28%,rgba(7,5,6,.16) 70%,#050304 100%),
+ radial-gradient(circle at center,transparent 20%,rgba(0,0,0,.42) 100%);
+}
+.mavis-world-ending .ending-copy{display:block!important;z-index:2}
+@media(max-width:800px){
+ .mavis-opening .opening-image{background-position:center top!important}
+ .mavis-opening .opening-content{padding:35px 12px}
+ .mavis-world-ending{height:430px}
+ .mavis-world-ending::before{background-size:auto 100%;background-position:center bottom}
+}
+
 </style>
 
 
@@ -2602,6 +2655,9 @@ footer{background:#060405!important;border-top-color:rgba(126,45,55,.16)!importa
     </footer>
 
 
+<script>
+(()=>{const el=document.getElementById('mavisWorldEnding');if(!el)return;const move=()=>{const r=el.getBoundingClientRect(),p=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height)));el.style.setProperty('--drift',p);const bg=el;bg.style.setProperty('background-position',((50)+(p-0.5)*2)+'% bottom');};addEventListener('scroll',move,{passive:true});move();})();
+</script>
 </body>
 
 </html>
